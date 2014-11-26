@@ -34,6 +34,7 @@ endef
 clean:
 	rm -f $(output_paths)
 	rm -f $(filelist_paths)
+	rm -rf $(tmp_dir)
 
 $(foreach lang,$(langs),$(eval $(call make_filelist,$(lang))))
 
