@@ -1,9 +1,9 @@
-NAME "Slovak TenTen Corpus (2011-12-16) - Slovak - words only"
-PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w"
+NAME "English TenTen Corpus (2011-12-16) - English - words only"
+PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w"
 ENCODING utf-8
-INFO "Slovak TenTen Corpus (2011-12-16) - Slovak - words only"
-LANGUAGE "Slovak"
+INFO "English TenTen Corpus (2011-12-16) - English - words only"
+LANGUAGE "English"
 
 SHORTREF ""
 TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
@@ -11,11 +11,11 @@ WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "sk_SK.UTF-8"
+        LOCALE "en_US.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "sk_SK.UTF-8"
+        LOCALE "en_US.UTF-8"
 }
 ATTRIBUTE tag {
         TYPE "FD_FGD"
@@ -24,7 +24,7 @@ ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
         FUNTYPE s
-        ARG1 "sk_SK.UTF-8"
+        ARG1 "en_US.UTF-8"
         FROMATTR word
         TYPE index
         TRANSQUERY yes
@@ -84,7 +84,7 @@ STRUCTURE p {
     DISPLAYTAG 0
 }
 
-STRUCTURE s {
+STRUCTURE p {
 }
 
 STRUCTURE g {
