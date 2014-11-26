@@ -2,6 +2,8 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
 lang = cs
 top_layer = w
 name = Vystadial_2013
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-4670-6/data_voip_cs.tgz\
+	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-4671-4/data_voip_en.tgz
 tmp_dir = $(ROOT_DIR)/tmp
 filelist_path = $(tmp_dir)/filelist.txt
 input_dir = $(ROOT_DIR)/input/data_voip_cs/data

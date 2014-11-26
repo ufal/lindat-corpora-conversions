@@ -2,6 +2,7 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
 langs = cs en
 top_layer = a
 name = PCEDT_2.0
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0015-8DAF-4/PCEDT-2-data-only.zip
 qsub := $(shell which qsub)
 ifdef qsub
 cluster_params = -p -j 100

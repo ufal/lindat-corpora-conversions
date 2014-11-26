@@ -2,6 +2,7 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
 langs = cs
 top_layer = a
 name = PDT_3.0
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-1AAF-3/PDT_3.0.zip
 qsub := $(shell which qsub)
 ifdef qsub
 cluster_params ?= -p -j 100

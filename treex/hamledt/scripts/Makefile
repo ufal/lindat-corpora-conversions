@@ -2,6 +2,7 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
 langs ?= ar cs da et fa fi grc la nl pt ro sv ta
 top_layer = a
 name = HamleDT_2.0
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-9551-4/hamledt-2.0-free.tar
 qsub := $(shell which qsub)
 ifdef qsub
 cluster_params ?= -p -j 100

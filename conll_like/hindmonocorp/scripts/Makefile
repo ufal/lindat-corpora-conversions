@@ -4,6 +4,7 @@ column_a = 3
 langs = $(lang_a)
 top_layer = m
 name = HindMonoCorp_0.5
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-6260-A/hindmonocorp05.export.gz
 tmp_dir = $(ROOT_DIR)/tmp
 filelist_path = $(tmp_dir)/filelist.txt
 from = @$(filelist_path)

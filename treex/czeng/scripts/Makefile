@@ -2,6 +2,7 @@ ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
 langs = cs en
 top_layer = a
 name = CzEng_1.0
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1458/data-treex-format.tar
 qsub := $(shell which qsub)
 ifdef qsub
 cluster_params ?= -p -j 100

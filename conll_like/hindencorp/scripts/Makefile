@@ -6,6 +6,7 @@ column_b = 5
 langs = $(lang_a) $(lang_b)
 top_layer = m
 name = HindEnCorp_0.5
+source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-625F-0/hindencorp05.export.gz
 tmp_dir = $(ROOT_DIR)/tmp
 filelist_path = $(tmp_dir)/filelist.txt
 from = @$(filelist_path)
