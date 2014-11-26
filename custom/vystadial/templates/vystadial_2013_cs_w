@@ -1,0 +1,38 @@
+NAME "Vystadial 2013 - phone calls speech corpus"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/Vystadial/2013/Vystadial_2013"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/Vystadial/2013/Vystadial_2013"
+ENCODING utf-8
+INFO "Vystadial 2013 - phone calls speech corpus"
+LANGUAGE "Czech"
+
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE sp {
+	ATTRIBUTE num
+}
+
+STRUCTURE seg {
+	ATTRIBUTE soundfile
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
