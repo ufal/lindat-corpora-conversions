@@ -1,7 +1,13 @@
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
-langs = ar cs da et fa fi grc la nl pt ro sv ta
+langs ?= ar cs da et fa fi grc la nl pt ro sv ta
 top_layer = a
-name=HamleDT_2.0
+name = HamleDT_2.0
+qsub := $(shell which qsub)
+ifdef qsub
+cluster_params ?= -p -j 100
+else
+cluster_params ?=
+endif
 tmp_dir = $(ROOT_DIR)/tmp
 input_dir = $(ROOT_DIR)/input
 output_dir = $(ROOT_DIR)/output
@@ -16,7 +22,7 @@ all: clean $(output_paths)
 
 define make_output
 $(call output_path,$(1)): $(call filelist_path,$(1))
-	treex -L$(1) Read::Treex from="@$$<" schema_dir=resources top_layer=$(top_layer) Write::Manatee >$$@
+	(cd $(tmp_dir) && treex -L$(1) $(cluster_params) Read::Treex from="@$$<" schema_dir=resources top_layer=$(top_layer) Write::Manatee >$$@)
 endef
 
 define make_filelist
@@ -28,6 +34,7 @@ endef
 clean:
 	rm -f $(output_paths)
 	rm -f $(filelist_paths)
+	rm -rf $(tmp_dir)
 
 $(foreach lang,$(langs),$(eval $(call make_filelist,$(lang))))
 

@@ -1,7 +1,13 @@
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
 langs = cs
 top_layer = a
-name=PDT_3.0
+name = PDT_3.0
+qsub := $(shell which qsub)
+ifdef qsub
+cluster_params ?= -p -j 100
+else
+cluster_params ?=
+endif
 tmp_dir = $(ROOT_DIR)/tmp
 input_dir = $(ROOT_DIR)/input
 output_dir = $(ROOT_DIR)/output
@@ -16,7 +22,7 @@ all: clean $(output_paths)
 
 define make_output
 $(call output_path,$(1)): $(call filelist_path,$(1))
-	treex -L$(1) Read::PDT from="@$$<" schema_dir=resources top_layer=$(top_layer) Write::Manatee >$$@.tmp
+	(cd $(tmp_dir) && treex -L$(1) Read::PDT from="@$$<" schema_dir=resources top_layer=$(top_layer) Write::Manatee >$$@.tmp)
 	$(ROOT_DIR)/scripts/fix_pdt_corpus.py $$@.tmp >$$@ && rm $$@.tmp
 endef
 
