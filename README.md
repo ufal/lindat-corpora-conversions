@@ -1,9 +1,9 @@
 # Conversion utilties
 
 This directory contains conversion utilities.
-Corpora are grouped in subdirectories by the way, they are processed during the conversion.
+Corpora are grouped in subdirectories by the input format.
 
 conll_like - input files have form of a tab delimited columns
-custom - input files have form of a custom
+custom - input files have custom formats
 treex - input files are processable by treex perl framework
 vertical - input file are already in output format
