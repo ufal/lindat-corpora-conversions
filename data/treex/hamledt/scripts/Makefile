@@ -11,7 +11,7 @@ include $(ROOT_DIR)/../../../scripts/common.mk
 
 define make_output
 $(call output_path,$(1)): $(tmp_dir) $(call filelist_path,$(1))
-	(cd $(tmp_dir) && treex -L$(1) $(cluster_params) Read::Treex from="@$$<" schema_dir=$(ROOT_DIR)/scripts/resources top_layer=$(top_layer) Write::Manatee >$$@)
+	(cd $(tmp_dir) && treex -L$(1) $(cluster_params) Read::Treex from="@$$(call filelist_path,$(1))" schema_dir=$(ROOT_DIR)/scripts/resources top_layer=$(top_layer) Write::Manatee >$$@)
 endef
 
 define make_filelist
