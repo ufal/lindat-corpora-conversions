@@ -16,7 +16,7 @@ include $(ROOT_DIR)/../../../scripts/common.mk
 
 $(splitted_tmp_dir): $(tmp_dir) $(input_paths)
 	mkdir -p $(splitted_tmp_dir)
-	gunzip -c $+ | awk '{print >> "$(splitted_tmp_dir)/"$$1}'
+	gunzip -c $(input_paths) | awk '{print >> "$(splitted_tmp_dir)/"$$1}'
 
 split: $(splitted_tmp_dir)
 
