@@ -4,16 +4,17 @@ subsystems = $(wildcard $(ROOT_DIR)/data/*/*/scripts)
 all: compile
 
 clean:
-	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) clean;)
+	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) $@;)
 
-download: clean
-	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) download;)
+download:
+	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) $@;)
 
-convert: download
-	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) convert;)
+convert:
+	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) $@;)
 
-install: convert
-	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) compile;)
+install:
+	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) $@;)
 
-compile: install
-	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) install;)
+compile:
+	$(foreach subsystem,$(subsystems),$(MAKE) -C $(subsystem) $@;)
+

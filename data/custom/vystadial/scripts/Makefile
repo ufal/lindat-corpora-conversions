@@ -1,4 +1,7 @@
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+
+include $(ROOT_DIR)/../../../scripts/common.mk
+
 lang = cs
 top_layer = w
 name = Vystadial_2013
@@ -6,16 +9,16 @@ source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858
 	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-4671-4/data_voip_en.tgz
 tmp_dir = $(ROOT_DIR)/tmp
 filelist_path = $(tmp_dir)/filelist.txt
-input_dir = $(ROOT_DIR)/input/data_voip_cs/data
 input_paths = $(wildcard $(input_dir)/*.trn)
-output_dir = $(ROOT_DIR)/output
 output_file = $(name)_$(lang)-$(top_layer)
 output_path = $(output_dir)/$(output_file)
 speech_dir = $(output_dir)/speech
 
 .PHONY: clean
 
-all: clean output mp3
+all: convert
+
+convert: output mp3
 
 clean:
 	rm -f $(output_path)

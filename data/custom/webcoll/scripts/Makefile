@@ -1,4 +1,7 @@
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+
+include $(ROOT_DIR)/../../../scripts/common.mk
+
 lang = cs
 top_layer = m
 name = WebColl
@@ -14,22 +17,18 @@ source_urls = /net/data/webcoll/tr-tag/am-trns-sgml.tar.gz\
 	/net/data/webcoll/tr-tag/np-trns-sgml.tar.gz\
 	/net/data/webcoll/tr-tag/rf-trns-sgml.tar.gz
 tmp_dir = $(ROOT_DIR)/tmp
-input_dir = $(ROOT_DIR)/input
 input_paths = $(wildcard $(input_dir)/*.tar.gz)
-output_dir = $(ROOT_DIR)/output
 output_file = $(name)_$(lang)-$(top_layer)
 output_path = $(output_dir)/$(output_file)
 
 .PHONY: clean
 
-all: clean output
+all: convert
+
+convert: $(output_path)
 
 clean:
 	rm -f $(output_path)
-
-all: $(output_path)
-
-output: $(output_path)
 
 $(output_path):
 	find $(tmp_dir)/trns/*.sgml -type f | xargs -n 1 ./webcoll2manatee.py >$@

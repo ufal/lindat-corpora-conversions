@@ -70,6 +70,7 @@ STRUCTURE doc {
     ATTRIBUTE length
     ATTRIBUTE timestamp
     ATTRIBUTE url
+    ATTRIBUTE wordcount
 }
 
 STRUCTURE p {

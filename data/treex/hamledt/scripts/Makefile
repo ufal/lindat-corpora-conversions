@@ -3,32 +3,19 @@ langs ?= ar cs da et fa fi grc la nl pt ro sv ta
 top_layer = a
 name = HamleDT_2.0
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-9551-4/hamledt-2.0-free.tar
-qsub := $(shell which qsub)
-ifdef qsub
-cluster_params ?= -p -j 100
-else
-cluster_params ?=
-endif
-tmp_dir = $(ROOT_DIR)/tmp
-input_dir = $(ROOT_DIR)/input
-output_dir = $(ROOT_DIR)/output
-output_path = $(output_dir)/$(name)_$(1)-$(top_layer)
 filelist_path = $(tmp_dir)/filelist.txt.$(1)
-output_paths = $(foreach lang,$(langs),$(call output_path,$(lang)))
 filelist_paths = $(foreach lang,$(langs),$(call filelist_path,$(lang)))
+vertical_subdir = $(vertical_dir)/monolingual/HamleDT/2.0
 
-.PHONY: clean
-
-all: clean $(output_paths)
+include $(ROOT_DIR)/../../../scripts/common.mk
 
 define make_output
-$(call output_path,$(1)): $(call filelist_path,$(1))
-	(cd $(tmp_dir) && treex -L$(1) $(cluster_params) Read::Treex from="@$$<" schema_dir=resources top_layer=$(top_layer) Write::Manatee >$$@)
+$(call output_path,$(1)): $(tmp_dir) $(call filelist_path,$(1))
+	(cd $(tmp_dir) && treex -L$(1) $(cluster_params) Read::Treex from="@$$<" schema_dir=$(ROOT_DIR)/scripts/resources top_layer=$(top_layer) Write::Manatee >$$@)
 endef
 
 define make_filelist
-$(call filelist_path,$(1)):
-	mkdir -p $(tmp_dir)
+$(call filelist_path,$(1)): $(tmp_dir)
 	(cd $(tmp_dir) && find $(input_dir) -type f -wholename '*/$(1)/*/001_pdtstyle/*.treex.gz') >$$@
 endef
 

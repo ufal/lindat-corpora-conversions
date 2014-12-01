@@ -5,33 +5,28 @@ langs = $(lang_a)
 top_layer = m
 name = HindMonoCorp_0.5
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-6260-A/hindmonocorp05.export.gz
-tmp_dir = $(ROOT_DIR)/tmp
-filelist_path = $(tmp_dir)/filelist.txt
-from = @$(filelist_path)
-input_dir = $(ROOT_DIR)/input
-splitted_input_dir = $(tmp_dir)/splitted
-input_file = hindmonocorp05.export
-input_path = $(input_dir)/$(input_file)
-output_dir = $(ROOT_DIR)/output
-output_path = $(output_dir)/$(name)_$(1)-$(top_layer)
-output_paths = $(foreach lang,$(langs),$(call output_path,$(lang)))
+splitted_tmp_dir = $(tmp_dir)/splitted
+input_files = hindmonocorp05.export.gz
+input_paths = $(addprefix $(input_dir)/,$(input_files))
+vertical_subdir = $(vertical_dir)/monolingual/HindMonoCorp/0.5
 
-.PHONY: clean
+include $(ROOT_DIR)/../../../scripts/common.mk
 
-all: clean $(output_paths)
+$(splitted_tmp_dir): $(tmp_dir) $(input_paths)
+	mkdir -p $(splitted_tmp_dir)
+	gunzip -c $+ | awk '{print >> "$(splitted_tmp_dir)/"$$1}'
 
-split: $(input_path)
-	mkdir -p $(splitted_input_dir)
-	awk '{print >> "$(splitted_input_dir)/"$$1}' $<
+split: $(splitted_tmp_dir)
 
 clean:
 	rm -f $(output_paths)
-	rm -f $(filelist_path)
-	rm -rf $(splitted_input_dir)
+	rm -rf $(splitted_tmp_dir)
+	rm -rf $(tmp_dir)
 
 define make_output
 $(call output_path,$(1)): split
-	for file in $(splitted_input_dir)/*; do \
+	@echo "Creating file $$@"
+	@for file in $(splitted_tmp_dir)/*; do \
 		echo -n "Processing file $$$$file ..."; \
 		id=`basename $$$$file`; \
 		echo "<doc id=\"$$$$id\">" >>$$@; \

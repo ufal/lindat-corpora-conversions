@@ -1,4 +1,7 @@
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+
+include $(ROOT_DIR)/../../../scripts/common.mk
+
 lang = cs
 top_layer = w
 name = CzechParl_2012-03-28
@@ -39,9 +42,7 @@ source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858
 	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0005-CF9C-4/SOUND_110831_005909.trs\
 	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0005-CF9C-4/SOUND_110831_005909.wav
 tmp_dir = $(ROOT_DIR)/tmp
-input_dir = $(ROOT_DIR)/input
 input_paths := $(input_dir)/*.trs
-output_dir = $(ROOT_DIR)/output
 output_file = $(name)_$(lang)-$(top_layer)
 output_path = $(output_dir)/$(output_file)
 sox_commands_path = $(tmp_dir)/sox.sh
@@ -49,7 +50,9 @@ speech_dir = $(output_dir)/speech
 
 .PHONY: clean
 
-all: clean mp3
+all: convert
+
+convert: mp3
 
 clean:
 	rm -f $(output_path)
