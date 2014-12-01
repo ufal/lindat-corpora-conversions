@@ -1,6 +1,6 @@
 NAME "Czech-English Parallel Corpus 1.0 - English - with POS tags and AFUN"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/CzEng/1.0/CzEng_1.0_en-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/paralle/CzEng/1.0/CzEng_1.0_en-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/CzEng/1.0/CzEng_1.0_en-a"
 ENCODING utf-8
 INFO "Czech-English Parallel Corpus 1.0 - English - with POS tags and AFUN"
 LANGUAGE "English"

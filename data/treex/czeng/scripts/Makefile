@@ -5,7 +5,7 @@ name = CzEng_1.0
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1458/data-treex-format.tar
 filelist_path = $(tmp_dir)/filelist.txt.$(1)
 filelist_paths = $(foreach lang,$(langs),$(call filelist_path,$(lang)))
-vertical_subdir = $(vertical_dir)/monolingual/CzEng/1.0
+vertical_subdir = $(vertical_dir)/parallel/CzEng/1.0
 
 include $(ROOT_DIR)/../../../scripts/common.mk
 
