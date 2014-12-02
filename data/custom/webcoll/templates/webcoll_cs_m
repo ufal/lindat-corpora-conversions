@@ -1,6 +1,6 @@
 NAME "WebColl Corpus - Czech - with POS tags"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/WebColl/webcoll-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/WebColl/webcoll-m"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/WebColl/WebColl_cs-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/WebColl/WebColl_cs-m"
 ENCODING utf-8
 INFO "WebColl Corpus - Czech - with POS tags"
 LANGUAGE "Czech"
