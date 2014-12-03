@@ -15,20 +15,24 @@ cluster_params ?= -p -j 100
 else
 cluster_params ?=
 endif
+repository_server = lindat.mff.cuni.cz
+python_metadata_tool = /sources/dspace-1.8.2/bits/tools/python-dspace-metadata/main.py
+python_metadata_dir = $(dir $(python_metadata_tool))
+extract_filename = $(shell echo -n "$(1)" | rev | cut -d/ -f1 | rev)
+extract_handle = $(shell echo -n "$(1)" | rev | cut -d/ -f2,3 | rev)
+fetch_remote_path =  $(shell ssh $(repository_server) 'cd $(python_metadata_dir) && python $(python_metadata_tool) --assetstore-path --handle="$(1)" --name="$(2)" 2>/dev/null')
 
 all: compile
 
-$(input_paths):
-	@echo
-	@echo '========================================================================'
-	@echo '!!! THE FILES NEED TO BE DOWNLOADED MANUALLY DUE TO LICENCING ISSUES !!!'
-	@echo '========================================================================'
-	@echo 'Copy downloaded files to: $(input_dir)'
-	@echo '------------------------------------------------------------------------'
-	@$(foreach source_url,$(source_urls),echo wget '$(source_url)';)
-	@echo '========================================================================'
-	@read -p "Continue (y/N)? " answer && [ "$$answer" = "y" ]
-	$(foreach input_path,$(input_paths),[ -e $(input_paths) ];)
+define input_path
+$(addprefix $(input_dir)/,$(call extract_filename,$(1))):
+	@remote_path=$(call fetch_remote_path,$(call extract_handle,$(1)),$(call extract_filename,$(1))); \
+	if [ -n "$$$$remote_path" ]; then \
+		 (cd $(input_dir) && scp $(repository_server):$$$$remote_path $$@); \
+	fi
+endef
+
+$(foreach source_url,$(source_urls),$(eval $(call input_path,$(source_url))))
 
 $(vertical_subdir):
 	mkdir -p $@
