@@ -8,8 +8,6 @@ top_layer = m
 name = HindEnCorp_0.5
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-625F-0/hindencorp05.export.gz
 splitted_tmp_dir = $(tmp_dir)/splitted
-input_files = hindencorp05.export.gz
-input_paths = $(addprefix $(input_dir)/,$(input_files))
 vertical_subdir = $(vertical_dir)/parallel/HindEnCorp/0.5
 
 include $(ROOT_DIR)/../../../scripts/common.mk

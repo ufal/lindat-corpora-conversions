@@ -14,15 +14,18 @@ $(call output_path,$(1)): $(tmp_dir) $(call filelist_path,$(1))
 	(cd $(tmp_dir) && treex -L$(1) $(cluster_params) Read::Treex from="@$$(call filelist_path,$(1))" schema_dir=$(ROOT_DIR)/scripts/resources top_layer=$(top_layer) Write::Manatee >$$@)
 endef
 
+$(tmp_dir)/2.0: $(input_paths)
+	(cd $(tmp_dir) && tar -x --no-same-permissions -f $(input_paths))
+
 define make_filelist
-$(call filelist_path,$(1)): $(tmp_dir)
-	(cd $(tmp_dir) && find $(input_dir) -type f -wholename '*/$(1)/*/001_pdtstyle/*.treex.gz') >$$@
+$(call filelist_path,$(1)): $(tmp_dir)/2.0
+	(cd $(tmp_dir) && find $(tmp_dir) -type f -wholename '*/$(1)/*/001_pdtstyle/*.treex.gz') >$$@
 endef
 
 clean:
 	rm -f $(output_paths)
 	rm -f $(filelist_paths)
-	rm -rf $(tmp_dir)
+	rm -rf $(tmp_dir)/2.0
 
 $(foreach lang,$(langs),$(eval $(call make_filelist,$(lang))))
 

@@ -3,8 +3,6 @@ langs = sk
 top_layer = w
 name = skTenTen_2011-12-16
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0001-CCDB-0/skTenTen.vert.xz
-input_files = skTenTen.vert.xz
-input_paths = $(addprefix $(input_dir)/,$(input_files))
 vertical_subdir = $(vertical_dir)/monolingual/skTenTen/2011-12-16
 
 include $(ROOT_DIR)/../../../scripts/common.mk

@@ -1,8 +1,6 @@
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
-
-include $(ROOT_DIR)/../../../scripts/common.mk
-
 lang = cs
+langs = $(lang)
 top_layer = w
 name = CzechParl_2012-03-28
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0005-CF9C-4/SOUND_110212_003546.trs\
@@ -41,28 +39,24 @@ source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858
 	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0005-CF9C-4/SOUND_110715_005912.wav\
 	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0005-CF9C-4/SOUND_110831_005909.trs\
 	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0005-CF9C-4/SOUND_110831_005909.wav
-tmp_dir = $(ROOT_DIR)/tmp
-input_paths := $(input_dir)/*.trs
-output_file = $(name)_$(lang)-$(top_layer)
-output_path = $(output_dir)/$(output_file)
+vertical_subdir = $(vertical_dir)/monolingual/CzechParl/2012-03-28
 sox_commands_path = $(tmp_dir)/sox.sh
 speech_dir = $(output_dir)/speech
+download_method = wget
 
-.PHONY: clean
+convert: download mp3
 
-all: convert
+include $(ROOT_DIR)/../../../scripts/common.mk
 
-convert: mp3
-
-clean:
-	rm -f $(output_path)
-	rm -f $(sox_commands_path)
-	rm -rf $(speech_dir)
-
-mp3: $(sox_commands_path)
+mp3: $(call output_path,$(lang))
 	mkdir -p $(speech_dir)
 	(cd $(ROOT_DIR) && sh $(sox_commands_path))
 
-$(sox_commands_path): $(input_paths)
-	$(foreach file,$+, $(ROOT_DIR)/scripts/czechparl2manatee.py $(file) $(output_path) $(sox_commands_path);)
+clean:
+	rm -f $(call output_path,$(lang))
+	rm -f $(sox_commands_path)
+	rm -rf $(speech_dir)
+
+$(call output_path,$(lang)): $(input_paths)
+	$(foreach file,$(filter %.trs,$(input_paths)), $(ROOT_DIR)/scripts/czechparl2manatee.py $(file) $@ $(sox_commands_path);)
 
