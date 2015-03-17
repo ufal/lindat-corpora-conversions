@@ -4,10 +4,9 @@
 import sys
 import re
 from os.path import basename
-
+import xml.etree.ElemntTree as ET
 
 def extract_doc_id(filename):
-    # sample: ./input/data_voip_cs/data/all-2012-06-08-11-17-43.545468.recorded-0056.20-0057.83.wav.trn
     parts = filename.split('/')
     basename = parts[-1]
     doc_id = re.sub(r'^([a-zA-Z-]*[a-zA-Z])[-].*$','\\1',basename)
@@ -27,7 +26,7 @@ def tokenize_sentence(sentence):
 
 def process_sentence(file, sentence, i):
     tokens = tokenize_sentence(sentence)
-    soundfile = re.sub(r'^.*?([^/]*)\.wav\.trn$', '\\1.mp3', file)
+    soundfile = re.sub(r'^.*?([^/]*)\.wav\.trs$', '\\1.mp3', file)
     print '<sp num="%d">' % i
     print '<seg soundfile="%s">' % soundfile
     #print '<seg soundfile="%s" time=0>' % soundfile
@@ -40,7 +39,7 @@ def process_sentence(file, sentence, i):
 
 
 def convert_file(file, i):
-    file_fullpath = '../input/data_voip_en/data/'+file 
+    file_fullpath = '../input/'+file 
     with open(file_fullpath) as f:
         sentences = [ line.strip() for line in f.readlines()]
     for sentence in sentences:
@@ -50,8 +49,7 @@ def convert_file(file, i):
 
 def process_docs(docs):
     for doc,files in docs.items():
-        #print '<doc id="%s">' % doc #For Czech
-	print '<doc>' #for English no subcorpora
+	print '<doc>'
         i=0
         for file in files:
             i = convert_file(file, i)
