@@ -7,7 +7,9 @@ import os
 import lxml.etree
 
 def tokenize_text(text):
-    text = re.sub(r'(\w+)', r'\1\n',text.strip(),0,re.UNICODE|re.MULTILINE)
+    #text = re.sub(r'(\w+)', r'\1\n',text.strip(),0,re.UNICODE|re.MULTILINE)
+    text = re.sub(r'\]',r']\n',text,0,re.MULTILINE).strip() #handling "[unintelligible_|]Scandinavian[|_unintelligible]"
+    text = re.sub(r'\[',r'\n[',text,0,re.MULTILINE).strip()
     text = re.sub(r'[\s\n]+',r'\n',text,0,re.MULTILINE).strip()
     tokens = text.split('\n')
     return tokens
@@ -24,9 +26,9 @@ def create_sox_command(input_filename, output_filename, start_time, end_time):
 def create_segment_header(speech_filename):
     return '<seg soundfile="%s">' % speech_filename
 
-def create_turn_header(speakers, speaker_map):
-    speakers = "|".join([speaker_map[speaker] if speaker in speaker_map else '' for speaker in speakers.split(' ')])
-    return '<turn speakers="%s">' % speakers
+#def create_turn_header(speakers, speaker_map):
+#    speakers = "|".join([speaker_map[speaker] if speaker in speaker_map else '' for speaker in speakers.split(' ')])
+#    return '<turn speakers="%s">' % speakers
 
 def segmentate_texts(turn):
     doc = lxml.etree.fromstring(ET.tostring(turn))
@@ -61,17 +63,17 @@ def process_segment(filename,segment):
     return [buf, sox]
 
 
-def proces_turn(filename,turn,speaker_map):
+def proces_turn(filename,turn):
     segments = filter(lambda (s,e,t): not re.match(r'^[\n\s]+$', t) ,segmentate_texts(turn))
-    speaker = turn.attrib['speaker']
+    #speaker = turn.attrib['speaker']
     commands = []
     buf = ''
-    buf += '%s\n' % create_turn_header(speaker, speaker_map)
+    #buf += '%s\n' % create_turn_header(speaker, speaker_map)
     for segment in segments:
         [mybuf,mysox] = process_segment(filename, segment)
         buf += mybuf
         commands.append(mysox)
-    buf += '</turn>\n'
+    #buf += '</turn>\n'
     return [buf,commands]
 
 def print_buffer(corpus_filename, buf):
@@ -83,16 +85,18 @@ def print_commands(sox_commands_filename, commands):
         f.write("\n".join(commands) + "\n")
 
 def process_tree(filename,tree,corpus_filename,sox_commands_filename):
-    speakers = tree.findall('.//Speaker')
-    speaker_map = {}
-    for speaker in speakers:
-        speaker_map[speaker.attrib['id']] = speaker.attrib['name']
+#    speakers = tree.findall('.//Speaker')
+#    speaker_map = {}
+#    for speaker in speakers:
+#        speaker_map[speaker.attrib['id']] = speaker.attrib['name']
     turns = tree.findall('.//Turn')
     commands = []
     buf = ''
-    buf += '<doc>\n'
+    buf += '<doc id="'
+    buf += filename
+    buf += '">\n'
     for turn in turns:
-        [mybuf, mycommands] = proces_turn(filename,turn,speaker_map)
+        [mybuf, mycommands] = proces_turn(filename,turn)
         buf += mybuf
         commands += mycommands
     buf += '</doc>\n'

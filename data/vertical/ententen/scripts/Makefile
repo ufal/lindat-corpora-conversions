@@ -6,9 +6,10 @@ source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858
 vertical_subdir = $(vertical_dir)/monolingual/enTenTen/2011-12-16
 
 include $(ROOT_DIR)/../../../scripts/common.mk
+#input_dir = ../input.sample
 
 clean:
 	rm -f "$(output_paths)"
 
 $(output_paths): $(input_paths)
-	zcat $+ > $@
+	zcat $+ | egrep -v '</p>' | sed ':begin;$!N;s/<\/doc>\n<\/doc>/<\/doc>/;tbegin;P;D' |  sed 's/<\/doc>/<\/p>\n<\/doc>/g' | sed 's/<p>/<\/p>\n<p>/g' | sed ':begin;$!N;s/">\n<\/p>/">/;tbegin;P;D' > $@

@@ -1,0 +1,7 @@
+The corpus is artificially created one - a native speaker of Serbian reads the 
+messages from ATC used by plane pilots.
+
+The corpus is annotated with pitch-marks(glottal closure instance), but imho
+there is no way to process such small phonetic units within manatee.
+For the first version I will use word-level annotation only. Later on, we can consult
+with the authors if those pitch-marks are really needed to be present and in which form. The same applies to alignment.mlf - sound search?

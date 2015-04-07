@@ -48,6 +48,7 @@ convert: download mp3
 
 include $(ROOT_DIR)/../../../scripts/common.mk
 
+
 mp3: $(call output_path,$(lang))
 	mkdir -p $(speech_dir)
 	(cd $(ROOT_DIR) && sh $(sox_commands_path))

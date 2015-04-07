@@ -1,0 +1,4 @@
+OVM inlcudes 16 speech and 16 transcription files. Links list generation:
+
+1. In the console: $('.label.label-info').each(function() { console.log(this.getAttribute("href")); })  => repo_links
+2. cat repo_links | perl -pne 's/\?sequence=\d+\"/\\/g' | perl -pne 's/^\"/\thttps:\/\/lindat.mff.cuni.cz/g' => paste list to the Makefile

@@ -1,39 +1,71 @@
-ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/..
 
 lang = cs
 langs = $(lang)
 top_layer = w
 name = OVM
 source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110904.trs\
-	https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110904.wav
-vertical_subdir = $(vertical_dir)/speech/OVM
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110904.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110911.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110911.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110918.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110918.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110925.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_110925.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111002.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111002.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111009.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111009.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111016.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111016.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111023.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111023.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111030.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111030.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111106.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111106.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111113.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111113.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111120.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111120.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111127.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111127.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111204.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111204.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111211.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111211.wav\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111218.trs\
+        https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-000D-EC98-3/OVM_111218.wav 
+vertical_subdir = $(vertical_dir)/speech/
 sox_commands_path = $(tmp_dir)/sox.sh
-speech_input_dir = $(tmp_dir)/speech
-speech_output_dir = $(output_dir)/speech
+speech_dir = $(output_dir)/speech/
 download_method = wget
-
+registry_filename = $(notdir $(registry_paths))
 convert: download mp3
 
 include $(ROOT_DIR)/../../../scripts/common.mk
 
-input_dir =  $(ROOT_DIR)
+input_dir =  $(ROOT_DIR)/input
 
-
-#$(tmp_dir)/trs_cp1250: $(input_paths)
-#	(cd $(tmp_dir) && tar -xv --no-same-permissions -f $(input_dir)/speech.tar)
-#	(cd $(tmp_dir) && tar -xzv --no-same-permissions -f $(input_dir)/trs_cp1250.tgz)
+mp3: $(call output_path,$(lang))
+	mkdir -p $(speech_dir)
+	(cd $(ROOT_DIR) && sh $(sox_commands_path))
 
 
 clean:
-	rm -f $(output_path)
-	rm -f $(filelist_path)
-	rm -rf $(speech_output_dir)
+	rm -f $(call output_path,$(lang))
+	rm -f $(sox_commands_path)
+	rm -rf $(speech_dir)
 
-%.mp3: 
-	lame $(input_dir)/$(patsubst %.mp3,%wav,$(notdir $@)) $(speech_output_dir)/$@
 
-$(speech_output_dir):
-	mkdir -p $@
+$(call output_path,$(lang)): $(input_paths)
+	$(foreach file,$(filter %.trs,$(input_paths)), $(ROOT_DIR)/scripts/ovm2manatee.py $(file) $@ $(sox_commands_path);)
 
-mp3: $(speech_output_dir) $(patsubst %.wav.trn,%.mp3,$(notdir $(input_paths)))
+copy_speech:
+	#cp $(templates_dir)/* $(registry_dir)/
+	cp $(output_paths) $(vertical_subdir)/OVM
+	mkdir -p $(speech_file_dir)/$(registry_filename)
+	cp $(output_dir)/speech/* $(speech_file_dir)/$(registry_filename)/
 
+compile_speech:
+	compilecorp --no-sketches --recompile-corpus $(registry_dir)/$(registry_filename)

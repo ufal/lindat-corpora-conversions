@@ -1,6 +1,6 @@
 NAME "Otázky Václava Moravce - Czech - words only"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/OVM"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/OVM"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/OVM/OVM_cs-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/OVM/OVM_cs-w"
 ENCODING utf-8
 INFO "Otázky Václava Moravce - Czech - words only"
 INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-000D-EC98-3"
@@ -10,13 +10,13 @@ DOCSTRUCTURE doc
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "cs_CZ.UTF-8"
+        LOCALE "cs_CS.UTF-8"
 }
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
         FUNTYPE s
-        ARG1 "cs_CZ.UTF-8"
+        ARG1 "cs_CS.UTF-8"
         FROMATTR word
         TYPE index
         TRANSQUERY yes

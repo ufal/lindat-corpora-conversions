@@ -5,10 +5,6 @@ ENCODING utf-8
 INFO "English TenTen Corpus (2011-12-16) - English - words only"
 LANGUAGE "English"
 
-SHORTREF ""
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
-WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
-
 ATTRIBUTE word {
         TYPE "FD_FGD"
         LOCALE "en_US.UTF-8"
@@ -63,38 +59,16 @@ ATTRIBUTE   c {
 }
 
 STRUCTURE doc {
-    ATTRIBUTE xdeduplid
-    ATTRIBUTE langfilterscore
-    ATTRIBUTE contenttype
-    ATTRIBUTE ip
-    ATTRIBUTE length
-    ATTRIBUTE timestamp
+	ATTRIBUTE wordcount
     ATTRIBUTE url
-    ATTRIBUTE wordcount
 }
 
 STRUCTURE p {
-	ATTRIBUTE id
-    ATTRIBUTE wordcount
-    ATTRIBUTE class
-    ATTRIBUTE cfclass
-    ATTRIBUTE heading
-    ATTRIBUTE swratio
-    ATTRIBUTE badreason
-    ATTRIBUTE tokenscount
-    DISPLAYTAG 0
-}
+  DISPLAYTAG 0                                 
 
-STRUCTURE p {
 }
 
 STRUCTURE g {
-    DISPLAYTAG 0
-    DISPLAYBEGIN "_EMPTY_"
-}
-
-STRUCTURE gap {
-    ATTRIBUTE tokenscount
     DISPLAYTAG 0
     DISPLAYBEGIN "_EMPTY_"
 }

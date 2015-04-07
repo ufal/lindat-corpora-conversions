@@ -1,6 +1,7 @@
 conversions_dir = /opt/projects/lindat-services-kontext/devel/data/corpora/conversions
 registry_dir = /opt/projects/lindat-services-kontext/devel/data/corpora/registry
 vertical_dir = /opt/projects/lindat-services-kontext/devel/data/corpora/vert
+speech_file_dir = /opt/projects/lindat-services-kontext/devel/data/corpora/speech
 identity_file = $(conversions_dir)/.ssh/id_rsa
 tmp_dir = $(ROOT_DIR)/tmp
 templates_dir =  $(ROOT_DIR)/templates
