@@ -1,4 +1,12 @@
-# Conversion utilities
+
+#Corpora conversion
+* [Conversion utilities](#cu)
+* [Conversion process](#conv_proc)
+ * [PDT to Manatee](#pdt-manatee)
+ * [Treex to Manatee](#treex-manatee)
+* [Corpora compilation](#corp-comp)
+
+##<a name="cu"></a>Conversion utilities
 
 This directory contains conversion utilities for converting corpora into LINDAT KonText format.
 Corpora utilities are grouped in subdirectories by the input format.
@@ -8,7 +16,7 @@ Corpora utilities are grouped in subdirectories by the input format.
 * treex - input files are processable by treex perl framework
 * vertical - input file are already in output format
 
-##Overview
+###Tools
 
 Conversion of corpora is performed on development environment only and realized by the following tools:
 
@@ -17,7 +25,7 @@ Conversion of corpora is performed on development environment only and realized 
 * treex
 * python
 
-##Cluster setup
+##Cluster setup(ufal-internal)
 
 See detailed description of the cluster here: https://wiki.ufal.ms.mff.cuni.cz/grid
 
@@ -35,7 +43,7 @@ Be sure to clean up any files when the conversion is finished.
 Install perlbrew on your local computer (your $HOME will be available on the cluster as well) as described here: https://wiki.ufal.ms.mff.cuni.cz/perlbrew
 Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.html, please note that most of the prerequisites is already provided by the perlbrew.
 
-##Conversion process
+##<a name="conv_proc"></a>Conversion process
 ```
 # SSH to the cluster:
 ssh lrc1
@@ -65,7 +73,7 @@ exit
 # Logout
 exit
 ```
-##PDT to Manatee
+###<a name="pdt-manatee"></a>PDT to Manatee
 Conversion of PDT was implemenented in perl as a Block for Treex (Treex::Block::Write::Manatee). This block converts documents in PDT to <doc> structures in vertical files for Manatee.
 
 the following attributes are included in the output:
@@ -109,6 +117,8 @@ Prefixes:
 
 Shell script was created to easily convert the whole set of PDT documents to a single corpus.
 
-##Treex to Manatee
+###<a name="treex-manatee"></a>Treex to Manatee
 
 Conversion of treex files was implemenented in perl as a Block for Treex (Treex::Block::Write::Manatee). This block converts documents in treex to <doc> structures in vertical files for Manatee.
+
+##<a name="corp-comp"></a>Corpora compilation
