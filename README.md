@@ -64,7 +64,7 @@ Install perlbrew on your local computer (your $HOME will be available on the clu
 Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.html, please note that most of the prerequisites is already provided by the perlbrew.
 
 ##<a name="conv_proc"></a>Conversion process
-```
+```bash
 # SSH to the cluster:
 ssh lrc1
 # Use screen
@@ -104,7 +104,7 @@ the following attributes are included in the output:
 * afun
 
 The structure of the output document is as follows:
-```
+```xml
 <doc id="xyz">
 <s id="1">
 token    lemma    POS-tag    afun
