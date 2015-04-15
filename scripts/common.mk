@@ -24,9 +24,9 @@ python_metadata_dir = $(dir $(python_metadata_tool))
 extract_filename = $(shell echo -n "$(1)" | rev | cut -d/ -f1 | rev)
 extract_handle = $(shell echo -n "$(1)" | rev | cut -d/ -f2,3 | rev)
 input_paths = $(addprefix $(input_dir)/,$(foreach source_url,$(source_urls),$(call extract_filename,$(source_url))))
-ifndef download_method
-	download_method = scp
-endif
+#ifndef download_method
+#	download_method = scp
+#endif
 fetch_remote_path = $(shell ssh -i $(identity_file) $(repository_server) 'cd $(python_metadata_dir) && python $(python_metadata_tool) --assetstore-path --handle="$(1)" --name="$(2)" 2>/dev/null')
 
 all: compile
@@ -44,7 +44,7 @@ $(addprefix $(input_dir)/,$(call extract_filename,$(1))):
     fi
 endef
 
-$(foreach source_url,$(source_urls),$(eval $(call input_path,$(source_url))))
+#$(foreach source_url,$(source_urls),$(eval $(call input_path,$(source_url))))
 
 $(vertical_subdir):
 	mkdir -p $@

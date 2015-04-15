@@ -6,7 +6,6 @@ source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858
 vertical_subdir = $(vertical_dir)/monolingual/czes
 
 include $(ROOT_DIR)/../../../scripts/common.mk
-input_dir =  $(ROOT_DIR)/input.sample
 
 clean:
 	rm -f "$(output_paths)"
