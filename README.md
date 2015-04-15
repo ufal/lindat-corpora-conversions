@@ -64,6 +64,15 @@ Install perlbrew on your local computer (your $HOME will be available on the clu
 Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.html, please note that most of the prerequisites is already provided by the perlbrew.
 
 ##<a name="conv_proc"></a>Conversion process
+Corpora conversion and compilation are realized by the system of Makefiles as follows. 
+The corpus specific Makefile is stored in a directory script and it usually contains the conversion steps. 
+The common steps - like copying the corpora in vertical format and registry files into the sufficient place
+and executing *compilecorp* - are incorporated into common.mk. 
+
+We have disabled the function of automatical downloading because of the security reasons, see the [commit](https://github.com/ufal/lindat-corpora-conversions/commit/cd9a26865fbf970f3aa71bcda5decf7c9fc1eda9#diff-217673f9edaf6c9c1a73a57462e208a8).
+
+
+**Makefile execution on cluster:**
 ```bash
 # SSH to the cluster:
 ssh lrc1
