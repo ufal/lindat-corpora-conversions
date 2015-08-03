@@ -1,0 +1,28 @@
+NAME "Web to Corpus - Aragonese"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/W2C/W2C_arg-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/W2C/W2C_arg-w"
+ENCODING utf-8
+INFO "A set of corpora for 120 languages automatically collected from wikipedia and the web."
+LANGUAGE "Aragonese"
+
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "an_ES.UTF-8"
+}
+
+STRUCTURE doc {
+        ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+        ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
+

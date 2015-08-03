@@ -1,0 +1,28 @@
+NAME "Web to Corpus - Belarusian"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/W2C/W2C_bel-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/W2C/W2C_bel-w"
+ENCODING utf-8
+INFO "A set of corpora for 120 languages automatically collected from wikipedia and the web."
+LANGUAGE "Belarusian"
+
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "be_BY.UTF-8"
+}
+
+STRUCTURE doc {
+        ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+        ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
+
