@@ -1,0 +1,69 @@
+NAME "Universal Dependencies 1.1 - Italian"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_it-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/it-ud-train.vert"
+ENCODING utf-8
+INFO "The Italian corpus annotated according to the UD annotation scheme was obtained by conversion from ISDT (Italian Stanford Dependency Treebank), released for the dependency parsing shared task of Evalita-2014 (Bosco et al. 2014)."
+LANGUAGE "Italian"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "hr-HR.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "hr-HR.UTF-8"
+}
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "hr-HR.UTF-8"
+}
+ATTRIBUTE p_lemma {
+          TYPE "FD_FGD"
+          LOCALE "hr-HR.UTF-8"
+}
+ATTRIBUTE p_pos {
+          TYPE "FD_FGD"
+}
+ATTRIBUTE p_ufeat {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_deprel {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE position {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE distance {
+          TYPE "FD_FGD"
+}
+
+
+STRUCTURE s {
+	ATTRIBUTE sent_id
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

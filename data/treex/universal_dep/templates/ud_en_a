@@ -1,0 +1,67 @@
+NAME "Universal Dependencies 1.1 - English"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_en-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/en-ud-train.vert"
+ENCODING utf-8
+INFO "UD 1.1 - English. A Gold Standard Universal Dependencies Corpus for English, built over the source material of the English Web Treebank LDC2012T13 (https://catalog.ldc.upenn.edu/LDC2012T13)."
+LANGUAGE "English"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE p_lemma {
+          TYPE "FD_FGD"
+          LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE p_pos {
+          TYPE "FD_FGD"
+}
+ATTRIBUTE p_ufeat {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_deprel {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE position {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE distance {
+          TYPE "FD_FGD"
+}
+
+STRUCTURE s {
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

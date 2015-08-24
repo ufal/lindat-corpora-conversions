@@ -1,0 +1,68 @@
+NAME "Universal Dependencies 1.1 - Indonesian"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_id-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/id-ud-train.vert"
+ENCODING utf-8
+INFO "The Indonesian UD is converted from the standard version of the universal dependency treebank v2.0 (legacy). Tree count:5593. Word count:121923. Token count:121923."
+LANGUAGE "Indonesian"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "in_ID.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "in_ID.UTF-8"
+}
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "in_ID.UTF-8"
+}
+ATTRIBUTE p_lemma {
+          TYPE "FD_FGD"
+          LOCALE "in_ID.UTF-8"
+}
+ATTRIBUTE p_pos {
+          TYPE "FD_FGD"
+}
+ATTRIBUTE p_ufeat {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_deprel {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE position {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE distance {
+          TYPE "FD_FGD"
+}
+
+
+STRUCTURE s {
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
