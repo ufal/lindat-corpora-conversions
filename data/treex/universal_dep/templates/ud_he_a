@@ -1,20 +1,20 @@
-NAME "Universal Dependencies 1.1 - Italian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_it-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/it-ud-train.vert"
+NAME "Universal Dependencies 1.1 - Hebrew"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_he-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/he-ud-train.vert"
 ENCODING utf-8
-INFO "The Italian corpus annotated according to the UD annotation scheme was obtained by conversion from ISDT (Italian Stanford Dependency Treebank), released for the dependency parsing shared task of Evalita-2014 (Bosco et al. 2014)."
-LANGUAGE "Italian"
+INFO "The corpus was built by semi-automatic conversion of the Hebrew Constituency Treebank (v2). The corpus comprises 115,535 tokens (158,855 words) and 6,216, taken from the `Ha'aretz` newspaper."
+LANGUAGE "Hebrew"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
 DOCSTRUCTURE doc
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "it_IT.UTF-8"
+        LOCALE "he-IL.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "it_IT.UTF-8"
+        LOCALE "he-IL.UTF-8"
 }
 ATTRIBUTE pos {
         TYPE "FD_FGD"
@@ -29,11 +29,11 @@ ATTRIBUTE deprel {
 
 ATTRIBUTE p_word {
           TYPE "FD_FGD"
-          LOCALE "it_IT.UTF-8"
+          LOCALE "he-IL.UTF-8"
 }
 ATTRIBUTE p_lemma {
           TYPE "FD_FGD"
-          LOCALE "it_IT.UTF-8"
+          LOCALE "he-IL.UTF-8"
 }
 ATTRIBUTE p_pos {
           TYPE "FD_FGD"
@@ -56,7 +56,6 @@ ATTRIBUTE distance {
 
 
 STRUCTURE s {
-	ATTRIBUTE sent_id
 }
 
 STRUCTURE doc {
