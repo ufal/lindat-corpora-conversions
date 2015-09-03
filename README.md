@@ -241,8 +241,8 @@ Size (in MB): 4761MB
   * BushBank - MUNI
   * Corpus of contemporary blogs (MUNI)
   * Czech Named Entity Corpus
-  * Urdu Monolingual Corpus
-  * Facebook data for sentiment analysis
+  * ~~Urdu Monolingual Corpus~~
+  * ~~Facebook data for sentiment analysis~~ (only development version, not decided how to process)
   * PDT annotation: Multiword expressions, coreference, lexico-semantic, discourse annotation in PDT??
   * Slovinsky korpus jos100k?
 * parallel
@@ -250,5 +250,5 @@ Size (in MB): 4761MB
   * EnTam:English-Tamil parallel corpus
   * Indonesian-English parallel corpus
 * speech
-  *English corpus of air traffic messages - Taiwanese accent
+  * English corpus of air traffic messages - Taiwanese accent
 
