@@ -7,6 +7,7 @@
  * [Treex to Manatee](#treex-manatee)
 * [Corpora compilation](#corp-comp)
 * [Conversion benchmarks](#benchmarks)
+* [List of corpora to convert](#corpora_list)
 
 ##<a name="intro"></a>Introduction
 
@@ -233,4 +234,21 @@ Size (in MB): 4761MB
 |-------|-------|
 | processing time | 1129.716s |
 
+##<a name="corpora_list"></a>List of corpora to convert
+
+* monolingual
+  * W2C - Web to corpus - different languages, 55 gb scripts ready; no segmentation into sentences, noisy data
+  * BushBank - MUNI
+  * Corpus of contemporary blogs (MUNI)
+  * Czech Named Entity Corpus
+  * ~~Urdu Monolingual Corpus~~
+  * ~~Facebook data for sentiment analysis~~ (only development version, not decided how to process)
+  * PDT annotation: Multiword expressions, coreference, lexico-semantic, discourse annotation in PDT??
+  * Slovinsky korpus jos100k?
+* parallel
+  * English-Slovak parallel corpus
+  * EnTam:English-Tamil parallel corpus
+  * Indonesian-English parallel corpus
+* speech
+  * English corpus of air traffic messages - Taiwanese accent
 
