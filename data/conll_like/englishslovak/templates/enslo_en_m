@@ -1,0 +1,82 @@
+NAME "English-Slovak parallel corpus"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/EnglishSlovak/EnglishSlovak_en-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/EnglishSlovak/EnglishSlovak_en-m"
+ENCODING utf-8
+INFO "EnglishSlovak - English"
+LANGUAGE "English"
+
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE doc
+
+ALIGNED "enslo_sk_m"
+ALIGNSTRUCT align
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "en_US.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
+STRUCTURE doc {
+    ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE align {
+	ATTRIBUTE id
+}
+
+STRUCTURE s {
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
