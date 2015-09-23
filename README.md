@@ -237,16 +237,17 @@ Size (in MB): 4761MB
 ##<a name="corpora_list"></a>List of corpora to convert
 
 * monolingual
+  * HAMLEDT 3.0 (now only obsolete 2.0 version and search for form|lemma|tag|afun only)!!    
   * W2C - Web to corpus - different languages, 55 gb scripts ready; no segmentation into sentences, noisy data
   * BushBank - MUNI
   * Corpus of contemporary blogs (MUNI)
   * Czech Named Entity Corpus
   * ~~Urdu Monolingual Corpus~~
-  * ~~Facebook data for sentiment analysis~~ (only development version, not decided how to process)
+  * ~~Facebook data for sentiment analysis~~ 
   * PDT annotation: Multiword expressions, coreference, lexico-semantic, discourse annotation in PDT??
   * Slovinsky korpus jos100k?
 * parallel
-  * English-Slovak parallel corpus
+  * ~~English-Slovak parallel corpus~~
   * EnTam:English-Tamil parallel corpus
   * Indonesian-English parallel corpus
 * speech
