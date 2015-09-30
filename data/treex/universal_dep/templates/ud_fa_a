@@ -7,6 +7,7 @@ LANGUAGE "Persian"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
 DOCSTRUCTURE doc
+RIGHTTOLEFT righttoleft
 
 ATTRIBUTE word {
         TYPE "FD_FGD"

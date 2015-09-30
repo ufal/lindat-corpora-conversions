@@ -8,6 +8,7 @@ LANGUAGE "Urdu"
 TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
+RIGHTTOLEFT righttoleft
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
