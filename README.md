@@ -248,8 +248,8 @@ Size (in MB): 4761MB
   * Slovinsky korpus jos100k?
 * parallel
   * ~~English-Slovak parallel corpus~~
-  * EnTam:English-Tamil parallel corpus
-  * Indonesian-English parallel corpus
+  * ~~EnTam:English-Tamil parallel corpus~~
+  * Indonesian-English parallel corpus 
 * speech
   * English corpus of air traffic messages - Taiwanese accent
 
