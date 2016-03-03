@@ -254,4 +254,6 @@ Size (in MB): 4761MB
   * English corpus of air traffic messages - Taiwanese accent
 * External:
   * ACL corpus (https://groups.google.com/forum/#!topic/acl-anthology/GSaU_JhHUZo)
+  * OPUS (http://opus.lingfil.uu.se)
+      * See the OPUS search interfaces. We should serve as an alternative (hopefuly nicer) interface for the same data.
 
