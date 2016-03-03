@@ -252,4 +252,6 @@ Size (in MB): 4761MB
   * Indonesian-English parallel corpus 
 * speech
   * English corpus of air traffic messages - Taiwanese accent
+* External:
+  * ACL corpus (https://groups.google.com/forum/#!topic/acl-anthology/GSaU_JhHUZo)
 
