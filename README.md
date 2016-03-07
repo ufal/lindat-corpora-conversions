@@ -246,6 +246,7 @@ Size (in MB): 4761MB
   * ~~Facebook data for sentiment analysis~~ 
   * PDT annotation: Multiword expressions, coreference, lexico-semantic, discourse annotation in PDT??
   * Slovinsky korpus jos100k?
+  * ACL RD-TEC 2.0: http://hdl.handle.net/11372/LRT-1661
 * parallel
   * ~~English-Slovak parallel corpus~~
   * ~~EnTam:English-Tamil parallel corpus~~
