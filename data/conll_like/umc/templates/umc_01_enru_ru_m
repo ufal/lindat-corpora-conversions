@@ -1,15 +1,14 @@
 NAME "UMC 0.1 - Russian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_ru-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_ru-m"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_enru_ru-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_enru_ru-m"
 ENCODING utf-8
 INFO "UMC 0.1 - Russian"
 LANGUAGE "Russian"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
-WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+TAGSETDOC "http://corpus.leeds.ac.uk/mocky/ru-table.tab"
 DOCSTRUCTURE doc
 
-ALIGNED "umc_01_cs_m"
+ALIGNED "umc_01_enru_en_m"
 ALIGNSTRUCT align
 
 ATTRIBUTE word {

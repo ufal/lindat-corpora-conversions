@@ -1,24 +1,23 @@
-NAME "UMC 0.1 - Russian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_ru-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_ru-m"
+NAME "UMC 0.1 - English-Russian corpus"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_enru_en-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_enru_en-m"
 ENCODING utf-8
-INFO "UMC 0.1 - Russian"
-LANGUAGE "Russian"
+INFO "UMC 0.1  is a parallel corpus of texts in Czech and Russian downloaded from the single source - The Project Syndicate. It is automatically lemmatized and tagged, so it is searchable for form, lemma and tag."
+LANGUAGE "English"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
-WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+TAGSETDOC "https://www.cs.cmu.edu/~awb/papers/CSL-posbrk/node25.html"
 DOCSTRUCTURE doc
 
-ALIGNED "umc_01_cs_m"
+ALIGNED "umc_01_enru_ru_m"
 ALIGNSTRUCT align
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "ru_RU.UTF-8"
+        LOCALE "en_US.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "ru_RU.UTF-8"
+        LOCALE "en_US.UTF-8"
 }
 ATTRIBUTE tag {
         TYPE "FD_FGD"
@@ -27,7 +26,7 @@ ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
         FUNTYPE s
-        ARG1 "ru_US.UTF-8"
+        ARG1 "en_EN.UTF-8"
         FROMATTR word
         TYPE index
         TRANSQUERY yes
@@ -66,7 +65,8 @@ ATTRIBUTE   c {
 }
 
 STRUCTURE doc {
-    ATTRIBUTE id
+	ATTRIBUTE id
+	DISPLAYTAG 0
     ATTRIBUTE wordcount
 }
 
@@ -75,6 +75,8 @@ STRUCTURE align {
 }
 
 STRUCTURE s {
+	ATTRIBUTE id
+
 }
 
 MAXCONTEXT 50

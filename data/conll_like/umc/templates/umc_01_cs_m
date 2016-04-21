@@ -1,8 +1,8 @@
-NAME "UMC 0.1 - Czech - POS tags only"
+NAME "UMC 0.1 - Czech-Russian"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_cs-m"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_cs-m"
 ENCODING utf-8
-INFO "UMC 0.1 - Czech - POS tags only"
+INFO "UMC 0.1 - Czech-Russian"
 LANGUAGE "Czech"
 
 TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
@@ -67,6 +67,7 @@ ATTRIBUTE   c {
 
 STRUCTURE doc {
 	ATTRIBUTE id
+	DISPLAYTAG 0
     ATTRIBUTE wordcount
 }
 
