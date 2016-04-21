@@ -3,4 +3,5 @@
 **/output/*
 **/tmp/*
 **/.nfs*
+**/old
 .ssh
