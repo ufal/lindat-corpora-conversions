@@ -11,7 +11,7 @@ make_template() {
 	local lang="$2"
 	template_name="w2c_$lang""_w"
 	echo "Creating $template_dir/$template_name"
-	./oo_gen_templates.py $lang
+	./gen_templates.py $lang
 	echo "Copying  $template_dir/$template_name to $registry_dir"
 	#cp -u $template_dir/* $registry_dir
 }
