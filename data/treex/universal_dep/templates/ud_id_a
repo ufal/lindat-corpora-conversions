@@ -1,6 +1,6 @@
-NAME "Universal Dependencies 1.1 - Indonesian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_id-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/id-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Indonesian"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_id-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/id-ud-train.vert"
 ENCODING utf-8
 INFO "The Indonesian UD is converted from the standard version of the universal dependency treebank v2.0 (legacy). Tree count:5593. Word count:121923. Token count:121923."
 LANGUAGE "Indonesian"
@@ -46,16 +46,13 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

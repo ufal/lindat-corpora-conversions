@@ -1,8 +1,8 @@
-NAME "Universal Dependencies 1.1 - Finnish-FTB"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_fiftb-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/fiftb-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Finnish-FTB"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_fiftb-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/fi_ftb-ud-train.vert"
 ENCODING utf-8
-INFO "UD 1.1. - Finnish. The UD version of FinnTreeBank 1 was derived from FinnTreeBank 1 2014 by a scripted mapping of labels and some restructuring in an attempt to conform approximately to the UD Finnish model. Tree count:19097. Word count:161984. Token count: 161682."
+INFO "UD 1.2. - Finnish. The UD version of FinnTreeBank 1 was derived from FinnTreeBank 1 2014 by a scripted mapping of labels and some restructuring in an attempt to conform approximately to the UD Finnish model. Tree count:19097. Word count:161984. Token count: 161682."
 LANGUAGE "Finnish"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -46,16 +46,13 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

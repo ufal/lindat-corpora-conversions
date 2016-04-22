@@ -1,6 +1,6 @@
-NAME "Universal Dependencies 1.1 - Irish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_ga-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/ga-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Irish"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_ga-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/ga-ud-train.vert"
 ENCODING utf-8
 INFO "The Irish UD Treebank is a conversion of the Irish Dependency Treebank (IDT).The Treebank contains 1020 sentences taken from the New Corpus of Ireland-Irish (NCII), with text from books, newswire, websites and other media. These sentences are a subset of a gold-standard POS-tagged corpus for Irish. Trees: 1020. Token count: 23686"
 LANGUAGE "Irish"
@@ -46,16 +46,13 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

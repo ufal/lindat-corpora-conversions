@@ -1,0 +1,66 @@
+NAME "Universal Dependencies 1.2 - Estonian"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_et-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/et-ud-train.vert"
+ENCODING utf-8
+INFO "This corpus is also called Arborest and it is an experimental VISL-style hybrid treebank. It resulted from experiments on creating an Estonian treebank semiautomatically from a sample of the Estonian text corpus, annotated (parsed and manually corrected) on the shallow-syntactic level. The annotation was based on the Constraint Grammar."
+LANGUAGE "Estonian"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "et_EE.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "et_EE.UTF-8"
+}
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "et_EE.UTF-8"
+}
+ATTRIBUTE p_lemma {
+          TYPE "FD_FGD"
+          LOCALE "et_EE.UTF-8"
+}
+ATTRIBUTE p_pos {
+          TYPE "FD_FGD"
+}
+ATTRIBUTE p_ufeat {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_deprel {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE parent {
+          TYPE "FD_FGD"
+}
+
+
+STRUCTURE s {
+	ATTRIBUTE id
+	ATTRIBUTE sent_id
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

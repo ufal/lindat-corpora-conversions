@@ -1,6 +1,6 @@
-NAME "Universal Dependencies 1.1 - Swedish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_sv-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/sv-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Swedish"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_sv-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/sv-ud-train.vert"
 ENCODING utf-8
 INFO "The Swedish UD treebank is based on the Professional Prose section of Talbanken. It consists of roughly 6,000 sentences and 95,000 tokens taken from a variety of genres, including text books, information brochures, and newspaper articles."
 LANGUAGE "Swedish"
@@ -46,15 +46,12 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

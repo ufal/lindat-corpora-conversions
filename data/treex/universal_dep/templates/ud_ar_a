@@ -1,20 +1,21 @@
-NAME "Universal Dependencies 1.2 - German"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_de-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/de-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Arabic"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_ar-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/ar-ud-train.vert"
 ENCODING utf-8
-INFO "UD 1.2 - German. The German UD conforms to the UD guidelines, but there are some exceptions. The primary exception is that there are no morphological features defined."
-LANGUAGE "German"
+INFO "The Arabic UD treebank is based on the Prague Arabic Dependency Treebank (PADT), created at the Charles University in Prague. The treebank consists of 7,664 sentences (282,384 tokens) and its domain is mainly newswire."
+LANGUAGE "Arabic"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
 DOCSTRUCTURE doc
+RIGHTTOLEFT righttoleft
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "de_DE.UTF-8"
+        LOCALE "ar_SA.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "de_DE.UTF-8"
+        LOCALE "ar_SA.UTF-8"
 }
 ATTRIBUTE pos {
         TYPE "FD_FGD"
@@ -29,11 +30,11 @@ ATTRIBUTE deprel {
 
 ATTRIBUTE p_word {
           TYPE "FD_FGD"
-          LOCALE "de_DE.UTF-8"
+          LOCALE "ar_SA.UTF-8"
 }
 ATTRIBUTE p_lemma {
           TYPE "FD_FGD"
-          LOCALE "de_DE.UTF-8"
+          LOCALE "ar_SA.UTF-8"
 }
 ATTRIBUTE p_pos {
           TYPE "FD_FGD"

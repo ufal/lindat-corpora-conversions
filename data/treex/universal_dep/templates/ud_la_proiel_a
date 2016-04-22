@@ -1,0 +1,64 @@
+NAME "Universal Dependencies 1.2 - Latin PROIEL"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_la_proiel-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/la_proiel-ud-train.vert"
+ENCODING utf-8
+INFO "The Latin PROIEL treebank is based on the Latin data from the PROIEL treebank, which is maintained at the Department of Philosophy, Classics, History of Arts and Ideas at the University of Oslo. The treebank contains most of the Vulgate New Testament translation plus selections from Caesar's Gallic War and Cicero's Letters to Atticus. "
+LANGUAGE "Latin"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "en.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "en.UTF-8"
+}
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "en.UTF-8"
+}
+ATTRIBUTE p_lemma {
+          TYPE "FD_FGD"
+          LOCALE "en.UTF-8"
+}
+ATTRIBUTE p_pos {
+          TYPE "FD_FGD"
+}
+ATTRIBUTE p_ufeat {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_deprel {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE parent {
+          TYPE "FD_FGD"
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

@@ -1,6 +1,6 @@
-NAME "Universal Dependencies 1.1 - Hebrew"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_he-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/he-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Hebrew"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_he-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/he-ud-train.vert"
 ENCODING utf-8
 INFO "The corpus was built by semi-automatic conversion of the Hebrew Constituency Treebank (v2). The corpus comprises 115,535 tokens (158,855 words) and 6,216, taken from the `Ha'aretz` newspaper."
 LANGUAGE "Hebrew"
@@ -47,16 +47,13 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

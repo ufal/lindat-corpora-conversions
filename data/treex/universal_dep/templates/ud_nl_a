@@ -1,20 +1,20 @@
-NAME "Universal Dependencies 1.2 - German"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_de-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/de-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Dutch"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_nl-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/nl-ud-train.vert"
 ENCODING utf-8
-INFO "UD 1.2 - German. The German UD conforms to the UD guidelines, but there are some exceptions. The primary exception is that there are no morphological features defined."
-LANGUAGE "German"
+INFO "The UD Dutch treebank is based on the Alpino treebank."
+LANGUAGE "Dutch"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
 DOCSTRUCTURE doc
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "de_DE.UTF-8"
+        LOCALE "nl_NL.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "de_DE.UTF-8"
+        LOCALE "nl_NL.UTF-8"
 }
 ATTRIBUTE pos {
         TYPE "FD_FGD"
@@ -29,11 +29,11 @@ ATTRIBUTE deprel {
 
 ATTRIBUTE p_word {
           TYPE "FD_FGD"
-          LOCALE "de_DE.UTF-8"
+          LOCALE "nl_NL.UTF-8"
 }
 ATTRIBUTE p_lemma {
           TYPE "FD_FGD"
-          LOCALE "de_DE.UTF-8"
+          LOCALE "nl_NL.UTF-8"
 }
 ATTRIBUTE p_pos {
           TYPE "FD_FGD"
@@ -49,7 +49,6 @@ ATTRIBUTE p_deprel {
 ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
-
 
 STRUCTURE s {
 	ATTRIBUTE id

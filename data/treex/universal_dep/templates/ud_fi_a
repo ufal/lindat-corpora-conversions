@@ -1,8 +1,8 @@
-NAME "Universal Dependencies 1.1 - Finnish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_fi-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/fi-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Finnish"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_fi-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/fi-ud-train.vert"
 ENCODING utf-8
-INFO "UD 1.1. - Finnish"
+INFO "UD 1.2. - Finnish"
 LANGUAGE "Finnish"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -46,16 +46,13 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

@@ -1,8 +1,8 @@
-NAME "Universal Dependencies 1.1 - Spanish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_es-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/es-ud-train.vert"
+NAME "Universal Dependencies 1.2 - Spanish"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_es-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/es-ud-train.vert"
 ENCODING utf-8
-INFO "The Spanish UD conforms to the UD guidelines, but there are some exceptions. The primary exception is that there are no morphological features defined."
+INFO "The Spanish UD conforms to the UD guidelines, but there are some exceptions."
 LANGUAGE "Spanish"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -46,16 +46,13 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {

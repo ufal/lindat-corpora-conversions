@@ -50,12 +50,13 @@ ATTRIBUTE position {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 
 STRUCTURE s {
+	ATTRIBUTE id
 	ATTRIBUTE orig_file_sentence
 	ATTRIBUTE sent_id
 }

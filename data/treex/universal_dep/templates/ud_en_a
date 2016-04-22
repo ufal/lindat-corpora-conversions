@@ -1,8 +1,8 @@
-NAME "Universal Dependencies 1.1 - English"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_en-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/en-ud-train.vert"
+NAME "Universal Dependencies 1.2 - English"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_en-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/en-ud-train.vert"
 ENCODING utf-8
-INFO "UD 1.1 - English. A Gold Standard Universal Dependencies Corpus for English, built over the source material of the English Web Treebank LDC2012T13 (https://catalog.ldc.upenn.edu/LDC2012T13)."
+INFO "UD 1.2 - English. A Gold Standard Universal Dependencies Corpus for English, built over the source material of the English Web Treebank LDC2012T13 (https://catalog.ldc.upenn.edu/LDC2012T13)."
 LANGUAGE "English"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -46,15 +46,12 @@ ATTRIBUTE p_deprel {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE position {
-          TYPE "FD_FGD"
-}
-
-ATTRIBUTE distance {
+ATTRIBUTE parent {
           TYPE "FD_FGD"
 }
 
 STRUCTURE s {
+	ATTRIBUTE id
 }
 
 STRUCTURE doc {
