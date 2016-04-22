@@ -1,0 +1,67 @@
+NAME "ACL RD-TEC 2.0"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/aclrd/2.0/aclrd20_en-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/aclrd/2.0/aclrd20_en-m"
+ENCODING utf-8
+INFO " ACL RD-TEC 2.0 consists of 300 abstracts from articles in the ACL Anthology Reference Corpus, published between 1978-2006. In these abstracts, terms are manually annotated."
+LANGUAGE "English"
+
+TAGSETDOC "https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "en_US.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+
+STRUCTURE doc {
+	ATTRIBUTE wordcount
+	ATTRIBUTE id
+    ATTRIBUTE title
+    ATTRIBUTE annotatorid
+
+}
+
+STRUCTURE term {
+	DISPLAYCTAG 1
+	ATTRIBUTE class
+	DISPLAYTAG 1
+	ATTRIBUTE id
+	ATTRIBUTE annotatorid
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+	ATTRIBUTE annotatorid
+}
+
+STRUCTURE g {
+    DISPLAYTAG 0
+    DISPLAYBEGIN "_EMPTY_"
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
