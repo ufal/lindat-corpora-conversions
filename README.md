@@ -246,10 +246,15 @@ Size (in MB): 4761MB
   * ~~Facebook data for sentiment analysis~~ 
   * PDT annotation: Multiword expressions, coreference, lexico-semantic, discourse annotation in PDT??
   * Slovinsky korpus jos100k?
+  * ACL RD-TEC 2.0: http://hdl.handle.net/11372/LRT-1661
 * parallel
   * ~~English-Slovak parallel corpus~~
-  * EnTam:English-Tamil parallel corpus
-  * Indonesian-English parallel corpus
+  * ~~EnTam:English-Tamil parallel corpus~~
+  * Indonesian-English parallel corpus 
 * speech
   * English corpus of air traffic messages - Taiwanese accent
+* External:
+  * ACL corpus (https://groups.google.com/forum/#!topic/acl-anthology/GSaU_JhHUZo)
+  * OPUS (http://opus.lingfil.uu.se)
+      * See the OPUS search interfaces. We should serve as an alternative (hopefuly nicer) interface for the same data.
 
