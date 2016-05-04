@@ -1,0 +1,2 @@
+1. process_hamledt.sh  Generating vertical on cluster with treex
+2. compile_hamledt.sh  generating registry files & to_config - to be copied to config.xml, compiling corpora

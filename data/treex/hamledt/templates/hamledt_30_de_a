@@ -1,0 +1,107 @@
+NAME "HamleDT 3.0 - German"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/HamleDT/3.0/hamledt_de-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/HamleDT/3.0/hamledt_de-a"
+ENCODING utf-8
+INFO "HamleDT 3.0 is a compilation of existing dependency treebanks (or dependency conversions of other treebanks), transformed so that they all conform to the same annotation style."
+LANGUAGE "German"
+
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+DOCSTRUCTURE doc
+
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "de_AT.UTF-8"
+}
+
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "de_AT.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_word {
+        TYPE "FD_FGD"
+        LOCALE "de_AT.UTF-8"
+}
+
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "de_AT.UTF-8"
+}
+ATTRIBUTE p_tag {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_deprel {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+
+ATTRIBUTE p_pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+
+
+ATTRIBUTE   k {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        ARG1    1
+        FUNTYPE i
+        FROMATTR tag
+        TYPE    index
+}
+ATTRIBUTE   g {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        ARG1    3
+        FUNTYPE i
+        FROMATTR tag
+        TYPE    index
+}
+ATTRIBUTE   c {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        ARG1    5
+        FUNTYPE i
+        FROMATTR tag
+        TYPE    index
+}
+
+STRUCTURE doc {
+        ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+        ATTRIBUTE id
+}
+
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
