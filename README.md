@@ -16,6 +16,8 @@ Two files are needed for the conversion: the vertical text (i.e. corpus) itself 
 
 The vertical text is documented here: http://www.sketchengine.co.uk/documentation/wiki/SkE/PrepareText<br />
 The corpus configuration file is documented here: http://www.sketchengine.co.uk/documentation/wiki/SkE/Config/FullDoc
+And a bit more about Creating a corpus in general is here: https://www.sketchengine.co.uk/documentation/
+
 ###Directory structure
 
 The directory structure on kontext-dev (kontext) servers is as follows:
