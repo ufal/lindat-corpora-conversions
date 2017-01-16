@@ -1,0 +1,84 @@
+NAME "Czech-English Parallel Corpus 1.0 - English - with POS tags and AFUN"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/CzEng/1.0/CzEng_1.0_en-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/CzEng/1.0/CzEng_1.0_en-a"
+ENCODING utf-8
+INFO "Czech-English Parallel Corpus 1.0 - English - with POS tags and AFUN"
+LANGUAGE "English"
+
+SHORTREF "=doc.id"
+TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE doc
+
+ALIGNED "czeng_10_cs_a"
+ALIGNSTRUCT s
+
+ATTRIBUTE word {
+        TYPE "MD_MGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "MD_MGD"
+        LOCALE "en_US.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE afun {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "en_US.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+	ATTRIBUTE category
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

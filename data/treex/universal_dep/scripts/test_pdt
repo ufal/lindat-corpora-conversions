@@ -1,0 +1,110 @@
+<title name="Českomoravský Profit">
+<issue article_number="1" id="cmpr9406" name="Českomoravský Profit, 1994, č. 6" number="6" year="1994">
+<doc id="Českomoravský Profit, 1994, č. 6">
+<s id="cs-ud-train-c001" orig_file_sentence="cmpr9406_001#1">
+Třikrát třikrát ADV     NumType=Mult    advmod  1       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       +1      _
+rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       _       _       _       _       _       0       0       1|4
+než     než     SCONJ   _       mark    3       slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       +1      _
+slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       -2      3
+</s>
+<s id="cs-ud-train-c002" orig_file_sentence="cmpr9406_001#2">
+Faxu    fax     NOUN    Animacy=Inan|Case=Dat|Gender=Masc|Negative=Pos|Number=Sing      dobj    1       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       +1      _
+škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       _       _       _       _       _       0
+       0       1|6|7
+především       především       ADV     _       advmod:emph     3       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +3      _
+přetížené       přetížený       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    4       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +2      _
+telefonní       telefonní       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    5       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +1      _
+linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       -4      3|4|5
+*       *       PUNCT   _       punct   7       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2
+       -5      _
+</s>
+<s id="cs-ud-train-c008" orig_file_sentence="cmpr9406_001#8">
+Ve      v       ADP     AdpType=Voc|Case=Loc    case    1       skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       +1      _
+skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +3      1
+to      ten     PRON    Case=Nom|Gender=Neut|Number=Sing|PronType=Dem   nsubj   3       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +2      _
+sice    sice    ADV     _       cc      4       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5
+       +1      _
+</s>
+</doc>
+<doc id="Českomoravský Profit, 1994, č. 6">
+<s id="cs-ud-train-c001" orig_file_sentence="cmpr9406_001#1">
+Třikrát třikrát ADV     NumType=Mult    advmod  1       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       +1      _
+rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       _       _       _       _       _       0       0       1|4
+než     než     SCONJ   _       mark    3       slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       +1      _
+slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       -2      3
+</s>
+<s id="cs-ud-train-c002" orig_file_sentence="cmpr9406_001#2">
+Faxu    fax     NOUN    Animacy=Inan|Case=Dat|Gender=Masc|Negative=Pos|Number=Sing      dobj    1       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       +1      _
+škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       _       _       _       _       _       0
+       0       1|6|7
+především       především       ADV     _       advmod:emph     3       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +3      _
+přetížené       přetížený       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    4       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +2      _
+telefonní       telefonní       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    5       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +1      _
+linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       -4      3|4|5
+*       *       PUNCT   _       punct   7       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2
+       -5      _
+</s>
+<s id="cs-ud-train-c008" orig_file_sentence="cmpr9406_001#8">
+Ve      v       ADP     AdpType=Voc|Case=Loc    case    1       skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       +1      _
+skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +3      1
+to      ten     PRON    Case=Nom|Gender=Neut|Number=Sing|PronType=Dem   nsubj   3       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +2      _
+sice    sice    ADV     _       cc      4       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5
+       +1      _
+</s>
+</doc>
+<doc id="Českomoravský Profit, 1994, č. 6">
+<s id="cs-ud-train-c001" orig_file_sentence="cmpr9406_001#1">
+Třikrát třikrát ADV     NumType=Mult    advmod  1       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       +1      _
+rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       _       _       _       _       _       0       0       1|4
+než     než     SCONJ   _       mark    3       slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       +1      _
+slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       -2      3
+</s>
+<s id="cs-ud-train-c002" orig_file_sentence="cmpr9406_001#2">
+Faxu    fax     NOUN    Animacy=Inan|Case=Dat|Gender=Masc|Negative=Pos|Number=Sing      dobj    1       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       +1      _
+škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       _       _       _       _       _       0
+       0       1|6|7
+především       především       ADV     _       advmod:emph     3       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +3      _
+přetížené       přetížený       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    4       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +2      _
+telefonní       telefonní       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    5       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +1      _
+linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       -4      3|4|5
+*       *       PUNCT   _       punct   7       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2
+       -5      _
+</s>
+<s id="cs-ud-train-c008" orig_file_sentence="cmpr9406_001#8">
+Ve      v       ADP     AdpType=Voc|Case=Loc    case    1       skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       +1      _
+skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +3      1
+to      ten     PRON    Case=Nom|Gender=Neut|Number=Sing|PronType=Dem   nsubj   3       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +2      _
+sice    sice    ADV     _       cc      4       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5
+       +1      _
+</s>
+</doc>
+</issue>
+</title>
+<title name="Lidové noviny">
+<issue article_number="100" id="ln94200" name="Lidové noviny, 1994, č. 200" number="200" year="1994">
+<doc id="Lidové noviny, 1994, č. 200">
+<s id="cs-ud-train-l1001" orig_file_sentence="ln94200_100#1">
+Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       _       _       _       _       _       0       0       2|3|6
+:       :       PUNCT   _       punct   2       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -1      _
+mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing
+       root    1       -2      5
+před    před    ADP     AdpType=Prep|Case=Ins   case    4       bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       +1      _
+bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3
+       -2      4
+?       ?       PUNCT   _       punct   6       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -5      _
+</s>
+</doc>
+<doc id="Lidové noviny, 1994, č. 200">
+<s id="cs-ud-train-l1001" orig_file_sentence="ln94200_100#20">
+Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       _       _       _       _       _       0       0       2|3|6
+:       :       PUNCT   _       punct   2       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -1      _
+mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing
+       root    1       -2      5
+před    před    ADP     AdpType=Prep|Case=Ins   case    4       bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       +1      _
+bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3
+       -2      4
+?       ?       PUNCT   _       punct   6       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -5      _
+</s>
+</doc>
+</issue>
+</title>

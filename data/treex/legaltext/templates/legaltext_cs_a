@@ -1,0 +1,120 @@
+NAME "Czech Legal Text Treebank 1.0"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/legaltext/legaltext_cs-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/legaltext/legaltext_cs-a"
+ENCODING utf-8
+INFO "The Czech Legal Text Treebank (CLTT) is a collection of 1133 manually annotated dependency trees. CLTT consists of two legal documents: The Accounting Act (563/1991 Coll., as amended) and Decree on Double-entry Accounting for undertakers (500/2002 Coll., as amended)."
+LANGUAGE "Czech"
+
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_form {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE p_tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE p_afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE eparent {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ep_form {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ep_lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ep_tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ep_afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
+
+
+STRUCTURE doc {
+	ATTRIBUTE id
+	ATTRIBUTE wordcount 
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

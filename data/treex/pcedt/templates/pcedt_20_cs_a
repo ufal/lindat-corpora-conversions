@@ -1,0 +1,83 @@
+NAME "Prague Czech-English Dependency Treebank 2.0 - Czech - with POS tags and AFUN"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
+ENCODING utf-8
+INFO "Prague Czech-English Dependency Treebank 2.0 - Czech - with POS tags and AFUN"
+LANGUAGE "Czech"
+
+SHORTREF ""
+TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE doc
+
+ALIGNED "pcedt_20_en_a"
+ALIGNSTRUCT s
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

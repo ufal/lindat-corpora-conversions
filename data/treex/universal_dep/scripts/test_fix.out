@@ -1,0 +1,80 @@
+<corpus id="test_fix_pdt">
+<doc id="cs_cac1-ud-train">
+<s id="cs_cac1-ud-train001" orig_file_sentence="a01w#1">
+Federální       federální       ADJ     Case=Nom|Degree=Pos|Gender=Neut|Negative=Pos|Number=Sing        amod    1       ministerstvo    ministerstvo    NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   nsubj   2       +1      _
+ministerstvo    ministerstvo    NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   nsubj   2       stanoví stanovit        VERB    Aspect=Perf|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act        root    4       +2      1|3
+vnitra  vnitro  NOUN    Case=Gen|Gender=Neut|Negative=Pos|Number=Sing   nmod    3       ministerstvo    ministerstvo    NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   nsubj   2       -1      _
+</s>
+<s id="cs_cac1-ud-train059" orig_file_sentence="a01w#59">
+Řidič   řidič   NOUN    Animacy=Anim|Case=Nom|Gender=Masc|Negative=Pos|Number=Sing      nsubj   1       povinni povinný ADJ     Animacy=Anim|Gender=Masc|Negative=Pos|Number=Plur|Variant=Short root    14      +13     3|4|5
+motorového      motorový        ADJ     Case=Gen|Degree=Pos|Gender=Neut|Negative=Pos|Number=Sing        amod    2       vozidla vozidlo NOUN    Case=Gen|Gender=Neut|Negative=Pos|Number=Sing   nmod    3       +1      _
+vozidla vozidlo NOUN    Case=Gen|Gender=Neut|Negative=Pos|Number=Sing   nmod    3       Řidič   řidič   NOUN    Animacy=Anim|Case=Nom|Gender=Masc|Negative=Pos|Number=Sing      nsubj   1       -2      2
+a       a       CONJ    _       cc      4       Řidič   řidič   NOUN    Animacy=Anim|Case=Nom|Gender=Masc|Negative=Pos|Number=Sing      nsubj   1       -3      _
+osoby   osoba   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    conj    5       Řidič   řidič   NOUN    Animacy=Anim|Case=Nom|Gender=Masc|Negative=Pos|Number=Sing      nsubj   1       -4      6
+sedící  sedící  ADJ     Aspect=Imp|Case=Nom|Gender=Fem|Negative=Pos|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act      amod    6       osoby   osoba   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    conj    5       -1      8
+na      na      ADP     AdpType=Prep|Case=Loc   case    7       sedadlech       sedadlo NOUN    Case=Loc|Gender=Neut|Negative=Pos|Number=Plur   nmod    8       +1      _
+sedadlech       sedadlo NOUN    Case=Loc|Gender=Neut|Negative=Pos|Number=Plur   nmod    8       sedící  sedící  ADJ     Aspect=Imp|Case=Nom|Gender=Fem|Negative=Pos|Number=Plur|Tense=Pres|VerbForm=Part|Voice=Act      amod    6       -2      7|10
+povinně povinně ADV     Degree=Pos|Negative=Pos advmod  9       vybavených      vybavený        ADJ     Case=Loc|Degree=Pos|Gender=Neut|Negative=Pos|Number=Plur        amod    10      +1      _
+</s>
+</doc>
+<doc id="cs_cac2-ud-train">
+<s id="cs_cac2-ud-train001" orig_file_sentence="n48w#49">
+Dnes    dnes    ADV     _       advmod  1       vidí    vidět   VERB    Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act    root    5       +4      _
+v       v       ADP     AdpType=Prep|Case=Loc   case    2       Kopistech       Kopist  PROPN   Animacy=Inan|Case=Loc|Gender=Masc|NameType=Geo|Negative=Pos|Number=Plur nmod    3       +1      _
+Kopistech       Kopist  PROPN   Animacy=Inan|Case=Loc|Gender=Masc|NameType=Geo|Negative=Pos|Number=Plur nmod    3       vidí    vidět   VERB    Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act    root    5       +2      2
+všichni všechno PRON    Animacy=Anim|Case=Nom|Gender=Masc|Number=Plur|PronType=Tot      nsubj   4       vidí    vidět   VERB    Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act    root    5       +1      _
+vidí    vidět   VERB    Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act    root    5       _       _       _       _       _       0       0
+       1|3|4|17|29
+</s>
+</doc>
+<doc id="cs-ud-train-c">
+<s id="cs-ud-train-c001" orig_file_sentence="cmpr9406_001#1">
+Třikrát třikrát ADV     NumType=Mult    advmod  1       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       +1      _
+rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       _       _       _       _       _       0       0       1|4
+než     než     SCONJ   _       mark    3       slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       +1      _
+slovo   slovo   NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   advcl   4       rychlejší       rychlý  ADJ     Case=Nom|Degree=Cmp|Gender=Fem|Negative=Pos|Number=Sing root    2       -2      3
+</s>
+<s id="cs-ud-train-c002" orig_file_sentence="cmpr9406_001#2">
+Faxu    fax     NOUN    Animacy=Inan|Case=Dat|Gender=Masc|Negative=Pos|Number=Sing      dobj    1       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       +1      _
+škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       _       _       _       _       _       0
+       0       1|6|7
+především       především       ADV     _       advmod:emph     3       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +3      _
+přetížené       přetížený       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    4       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +2      _
+telefonní       telefonní       ADJ     Case=Nom|Degree=Pos|Gender=Fem|Negative=Pos|Number=Plur amod    5       linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       +1      _
+linky   linka   NOUN    Case=Nom|Gender=Fem|Negative=Pos|Number=Plur    nsubj   6       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2       -4      3|4|5
+*       *       PUNCT   _       punct   7       škodí   škodit  VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    2
+       -5      _
+</s>
+<s id="cs-ud-train-c008" orig_file_sentence="cmpr9406_001#8">
+Ve      v       ADP     AdpType=Voc|Case=Loc    case    1       skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       +1      _
+skutečnosti     skutečnost      NOUN    Case=Loc|Gender=Fem|Negative=Pos|Number=Sing    nmod    2       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +3      1
+to      ten     PRON    Case=Nom|Gender=Neut|Number=Sing|PronType=Dem   nsubj   3       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5       +2      _
+sice    sice    ADV     _       cc      4       trvá    trvat   VERB    Aspect=Imp|Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act root    5
+       +1      _
+</s>
+</doc>
+<doc id="cs-ud-train-l1">
+<s id="cs-ud-train-l1001" orig_file_sentence="ln94200_100#1">
+Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       _       _       _       _       _       0       0       2|3|6
+:       :       PUNCT   _       punct   2       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -1      _
+mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing
+       root    1       -2      5
+před    před    ADP     AdpType=Prep|Case=Ins   case    4       bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       +1      _
+bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3
+       -2      4
+?       ?       PUNCT   _       punct   6       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -5      _
+</s>
+</doc>
+<doc id="cs-ud-train-l2">
+<s id="cs-ud-train-l1001" orig_file_sentence="ln94200_100#20">
+Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       _       _       _       _       _       0       0       2|3|6
+:       :       PUNCT   _       punct   2       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -1      _
+mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing
+       root    1       -2      5
+před    před    ADP     AdpType=Prep|Case=Ins   case    4       bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       +1      _
+bouřkou bouřka  NOUN    Case=Ins|Gender=Fem|Negative=Pos|Number=Sing    nmod    5       mlčení  mlčení  NOUN    Case=Nom|Gender=Neut|Negative=Pos|Number=Sing   conj    3
+       -2      4
+?       ?       PUNCT   _       punct   6       Tatra   Tatra   PROPN   Case=Nom|Gender=Fem|NameType=Com|Negative=Pos|Number=Sing       root    1       -5      _
+</s>
+</doc>
+</corpus>

@@ -1,0 +1,155 @@
+NAME "Prague Dependency Treebank 3.0 - Czech"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/PDT/3.0/PDT_3.0_cs-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/PDT/3.0/PDT_3.0_cs-a"
+ENCODING utf-8
+INFO "Prague Dependency Treebank 3.0 - Czech. Attributes come from the morphological, analytical and tectogrammatical layer."
+LANGUAGE "Czech"
+
+SHORTREF "=issue.name"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE article
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE caluse_number {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE is_member {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE a_type {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deepord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE t_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE functor {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE tfa {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE sempos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE grammatemes_rf {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE coref_special {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE antes {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE discourse_special {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE discourse_type {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE discourse_target {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+} 
+
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE eparent {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_form {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+} 
+
+ATTRIBUTE p_tag {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE p_afun {
+        TYPE "FD_FGD"
+} 
+
+
+ATTRIBUTE ep_form {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE ep_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE ep_tag {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ep_afun {
+        TYPE "FD_FGD"
+} 
+
+
+STRUCTURE title {
+	ATTRIBUTE name
+}
+
+STRUCTURE issue {
+    ATTRIBUTE id
+    ATTRIBUTE name
+    ATTRIBUTE year
+}
+
+
+STRUCTURE article {
+	ATTRIBUTE genre
+	ATTRIBUTE id
+    ATTRIBUTE number
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

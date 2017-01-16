@@ -1,0 +1,9 @@
+CWC is a huge corpus (over 38 mlrd sentences) automatically downloaded from web
+in a vertical format. The corpus is parsed and compiled like this:
+
+1. concat.py   - concatenated into sentences
+2. ssh to a machine with treex installed, mv Makefile_parsetreex Makefile; make split; make parse; make concatenate, put the result file into output folder on kontext-dev.
+3. make  - compile the output
+
+The block Write::Manatee will be adjusted according to which attributes we want
+to include into the corpus.

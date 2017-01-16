@@ -1,0 +1,109 @@
+NAME "Web to Corpus - English"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/W2C/w2c_parsed_en-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/data/treex/w2c_parsed/output/w2c_parsed_en-a"
+ENCODING utf-8
+INFO "A set of corpora for 120 languages automatically collected from wikipedia and the web. Parsed with UDpipe."
+LANGUAGE "English"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "en_AG"
+}
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "en_AG"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+
+
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "en_AG"
+}
+
+ATTRIBUTE lemma_lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        ARG1 "C"
+        FUNTYPE s 
+        FROMATTR lemma
+        TYPE index
+        TRANSQUERY yes
+}
+
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "en_AG"
+}
+
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "en_AG"
+}
+
+ATTRIBUTE p_pos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_ufeat {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+ATTRIBUTE p_deprel {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE p_ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE children {
+          TYPE "FD_FGD"
+          MULTIVALUE y
+          MULTISEP "|"
+}
+
+STRUCTURE doc {
+        ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+        ATTRIBUTE id
+}
+
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
