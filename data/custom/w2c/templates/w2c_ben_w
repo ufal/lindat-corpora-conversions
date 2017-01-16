@@ -1,0 +1,28 @@
+NAME "Web to Corpus - Bengali"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/W2C/W2C_ben-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/W2C/W2C_ben-w"
+ENCODING utf-8
+INFO "A set of corpora for 120 languages automatically collected from wikipedia and the web."
+LANGUAGE "Bengali"
+
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "bn_BD"
+}
+
+STRUCTURE doc {
+        ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+        ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
+

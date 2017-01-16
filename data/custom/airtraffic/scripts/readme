@@ -1,0 +1,15 @@
+Several files are not valid XML:
+
+cd inpust && egrep -L "\/Turn" *.trs
+
+ACCU-7NqzYv.trs
+ACCU-80UXVV.trs
+ACCU-JaeNLH.trs
+ACCU-PhR5Oj.trs
+TWR-XgqNSk.trs
+
+===the respective lines added===
+TODO:
+ask authors how do they want to cope with tags [air][ground][czech] - put them as tags, or specify as speakers turn like in OVM or CzechParl.
+
+So far we have decided to leave the tags in the corpus

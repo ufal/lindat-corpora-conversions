@@ -1,0 +1,262 @@
+eng	English	eng	eng	en	http://en.wikipedia.org/wiki/	3497630
+deu	German	deu	ger	de	http://de.wikipedia.org/wiki/	1159004
+fra	French	fra	fre	fr	http://fr.wikipedia.org/wiki/	1042562
+pol	Polish	pol	pol	pl	http://pl.wikipedia.org/wiki/	755892
+ita	Italian	ita	ita	it	http://it.wikipedia.org/wiki/	753262
+jpn	Japanese	jpn	jpn	ja	http://ja.wikipedia.org/wiki/	720642
+spa	Spanish	spa	spa	es	http://es.wikipedia.org/wiki/	680718
+nld	Dutch	nld	dut	nl	http://nl.wikipedia.org/wiki/	658227
+por	Portuguese	por	por	pt	http://pt.wikipedia.org/wiki/	650997
+rus	Russian	rus	rus	ru	http://ru.wikipedia.org/wiki/	632089
+swe	Swedish	swe	swe	sv	http://sv.wikipedia.org/wiki/	379220
+cat	Catalan	cat	cat	ca	http://ca.wikipedia.org/wiki/	297837
+nor	Norwegian	nor	nor	no	http://no.wikipedia.org/wiki/	283444
+fin	Finnish	fin	fin	fi	http://fi.wikipedia.org/wiki/	256504
+ukr	Ukrainian	ukr	ukr	uk	http://uk.wikipedia.org/wiki/	247144
+hun	Hungarian	hun	hun	hu	http://hu.wikipedia.org/wiki/	183252
+ces	Czech	ces	cze	cs	http://cs.wikipedia.org/wiki/	180370
+ron	Romanian	ron	rum	ro	http://ro.wikipedia.org/wiki/	153707
+tur	Turkish	tur	tur	tr	http://tr.wikipedia.org/wiki/	152640
+kor	Korean	kor	kor	ko	http://ko.wikipedia.org/wiki/	149682
+vie	Vietnamese	vie	vie	vi	http://vi.wikipedia.org/wiki/	143499
+dan	Danish	dan	dan	da	http://da.wikipedia.org/wiki/	139481
+ara	Arabic	ara	ara	ar	http://ar.wikipedia.org/wiki/	139168
+ind	Indonesian	ind	ind	id	http://id.wikipedia.org/wiki/	138189
+epo	Esperanto	epo	epo	eo	http://eo.wikipedia.org/wiki/	138138
+srp	Serbian	srp	srp	sr	http://sr.wikipedia.org/wiki/	136446
+lit	Lithuanian	lit	lit	lt	http://lt.wikipedia.org/wiki/	122862
+slk	Slovak	slk	slo	sk	http://sk.wikipedia.org/wiki/	119138
+vol	Volapük	vol	vol	vo	http://vo.wikipedia.org/wiki/	118846
+heb	Hebrew	heb	heb	he	http://he.wikipedia.org/wiki/	111871
+fas	Persian	fas	per	fa	http://fa.wikipedia.org/wiki/	110457
+bul	Bulgarian	bul	bul	bg	http://bg.wikipedia.org/wiki/	109649
+slv	Slovenian	slv	slv	sl	http://sl.wikipedia.org/wiki/	102657
+war	Waray (Philippines)	war	war		http://war.wikipedia.org/wiki/	100759
+hrv	Croatian	hrv	hrv	hr	http://hr.wikipedia.org/wiki/	90814
+msa	Malay (macrolanguage)	msa	may	ms	http://ms.wikipedia.org/wiki/	87123
+est	Estonian	est	est	et	http://et.wikipedia.org/wiki/	80201
+new	Newari	new	new		http://new.wikipedia.org/wiki/	69557
+glg	Galician	glg	glg	gl	http://gl.wikipedia.org/wiki/	65259
+tha	Thai	tha	tha	th	http://th.wikipedia.org/wiki/	64582
+nno	Norwegian Nynorsk	nno	nno	nn	http://nn.wikipedia.org/wiki/	61831
+eus	Basque	eus	baq	eu	http://eu.wikipedia.org/wiki/	61226
+hin	Hindi	hin	hin	hi	http://hi.wikipedia.org/wiki/	57800
+ell	Modern Greek (1453-)	ell	gre	el	http://el.wikipedia.org/wiki/	57562
+hat	Haitian	hat	hat	ht	http://ht.wikipedia.org/wiki/	53045
+lat	Latin	lat	lat	la	http://la.wikipedia.org/wiki/	47515
+tel	Telugu	tel	tel	te	http://te.wikipedia.org/wiki/	46740
+tgl	Tagalog	tgl	tgl	tl	http://tl.wikipedia.org/wiki/	46692
+aze	Azerbaijani	aze	aze	az	http://az.wikipedia.org/wiki/	44894
+kat	Georgian	kat	geo	ka	http://ka.wikipedia.org/wiki/	44380
+mkd	Macedonian	mkd	mac	mk	http://mk.wikipedia.org/wiki/	42660
+ceb	Cebuano	ceb	ceb		http://ceb.wikipedia.org/wiki/	42654
+bre	Breton	bre	bre	br	http://br.wikipedia.org/wiki/	36100
+hbs	Serbo-Croatian			sh	http://sh.wikipedia.org/wiki/	36006
+mar	Marathi	mar	mar	mr	http://mr.wikipedia.org/wiki/	31820
+ltz	Luxembourgish	ltz	ltz	lb	http://lb.wikipedia.org/wiki/	31538
+lav	Latvian	lav	lav	lv	http://lv.wikipedia.org/wiki/	31216
+jav	Javanese	jav	jav	jv	http://jv.wikipedia.org/wiki/	30817
+pms	Piemontese				http://pms.wikipedia.org/wiki/	30249
+isl	Icelandic	isl	ice	is	http://is.wikipedia.org/wiki/	30156
+bos	Bosnian	bos	bos	bs	http://bs.wikipedia.org/wiki/	30126
+cym	Welsh	cym	wel	cy	http://cy.wikipedia.org/wiki/	29759
+sqi	Albanian	sqi	alb	sq	http://sq.wikipedia.org/wiki/	29020
+tam	Tamil	tam	tam	ta	http://ta.wikipedia.org/wiki/	26359
+bel	Belarusian	bel	bel	be	http://be.wikipedia.org/wiki/	25509
+bpy	Bishnupriya				http://bpy.wikipedia.org/wiki/	24747
+arg	Aragonese	arg	arg	an	http://an.wikipedia.org/wiki/	23317
+oci	Occitan (post 1500)	oci	oci	oc	http://oc.wikipedia.org/wiki/	22806
+ben	Bengali	ben	ben	bn	http://bn.wikipedia.org/wiki/	21931
+swa	Swahili (macrolanguage)	swa	swa	sw	http://sw.wikipedia.org/wiki/	21086
+ido	Ido	ido	ido	io	http://io.wikipedia.org/wiki/	20895
+lmo	Lombard				http://lmo.wikipedia.org/wiki/	18436
+fry	Western Frisian	fry	fry	fy	http://fy.wikipedia.org/wiki/	18364
+guj	Gujarati	guj	guj	gu	http://gu.wikipedia.org/wiki/	17666
+afr	Afrikaans	afr	afr	af	http://af.wikipedia.org/wiki/	16500
+que	Quechua	que	que	qu	http://qu.wikipedia.org/wiki/	16230
+scn	Sicilian	scn	scn		http://scn.wikipedia.org/wiki/	16126
+mal	Malayalam	mal	mal	ml	http://ml.wikipedia.org/wiki/	15742
+kur	Kurdish	kur	kur	ku	http://ku.wikipedia.org/wiki/	15342
+urd	Urdu	urd	urd	ur	http://ur.wikipedia.org/wiki/	15044
+sun	Sundanese	sun	sun	su	http://su.wikipedia.org/wiki/	14701
+ast	Asturian	ast	ast		http://ast.wikipedia.org/wiki/	13984
+nap	Neapolitan	nap	nap		http://nap.wikipedia.org/wiki/	13127
+sgs	Samogitian				http://bat-smg.wikipedia.org/wiki/	12592
+hye	Armenian	hye	arm	hy	http://hy.wikipedia.org/wiki/	11921
+wln	Walloon	wln	wln	wa	http://wa.wikipedia.org/wiki/	11841
+chv	Chuvash	chv	chv	cv	http://cv.wikipedia.org/wiki/	11828
+gle	Irish	gle	gle	ga	http://ga.wikipedia.org/wiki/	11781
+ksh	Kölsch				http://ksh.wikipedia.org/wiki/	10947
+nep	Nepali	nep	nep	ne	http://ne.wikipedia.org/wiki/	10406
+yor	Yoruba	yor	yor	yo	http://yo.wikipedia.org/wiki/	10403
+kan	Kannada	kan	kan	kn	http://kn.wikipedia.org/wiki/	9808
+pnb	Western Panjabi				http://pnb.wikipedia.org/wiki/	9502
+tgk	Tajik	tgk	tgk	tg	http://tg.wikipedia.org/wiki/	9158
+vec	Venetian				http://vec.wikipedia.org/wiki/	8784
+yid	Yiddish	yid	yid	yi	http://yi.wikipedia.org/wiki/	8104
+gla	Scottish Gaelic	gla	gla	gd	http://gd.wikipedia.org/wiki/	8064
+tat	Tatar	tat	tat	tt	http://tt.wikipedia.org/wiki/	7888
+uzb	Uzbek	uzb	uzb	uz	http://uz.wikipedia.org/wiki/	7505
+oss	Ossetian	oss	oss	os	http://os.wikipedia.org/wiki/	7439
+pam	Pampanga	pam	pam		http://pam.wikipedia.org/wiki/	7415
+sah	Yakut	sah	sah		http://sah.wikipedia.org/wiki/	7245
+als	Tosk Albanian				http://als.wikipedia.org/wiki/	6948
+arz	Egyptian Arabic				http://arz.wikipedia.org/wiki/	6871
+kaz	Kazakh	kaz	kaz	kk	http://kk.wikipedia.org/wiki/	6714
+mri	Maori	mri	mao	mi	http://mi.wikipedia.org/wiki/	6664
+lim	Limburgan	lim	lim	li	http://li.wikipedia.org/wiki/	6420
+hsb	Upper Sorbian	hsb	hsb		http://hsb.wikipedia.org/wiki/	6244
+amh	Amharic	amh	amh	am	http://am.wikipedia.org/wiki/	6050
+glk	Gilaki				http://glk.wikipedia.org/wiki/	5960
+cos	Corsican	cos	cos	co	http://co.wikipedia.org/wiki/	5940
+gan	Gan Chinese				http://gan.wikipedia.org/wiki/	5830
+mon	Mongolian	mon	mon	mn	http://mn.wikipedia.org/wiki/	5538
+ina	Interlingua (International Auxiliary Language Association)	ina	ina	ia	http://ia.wikipedia.org/wiki/	5352
+sco	Scots	sco	sco		http://sco.wikipedia.org/wiki/	5105
+bcl	Central Bicolano				http://bcl.wikipedia.org/wiki/	4880
+fao	Faroese	fao	fao	fo	http://fo.wikipedia.org/wiki/	4592
+vro	Võro				http://fiu-vro.wikipedia.org/wiki/	4402
+sin	Sinhala	sin	sin	si	http://si.wikipedia.org/wiki/	4360
+nds	Low German	nds	nds		http://nds-nl.wikipedia.org/wiki/	4348
+mya	Burmese	mya	bur	my	http://my.wikipedia.org/wiki/	4295
+tuk	Turkmen	tuk	tuk	tk	http://tk.wikipedia.org/wiki/	4249
+vls	Vlaams				http://vls.wikipedia.org/wiki/	4225
+san	Sanskrit	san	san	sa	http://sa.wikipedia.org/wiki/	3994
+mlg	Malagasy	mlg	mlg	mg	http://mg.wikipedia.org/wiki/	3792
+bar	Bavarian				http://bar.wikipedia.org/wiki/	3751
+glv	Manx	glv	glv	gv	http://gv.wikipedia.org/wiki/	3660
+div	Dhivehi	div	div	dv	http://dv.wikipedia.org/wiki/	3545
+ilo	Iloko	ilo	ilo		http://ilo.wikipedia.org/wiki/	3501
+nrm	Narom				http://nrm.wikipedia.org/wiki/	3455
+roh	Romansh	roh	roh	rm	http://rm.wikipedia.org/wiki/	3388
+pag	Pangasinan	pag	pag		http://pag.wikipedia.org/wiki/	3379
+diq	Dimli (individual language)				http://diq.wikipedia.org/wiki/	3108
+ckb	Central Kurdish				http://ckb.wikipedia.org/wiki/	3084
+sme	Northern Sami	sme	sme	se	http://se.wikipedia.org/wiki/	3022
+mzn	Mazanderani				http://mzn.wikipedia.org/wiki/	2961
+fur	Friulian	fur	fur		http://fur.wikipedia.org/wiki/	2878
+wuu	Wu Chinese				http://wuu.wikipedia.org/wiki/	2874
+uig	Uighur	uig	uig	ug	http://ug.wikipedia.org/wiki/	2870
+lij	Ligurian				http://lij.wikipedia.org/wiki/	2809
+mlt	Maltese	mlt	mlt	mt	http://mt.wikipedia.org/wiki/	2746
+nov	Novial				http://nov.wikipedia.org/wiki/	2583
+ang	Old English (ca. 450-1100)	ang	ang		http://ang.wikipedia.org/wiki/	2539
+csb	Kashubian	csb	csb		http://csb.wikipedia.org/wiki/	2505
+srd	Sardinian	srd	srd	sc	http://sc.wikipedia.org/wiki/	2466
+zho	Chinese	zho	chi	zh	http://zh-classical.wikipedia.org/wiki/	2427
+bod	Tibetan	bod	tib	bo	http://bo.wikipedia.org/wiki/	2407
+khm	Central Khmer	khm	khm	km	http://km.wikipedia.org/wiki/	2371
+lad	Ladino	lad	lad		http://lad.wikipedia.org/wiki/	2361
+cbk	Chavacano				http://cbk-zam.wikipedia.org/wiki/	2328
+pli	Pali	pli	pli	pi	http://pi.wikipedia.org/wiki/	2317
+hif	Fiji Hindi				http://hif.wikipedia.org/wiki/	2268
+frp	Arpitan				http://frp.wikipedia.org/wiki/	2142
+hak	Hakka Chinese				http://hak.wikipedia.org/wiki/	2040
+pus	Pushto	pus	pus	ps	http://ps.wikipedia.org/wiki/	2035
+cor	Cornish	cor	cor	kw	http://kw.wikipedia.org/wiki/	2012
+pan	Panjabi	pan	pan	pa	http://pa.wikipedia.org/wiki/	1943
+szl	Silesian				http://szl.wikipedia.org/wiki/	1830
+xal	Kalmyk	xal	xal		http://xal.wikipedia.org/wiki/	1823
+nav	Navajo	nav	nav	nv	http://nv.wikipedia.org/wiki/	1809
+pdc	Pennsylvania German				http://pdc.wikipedia.org/wiki/	1798
+haw	Hawaiian	haw	haw		http://haw.wikipedia.org/wiki/	1766
+stq	Saterfriesisch				http://stq.wikipedia.org/wiki/	1692
+ile	Interlingue	ile	ile	ie	http://ie.wikipedia.org/wiki/	1665
+fij	Fijian	fij	fij	fj	http://fj.wikipedia.org/wiki/	1598
+kom	Komi	kom	kom	kv	http://kv.wikipedia.org/wiki/	1575
+crh	Crimean Tatar	crh	crh		http://crh.wikipedia.org/wiki/	1547
+som	Somali	som	som	so	http://so.wikipedia.org/wiki/	1545
+ton	Tonga (Tonga Islands)	ton	ton	to	http://to.wikipedia.org/wiki/	1507
+ace	Achinese	ace	ace		http://ace.wikipedia.org/wiki/	1494
+myv	Erzya	myv	myv		http://myv.wikipedia.org/wiki/	1418
+krc	Karachay-Balkar	krc	krc		http://krc.wikipedia.org/wiki/	1378
+mhr	Eastern Mari				http://mhr.wikipedia.org/wiki/	1356
+lin	Lingala	lin	lin	ln	http://ln.wikipedia.org/wiki/	1325
+ext	Extremaduran				http://ext.wikipedia.org/wiki/	1320
+grn	Guarani	grn	grn	gn	http://gn.wikipedia.org/wiki/	1317
+pcd	Picard				http://pcd.wikipedia.org/wiki/	1303
+kir	Kirghiz	kir	kir	ky	http://ky.wikipedia.org/wiki/	1293
+arc	Official Aramaic (700-300 BCE)	arc	arc		http://arc.wikipedia.org/wiki/	1139
+aym	Aymara	aym	aym	ay	http://ay.wikipedia.org/wiki/	1124
+jbo	Lojban	jbo	jbo		http://jbo.wikipedia.org/wiki/	1100
+wol	Wolof	wol	wol	wo	http://wo.wikipedia.org/wiki/	1085
+bjn	Banjar				http://bjn.wikipedia.org/wiki/	1011
+bak	Bashkir	bak	bak	ba	http://ba.wikipedia.org/wiki/	1009
+frr	Northern Frisian	frr	frr		http://frr.wikipedia.org/wiki/	1009
+kal	Kalaallisut	kal	kal	kl	http://kl.wikipedia.org/wiki/	1004
+pap	Papiamento	pap	pap		http://pap.wikipedia.org/wiki/	953
+kab	Kabyle	kab	kab		http://kab.wikipedia.org/wiki/	896
+tpi	Tok Pisin	tpi	tpi		http://tpi.wikipedia.org/wiki/	876
+tah	Tahitian	tah	tah	ty	http://ty.wikipedia.org/wiki/	863
+srn	Sranan Tongo	srn	srn		http://srn.wikipedia.org/wiki/	800
+zea	Zeeuws				http://zea.wikipedia.org/wiki/	798
+udm	Udmurt	udm	udm		http://udm.wikipedia.org/wiki/	738
+mrj	Western Mari				http://mrj.wikipedia.org/wiki/	735
+che	Chechen	che	che	ce	http://ce.wikipedia.org/wiki/	727
+koi	Komi-Permyak				http://koi.wikipedia.org/wiki/	694
+ibo	Igbo	ibo	ibo	ig	http://ig.wikipedia.org/wiki/	660
+abk	Abkhazian	abk	abk	ab	http://ab.wikipedia.org/wiki/	653
+dsb	Lower Sorbian	dsb	dsb		http://dsb.wikipedia.org/wiki/	645
+ori	Oriya	ori	ori	or	http://or.wikipedia.org/wiki/	638
+kon	Kongo	kon	kon	kg	http://kg.wikipedia.org/wiki/	580
+lao	Lao	lao	lao	lo	http://lo.wikipedia.org/wiki/	572
+mdf	Moksha	mdf	mdf		http://mdf.wikipedia.org/wiki/	539
+rmy	Vlax Romani				http://rmy.wikipedia.org/wiki/	502
+mwl	Mirandese	mwl	mwl		http://mwl.wikipedia.org/wiki/	491
+chu	Church Slavic	chu	chu	cu	http://cu.wikipedia.org/wiki/	474
+kaa	Kara-Kalpak	kaa	kaa		http://kaa.wikipedia.org/wiki/	418
+smo	Samoan	smo	smo	sm	http://sm.wikipedia.org/wiki/	405
+ava	Avaric	ava	ava	av	http://av.wikipedia.org/wiki/	403
+tet	Tetum	tet	tet		http://tet.wikipedia.org/wiki/	393
+kas	Kashmiri	kas	kas	ks	http://ks.wikipedia.org/wiki/	378
+got	Gothic	got	got		http://got.wikipedia.org/wiki/	375
+bam	Bambara	bam	bam	bm	http://bm.wikipedia.org/wiki/	367
+snd	Sindhi	snd	snd	sd	http://sd.wikipedia.org/wiki/	354
+bis	Bislama	bis	bis	bi	http://bi.wikipedia.org/wiki/	343
+ipk	Inupiaq	ipk	ipk	ik	http://ik.wikipedia.org/wiki/	342
+nau	Nauru	nau	nau	na	http://na.wikipedia.org/wiki/	332
+pih	Pitcairn-Norfolk				http://pih.wikipedia.org/wiki/	330
+iku	Inuktitut	iku	iku	iu	http://iu.wikipedia.org/wiki/	316
+pnt	Pontic				http://pnt.wikipedia.org/wiki/	310
+asm	Assamese	asm	asm	as	http://as.wikipedia.org/wiki/	308
+chr	Cherokee	chr	chr		http://chr.wikipedia.org/wiki/	304
+ssw	Swati	ssw	ssw	ss	http://ss.wikipedia.org/wiki/	279
+cdo	Min Dong Chinese				http://cdo.wikipedia.org/wiki/	274
+hau	Hausa	hau	hau	ha	http://ha.wikipedia.org/wiki/	262
+lbe	Lak				http://lbe.wikipedia.org/wiki/	253
+ewe	Ewe	ewe	ewe	ee	http://ee.wikipedia.org/wiki/	252
+tir	Tigrinya	tir	tir	ti	http://ti.wikipedia.org/wiki/	216
+zul	Zulu	zul	zul	zu	http://zu.wikipedia.org/wiki/	211
+orm	Oromo	orm	orm	om	http://om.wikipedia.org/wiki/	210
+zha	Zhuang	zha	zha	za	http://za.wikipedia.org/wiki/	202
+ven	Venda	ven	ven	ve	http://ve.wikipedia.org/wiki/	191
+tso	Tsonga	tso	tso	ts	http://ts.wikipedia.org/wiki/	184
+dzo	Dzongkha	dzo	dzo	dz	http://dz.wikipedia.org/wiki/	139
+sag	Sango	sag	sag	sg	http://sg.wikipedia.org/wiki/	133
+cre	Cree	cre	cre	cr	http://cr.wikipedia.org/wiki/	130
+cha	Chamorro	cha	cha	ch	http://ch.wikipedia.org/wiki/	129
+lug	Ganda	lug	lug	lg	http://lg.wikipedia.org/wiki/	128
+bxr	Russia Buriat				http://bxr.wikipedia.org/wiki/	123
+bug	Buginese	bug	bug		http://bug.wikipedia.org/wiki/	119
+kin	Kinyarwanda	kin	kin	rw	http://rw.wikipedia.org/wiki/	119
+aka	Akan	aka	aka	ak	http://ak.wikipedia.org/wiki/	116
+xho	Xhosa	xho	xho	xh	http://xh.wikipedia.org/wiki/	115
+nya	Nyanja	nya	nya	ny	http://ny.wikipedia.org/wiki/	114
+sot	Southern Sotho	sot	sot	st	http://st.wikipedia.org/wiki/	113
+tsn	Tswana	tsn	tsn	tn	http://tn.wikipedia.org/wiki/	110
+kik	Kikuyu	kik	kik	ki	http://ki.wikipedia.org/wiki/	108
+ful	Fulah	ful	ful	ff	http://ff.wikipedia.org/wiki/	107
+run	Rundi	run	run	rn	http://rn.wikipedia.org/wiki/	105
+sna	Shona	sna	sna	sn	http://sn.wikipedia.org/wiki/	103
+tum	Tumbuka	tum	tum		http://tum.wikipedia.org/wiki/	100
+twi	Twi	twi	twi	tw	http://tw.wikipedia.org/wiki/	69
+chy	Cheyenne	chy	chy		http://chy.wikipedia.org/wiki/	57
+ndo	Ndonga	ndo	ndo	ng	http://ng.wikipedia.org/wiki/	21
+iii	Sichuan Yi	iii	iii	ii	http://ii.wikipedia.org/wiki/	16
+cho	Choctaw	cho	cho		http://cho.wikipedia.org/wiki/	15
+mah	Marshallese	mah	mah	mh	http://mh.wikipedia.org/wiki/	10
+aar	Afar	aar	aar	aa	http://aa.wikipedia.org/wiki/	6
+kua	Kuanyama	kua	kua	kj	http://kj.wikipedia.org/wiki/	5
+hmo	Hiri Motu	hmo	hmo	ho	http://ho.wikipedia.org/wiki/	3
+mus	Creek	mus	mus		http://mus.wikipedia.org/wiki/	2
+kau	Kanuri	kau	kau	kr	http://kr.wikipedia.org/wiki/	1

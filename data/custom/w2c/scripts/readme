@@ -1,0 +1,9 @@
+The corpus W2C contains texts from wikipedia that appear to be not very clean and
+processed: the texts are not segmented into sentences, some non-utf8 characters occur now and then.
+The challange is to clean, e.g. Amharian text from non-utf8 characters when Amharian
+characters are considered to be non-utf-8 by iconv.
+
+The scripts in this folder will automatically download all the W2C corpora from LINDAT,
+generate templates, lines to be added to a config.xml file (to_config) and compile the corpora.
+
+So far we decided not to include CWC because the data are not good enough (we can change our mind and clean the data later).
