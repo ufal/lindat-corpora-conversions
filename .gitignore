@@ -1,0 +1,8 @@
+**/input/*
+**/input.sample/*
+**/output/*
+**/tmp/*
+**/.nfs*
+**/old
+.ssh
+.idea
