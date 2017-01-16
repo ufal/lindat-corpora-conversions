@@ -1,0 +1,32 @@
+NAME "English-Tamil parallel corpus"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/EnTam/EnTam_ta-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/EnTam/EnTam_ta-w"
+ENCODING utf-8
+INFO "English-Tamil parallel corpus"
+LANGUAGE "Tamil"
+
+DOCSTRUCTURE doc
+
+ALIGNED "entam_en_w"
+ALIGNSTRUCT align
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "ta_IN.UTF-8"
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE align {
+	ATTRIBUTE id
+}
+
+STRUCTURE s {
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
