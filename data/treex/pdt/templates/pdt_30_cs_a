@@ -5,6 +5,7 @@ ENCODING utf-8
 INFO "Prague Dependency Treebank 3.0 - Czech. Attributes come from the morphological, analytical and tectogrammatical layer."
 LANGUAGE "Czech"
 
+SHORTREF "=issue.name"
 TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE article
@@ -127,8 +128,21 @@ ATTRIBUTE ep_afun {
 } 
 
 
-STRUCTURE doc {
+STRUCTURE title {
+	ATTRIBUTE name
+}
+
+STRUCTURE issue {
+    ATTRIBUTE id
+    ATTRIBUTE name
+    ATTRIBUTE year
+}
+
+
+STRUCTURE article {
+	ATTRIBUTE genre
 	ATTRIBUTE id
+    ATTRIBUTE number
     ATTRIBUTE wordcount
 }
 

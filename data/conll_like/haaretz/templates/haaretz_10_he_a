@@ -1,0 +1,58 @@
+NAME "Parsed Parallel Corpus Haaretz"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/Haaretz/1.0/Haaretz_1.0_he-a"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/Haaretz/1.0/Haaretz_1.0_he-a"
+ENCODING utf-8
+INFO "Parallel English-Hebrew cospus parsedwith UDPipe parser"
+LANGUAGE "Hebrew"
+
+TAGSETDOC "http://universaldependencies.org/u/pos/index.html"
+STRUCTCTX doc
+
+ALIGNED "haaretz_10_en_a"
+ALIGNSTRUCT align
+
+
+ATTRIBUTE ord {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE word {
+        TYPE "MD_MGD"
+        LOCALE "he_IL.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "MD_MGD"
+	LOCALE "he_IL.UTF-8"
+}
+ATTRIBUTE pos {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE xpostag {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE feats {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE head {
+        TYPE "MD_MGD"
+}
+ATTRIBUTE deprel {
+        TYPE "MD_MGD"
+}
+
+ATTRIBUTE deps {
+        TYPE "MD_MGD"
+}  
+ATTRIBUTE misc {
+        TYPE "MD_MGD"
+}  
+
+STRUCTURE doc {
+	ATTRIBUTE wordcount
+}
+
+STRUCTURE align {
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
