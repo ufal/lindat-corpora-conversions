@@ -236,7 +236,7 @@ Size (in MB): 4761MB
 |-------|-------|
 | processing time | 1129.716s |
 
-##<a name="corpora_list"></a>List of corpora to convert
+## <a name="corpora_list"></a>List of corpora to convert
 
 * monolingual
   * HAMLEDT 3.0 (now only obsolete 2.0 version and search for form|lemma|tag|afun only)!!    
@@ -252,6 +252,7 @@ Size (in MB): 4761MB
 * parallel
   * ~~English-Slovak parallel corpus~~
   * ~~EnTam:English-Tamil parallel corpus~~
+  * Summa Theologica (Latin-Czech) – contact Martin Holub
   * Indonesian-English parallel corpus 
 * speech
   * English corpus of air traffic messages - Taiwanese accent
