@@ -29,6 +29,17 @@ The directory structure on kontext-dev (kontext) servers is as follows:
 /opt/project/lindat-services/devel/data/corpora/vert # vertical text files (corpora data)
 ```
 
+The new directory structure (the above one is also valid):
+```
+/opt/lindat/kontext-data/corpora/registry
+/opt/lindat/kontext-data/corpora/data
+/opt/lindat/kontext-data/corpora/speech
+/opt/lindat/kontext-data/corpora/view_treex #files in json format for tree visualisation
+/opt/lindat/kontext-data/corpora/conversions
+/opt/lindat/kontext-data/corpora/vert
+```
+
+
 ##<a name="cu"></a>Conversion utilities
 
 This directory contains conversion utilities for converting corpora into LINDAT KonText format.
