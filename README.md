@@ -258,9 +258,15 @@ Size (in MB): 4761MB
 | processing time | 1129.716s |
 
 ## <a name="production"></a>Production
-Updating - rsyncing corpora from kontext-dev to kontext machines can be done by the script:
+Updating - rsync corpora from kontext-dev to kontext machines can be done by the script:
+```
 /opt/projects/lindat-services-kontext/production/scripts/update_corpus.sh $registry_filename
+```
 Still need to add a few lines copying json files for treex view.
+It can not update multiple files, so rather use:
+```
+for file in /a/QUESTDATA/data/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora/registry/ud_13_* ; do ./update_corpus.sh $(basename $file); done
+```
 
 ## <a name="corpora_list"></a>List of corpora to convert
 
