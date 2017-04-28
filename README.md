@@ -1,5 +1,5 @@
 
-#Corpora conversion
+# Corpora conversion
 * [Introduction](#intro)
 * [Conversion utilities](#cu)
 * [Conversion process](#conv_proc)
@@ -9,7 +9,7 @@
 * [Conversion benchmarks](#benchmarks)
 * [List of corpora to convert](#corpora_list)
 
-##<a name="intro"></a>Introduction
+## <a name="intro"></a>Introduction
 
 Conversion of corpora from vertical text to binary format is done by the compilecorp tool provided by the manatee package.
 Two files are needed for the conversion: the vertical text (i.e. corpus) itself and corpus configuration file that describes in detail the contents of the corpus.
@@ -18,7 +18,7 @@ The vertical text is documented here: http://www.sketchengine.co.uk/documentatio
 The corpus configuration file is documented here: http://www.sketchengine.co.uk/documentation/wiki/SkE/Config/FullDoc
 And a bit more about Creating a corpus in general is here: https://www.sketchengine.co.uk/documentation/
 
-###Directory structure
+### Directory structure
 
 The directory structure on kontext-dev (kontext) servers is as follows:
 ```
@@ -29,7 +29,18 @@ The directory structure on kontext-dev (kontext) servers is as follows:
 /opt/project/lindat-services/devel/data/corpora/vert # vertical text files (corpora data)
 ```
 
-##<a name="cu"></a>Conversion utilities
+The new directory structure (the above one is also valid):
+```
+/opt/lindat/kontext-data/corpora/registry
+/opt/lindat/kontext-data/corpora/data
+/opt/lindat/kontext-data/corpora/speech
+/opt/lindat/kontext-data/corpora/view_treex #files in json format for tree visualisation
+/opt/lindat/kontext-data/corpora/conversions
+/opt/lindat/kontext-data/corpora/vert
+```
+
+
+## <a name="cu"></a>Conversion utilities
 
 This directory contains conversion utilities for converting corpora into LINDAT KonText format.
 Corpora utilities are grouped in subdirectories by the input format.
@@ -39,7 +50,7 @@ Corpora utilities are grouped in subdirectories by the input format.
 * treex - input files are processable by treex perl framework
 * vertical - input file are already in output format
 
-###Tools
+### Tools
 
 Conversion of corpora is performed on development environment only and realized by the following tools:
 
@@ -48,25 +59,25 @@ Conversion of corpora is performed on development environment only and realized 
 * treex
 * python
 
-##Cluster setup(ufal-internal)
+## Cluster setup(ufal-internal)
 
 See detailed description of the cluster here: https://wiki.ufal.ms.mff.cuni.cz/grid
 
-###SGE (Sun Cluster Engine) setup
+### SGE (Sun Cluster Engine) setup
 
 Set up the SGE environment as written here https://wiki.ufal.ms.mff.cuni.cz/zakladni-nastaveni-sge
 
-###Disk space
+### Disk space
 
 For any conversion create separate directory in /net/cluster/TMP (automounted) or /net/cluster/SSD (automounted) as there is not enough space elsewhere for large corpora.
 Be sure to clean up any files when the conversion is finished.
 
-###Treex
+### Treex
 
 Install perlbrew on your local computer (your $HOME will be available on the cluster as well) as described here: https://wiki.ufal.ms.mff.cuni.cz/perlbrew
 Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.html, please note that most of the prerequisites is already provided by the perlbrew.
 
-##<a name="conv_proc"></a>Conversion process
+## <a name="conv_proc"></a>Conversion process
 Corpora conversion and compilation are realized by the system of Makefiles as follows. 
 The corpus specific Makefile is stored in a directory script and it usually contains the conversion steps. 
 The common steps - like copying the corpora in vertical format and registry files into the sufficient place
@@ -105,7 +116,7 @@ exit
 # Logout
 exit
 ```
-###<a name="pdt-manatee"></a>PDT to Manatee
+### <a name="pdt-manatee"></a>PDT to Manatee
 Conversion of PDT was implemenented in perl as a Block for Treex (Treex::Block::Write::Manatee). This block converts documents in PDT to <doc> structures in vertical files for Manatee.
 
 the following attributes are included in the output:
@@ -149,11 +160,21 @@ Prefixes:
 
 Shell script was created to easily convert the whole set of PDT documents to a single corpus.
 
-###<a name="treex-manatee"></a>Treex to Manatee
+### <a name="treex-manatee"></a>Treex to Manatee
 
 Conversion of treex files was implemenented in perl as a Block for Treex (Treex::Block::Write::Manatee). This block converts documents in treex to <doc> structures in vertical files for Manatee.
 
-##<a name="corp-comp"></a>Corpora compilation
+### <a name="treex-view"></a>Tree visualisation
+The tree visualisation is implemented using the same mechanism as with audio files, see [issue 9](https://github.com/ufal/lindat-kontext/issues/9). In order for a syntactic tree to be displayed, the json files needed to be generated, which
+is done by the script [Treex::Block::Write::ViewJSON](https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ViewJSON.pm), once we have a .treex.gz file:
+```
+treex Read::Treex from=cmpr9406_001.treex.gz bundles_per_doc=1 Write::ViewJSON pretty=1 to=.
+```
+The IDs of the sentences in the vertical should correspond with the name of a respective json file, all json files
+are stored in the directory /opt/lindat/kontext-data/corpora/view_treex/$registry_filename . 
+
+
+## <a name="corp-comp"></a>Corpora compilation
 Set MANATEE_REGISTRY environmental variable to the directory with registry files:
 ```
 export MANATEE_REGISTRY=/opt/projects/lindat-services-kontext/devel/data/corpora/registry
@@ -163,7 +184,7 @@ Compile the corpus:
 cd $MANATEE_REGISTRY
 compilecorp --no-sketches --recompile-corpus <corpus config file>
 ```
-###Troubleshooting
+### Troubleshooting
 
 **Corpus config file in MANATEE_REGISTRY must be named in lowercase**
 
@@ -236,7 +257,18 @@ Size (in MB): 4761MB
 |-------|-------|
 | processing time | 1129.716s |
 
-##<a name="corpora_list"></a>List of corpora to convert
+## <a name="production"></a>Production
+Updating - rsync corpora from kontext-dev to kontext machines can be done by the script:
+```
+/opt/projects/lindat-services-kontext/production/scripts/update_corpus.sh $registry_filename
+```
+Still need to add a few lines copying json files for treex view.
+It can not update multiple files, so rather use:
+```
+for file in /a/QUESTDATA/data/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora/registry/ud_13_* ; do ./update_corpus.sh $(basename $file); done
+```
+
+## <a name="corpora_list"></a>List of corpora to convert
 
 * monolingual
   * HAMLEDT 3.0 (now only obsolete 2.0 version and search for form|lemma|tag|afun only)!!    
@@ -252,6 +284,7 @@ Size (in MB): 4761MB
 * parallel
   * ~~English-Slovak parallel corpus~~
   * ~~EnTam:English-Tamil parallel corpus~~
+  * Summa Theologica (Latin-Czech) – contact Martin Holub
   * Indonesian-English parallel corpus 
 * speech
   * English corpus of air traffic messages - Taiwanese accent
