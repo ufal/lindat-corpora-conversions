@@ -1,0 +1,42 @@
+NAME "Summa Contra Genties"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/Summa/Summa_la-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/Summa/Summa_la-m"
+ENCODING utf-8
+INFO "Czech-Latin corpus"
+LANGUAGE "Latin"
+
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE doc
+
+ALIGNED "summa_cs_m"
+ALIGNSTRUCT align
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "la_LA.UTF-8"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "la_LA.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+
+STRUCTURE doc {
+    ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE align {
+}
+
+STRUCTURE s {
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+

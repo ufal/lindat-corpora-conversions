@@ -1,0 +1,83 @@
+NAME "Summa Contra Genties"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/Summa/Summa_cs-m"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/Summa/Summa_cs-m"
+ENCODING utf-8
+INFO "Czech-Latin corpus"
+LANGUAGE "Czech"
+
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE doc
+
+ALIGNED "summa_la_m"
+ALIGNSTRUCT align
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CS.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CS.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CS.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
+	DISPLAYTAG 0
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE align {
+	ATTRIBUTE id
+}
+
+STRUCTURE s {
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
