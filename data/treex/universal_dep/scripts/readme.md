@@ -1,8 +1,22 @@
+## Conversion in general
 The treebanks from a CoNLLU format are transformed into a vertical format with a
 treex script: https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm, printing the following information: 
 form lemma pos ufeatures deprel parent_form parent_lemma parent_pos parent_ufeatures parent_deprel left/right immediate/distant
+After the new version of KonText will be released, we will be able to use global conditions and search for attributes 
+of a parent via its id. More, see issue [11](https://github.com/ufal/lindat-corpora-conversions/issues/11)
 
-Process fused tokens.
+## Autogenerate registry
+
+Because there are multiple templates, the script generate_templates.py was
+created to automatically generate registry files (templates). 
+
+## Splitting to documents
+Some treebanks, like Italian and Bulgarian, have document name meta-information.
+Use the script **split_to_docs.py** before convertions. 
+Should we include it into UD, and thus those treebanks will be inconsistent with others?
+   
+
+## Process fused tokens
 
 The following treebanks have fused tokens:
 de,it,cs,es,fa,fi,fr,he, e.g. 2-3 and 5-6 in Spanish, example in conllu:
