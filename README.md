@@ -173,6 +173,14 @@ treex Read::Treex from=cmpr9406_001.treex.gz bundles_per_doc=1 Write::ViewJSON p
 The IDs of the sentences in the vertical should correspond with the name of a respective json file, all json files
 are stored in the directory /opt/lindat/kontext-data/corpora/view_treex/$registry_filename . 
 
+### <a name="conllu-manatee"></a>CoNLL-U to Manatee
+As the corpora will be parsed by UD-pipe or a tool alike, there is a need for a common script to convert into Manatee.
+The script cloned from the respective block in Treex for Manatee was adjusted to the
+needs of UD, and it is still under the development (Treex::Block::Write::ManateeU).
+
+Following the [issue 3](https://github.com/ufal/lindat-corpora-conversions/issues/3) the script to process 
+fused tokens was created, but there are still issues to be resolved. 
+
 
 ## <a name="corp-comp"></a>Corpora compilation
 Set MANATEE_REGISTRY environmental variable to the directory with registry files:
