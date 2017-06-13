@@ -6,7 +6,7 @@ the registry file was send to the authors of Haaretz.
 The scripts to process and convert Haaretz can be applied to any other bi-parallel corpus:
 1. **parse_hen.sh** Pre-process (insert NEWLINE flag so that the original segmentation of sentence stays the same) and parse by UDPIPE
 2. **detect_double.py** Insert <align> tags according to the original alignment ignoring UDPIPE segmentation. In case n-m alignment, the
-parsed output will not be very helpful as the dependencies enumeration will be wrong:
+parsed output will not be very helpful as the dependencies enumeration will be wrong, see [issue14](https://github.com/ufal/lindat-corpora-conversions/issues/14):
 ```
 ENG:
 <align>
@@ -26,7 +26,7 @@ ENG:
 14      causes  cause   VERB    VBZ     Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   9       acl:relcl       _       _
 15      rifts   rift    NOUN    NNS     Number=Plur     14      dobj    _       SpaceAfter=No
 16      .       .       PUNCT   .       _       4       punct   _       _
-<\align>
+</align>
 
 
 HEB:
