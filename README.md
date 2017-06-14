@@ -181,6 +181,54 @@ needs of UD, and it is still under the development (Treex::Block::Write::Manatee
 Following the [issue 3](https://github.com/ufal/lindat-corpora-conversions/issues/3) the script to process 
 fused tokens was created, but there are still issues to be resolved. 
 
+## <a name="ud-conversion"></a> Whole pipeline of UD processing on the cluster
+### Conversion
+```bash
+# SSH to the cluster:
+ssh lrc1 (or troja - in this case all data should be stored in troja)
+# Use screen
+screen
+
+#Create directory in cluster TMP directory: 
+mkdir -p /net/cluster/TMP/$USER/kontext/ud20
+mkdir input output scripts input.sample tree-view treex
+
+# Download UD data from the repository (e.g. using wget)
+
+# Chomp some sample into input.sample to test if the script does things correctly (optional), then change paths in ud_convert
+
+# Copy scripts from some older UD version, e.g.:
+cp /net/cluster/TMP/kljueva/kontext/ud/scripts . (at least one script should be in theory synchronized with kontext-dev:/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/scripts/ud_convert.sh)
+
+# adjust perl block https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm according to which attributes you need to generate 
+
+# Generate vertical, treex (and then jsons from treex)
+cd scripts & time ./ud_convert.sh
+
+# Leave screen
+exit
+# Move all the data to kontext-dev:
+
+ssh quest & kontext-dev & cd /opt/projects/lindat-services-kontext/devel/data/corpora/conversions/data/treex/universal_dep/
+cd input %TODO change paths in ud_convert.sh, now everything is stored into input folder 
+
+# SCP vertical to kontext-dev:
+scp $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/*-train.vert output
+cd output & mv 
+
+# SCP jsons to kontext-dev:
+scp -r $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/ud_20_*_a /opt/projects/lindat-services-kontext/devel/data/corpora/view_treex
+
+# Clean up (optional, or at least remove treex folder)
+rm -r /net/cluster/TMP/$USER/kontext/ud20
+```
+### Compilation
+1. Adjust registry files in the directory **templates** according to the used attributes. Alternitevely, use generate_templates.py to generate the new ones; this script will also generate XML you have to put to config.xml.
+2. The script to process fused tokens [manatee_conllu-w2t.py](https://github.com/ufal/lindat-corpora-conversions/commit/d1fd25464a382820229ebf7ec969236d40971993) can be applied to the corpora, but further testing is needed - see [comment](https://github.com/ufal/lindat-corpora-conversions/issues/3#issuecomment-298621358)
+3. Adjust process.sh to new version of UD, compile all.
+4. For jsons, the treex view functions is UNFORTUNATELY hard-coded into [KonText code](https://github.com/ufal/lindat-kontext/issues/9#issuecomment-308411909) . So you will need to go to /opt/lindat/kontext-0.5 and change templates/view.tmpl
+and lib/conclib.py, grunt the files   
+For UD, it is already done ($corpname.startswith('ud_')) and corpus_fullname.startswith('ud_'), but for other corpora you will need to change and run grunt. Hopefully, in KonText 0.9 it will be processed better.
 
 ## <a name="corp-comp"></a>Corpora compilation
 Set MANATEE_REGISTRY environmental variable to the directory with registry files:
