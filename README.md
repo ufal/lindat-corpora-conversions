@@ -199,7 +199,7 @@ mkdir input output scripts input.sample tree-view treex
 # Chomp some sample into input.sample to test if the script does things correctly (optional), then change paths in ud_convert
 
 # Copy scripts from some older UD version, e.g.:
-cp /net/cluster/TMP/kljueva/kontext/ud/scripts . (at least one script should be in theory synchronized with kontext-dev:/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/scripts/ud_convert.sh)
+cp /net/cluster/TMP/kljueva/kontext/ud/scripts . #at least one script should be in theory synchronized with kontext-dev:/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/scripts/ud_convert.sh
 
 # adjust perl block https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm according to which attributes you need to generate 
 
@@ -211,7 +211,7 @@ exit
 # Move all the data to kontext-dev:
 
 ssh quest & kontext-dev & cd /opt/projects/lindat-services-kontext/devel/data/corpora/conversions/data/treex/universal_dep/
-cd input %TODO change paths in ud_convert.sh, now everything is stored into input folder 
+cd input # %TODO change paths in ud_convert.sh, now everything is stored into input folder 
 
 # SCP vertical to kontext-dev:
 scp $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/*-train.vert output
