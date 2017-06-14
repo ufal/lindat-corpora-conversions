@@ -5,6 +5,7 @@
 * [Conversion process](#conv_proc)
  * [PDT to Manatee](#pdt-manatee)
  * [Treex to Manatee](#treex-manatee)
+* [Convert and compile UD](#ud-conversion)
 * [Corpora compilation](#corp-comp)
 * [Conversion benchmarks](#benchmarks)
 * [List of corpora to convert](#corpora_list)
