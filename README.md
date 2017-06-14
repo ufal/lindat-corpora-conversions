@@ -215,7 +215,7 @@ cd input # %TODO change paths in ud_convert.sh, now everything is stored into in
 
 # SCP vertical to kontext-dev:
 scp $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/*-train.vert output
-cd output & mv 
+cd output & mv *-train.vert $registry_name # rename vertical files according to what is in registry
 
 # SCP jsons to kontext-dev:
 scp -r $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/ud_20_*_a /opt/projects/lindat-services-kontext/devel/data/corpora/view_treex
