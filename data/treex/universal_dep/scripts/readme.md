@@ -1,4 +1,7 @@
 ## Conversion in general
+
+(!!!New detailed howto convert UD is [available here](https://github.com/ufal/lindat-corpora-conversions/blob/master/README.md#-whole-pipeline-of-ud-processing-on-the-cluster))
+
 The treebanks from a CoNLLU format are transformed into a vertical format with a
 treex script: https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm, printing the following information: 
 form lemma pos ufeatures deprel parent_form parent_lemma parent_pos parent_ufeatures parent_deprel left/right immediate/distant
