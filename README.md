@@ -204,7 +204,7 @@ cp /net/cluster/TMP/kljueva/kontext/ud/scripts . #at least one script should be 
 # adjust perl block https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm according to which attributes you need to generate 
 
 # Generate vertical, treex (and then jsons from treex)
-cd scripts & time ./ud_convert.sh
+cd scripts & time ./ud_convert.sh  #generates files into the same directory!! it needs to be changed
 
 # Leave screen
 exit
