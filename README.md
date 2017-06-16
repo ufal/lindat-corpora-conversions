@@ -226,7 +226,7 @@ rm -r /net/cluster/TMP/$USER/kontext/ud20
 ```
 ### Compilation
 1. Adjust registry files in the directory **templates** according to the used attributes. Alternitevely, use generate_templates.py to generate the new ones; this script will also generate XML you have to put to config.xml.
-2. The script to process fused tokens [manatee_conllu-w2t.py](https://github.com/ufal/lindat-corpora-conversions/commit/d1fd25464a382820229ebf7ec969236d40971993) can be applied to the corpora, but further testing is needed - see [comment](https://github.com/ufal/lindat-corpora-conversions/issues/3#issuecomment-298621358)
+2. The script to process fused tokens [manatee_conllu-w2t.py](https://github.com/ufal/lindat-corpora-conversions/commit/d1fd25464a382820229ebf7ec969236d40971993) can be applied to the corpora, but further testing is needed - see [comment](https://github.com/ufal/lindat-corpora-conversions/issues/3#issuecomment-298621358). This script does not work on cyan (but on quest it does).
 3. Adjust process.sh to new version of UD, compile all.
 4. For jsons, the treex view functions is UNFORTUNATELY hard-coded into [KonText code](https://github.com/ufal/lindat-kontext/issues/9#issuecomment-308411909) . So you will need to go to /opt/lindat/kontext-0.5 and change templates/view.tmpl
 and lib/conclib.py, grunt the files   
