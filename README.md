@@ -21,25 +21,21 @@ And a bit more about Creating a corpus in general is here: https://www.sketcheng
 
 ### Directory structure
 
-The directory structure on kontext-dev (kontext) servers is as follows:
+On {kontext-dev,kontext}, the following directories are symlinks to the actual location of the data:
 ```
-/opt/project/lindat-services/$ENVIRONMENT/data/corpora/registry # configuration files (no subdirectories)
-/opt/project/lindat-services/$ENVIRONMENT/data/corpora/data # compiled corpora
-/opt/project/lindat-services/$ENVIRONMENT/data/corpora/speech # mp3 files
-/opt/project/lindat-services/devel/data/corpora/conversion # conversion of corpora (data and scripts)
-/opt/project/lindat-services/devel/data/corpora/vert # vertical text files (corpora data)
+/opt/lindat/kontext-data/corpora
+/opt/projects/lindat-services-kontext/{devel,production}/data/corpora
 ```
 
-The new directory structure (the above one is also valid):
+The directory has the following subdirectories:
 ```
-/opt/lindat/kontext-data/corpora/registry
-/opt/lindat/kontext-data/corpora/data
-/opt/lindat/kontext-data/corpora/speech
-/opt/lindat/kontext-data/corpora/view_treex #files in json format for tree visualisation
-/opt/lindat/kontext-data/corpora/conversions
-/opt/lindat/kontext-data/corpora/vert
+registry       # configuration files (no subdirectories)
+data           # compiled corpora
+speech         # mp3 files
+conversion     # conversion of corpora (this git repository -- data and scripts)
+vert           # vertical text files (corpora data)
+view_treex     # files in json format for tree visualisation
 ```
-
 
 ## <a name="cu"></a>Conversion utilities
 
