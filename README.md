@@ -12,16 +12,16 @@
 
 ## <a name="intro"></a>Introduction
 
-Conversion of corpora from vertical text to binary format is done by the compilecorp tool provided by the manatee package.
-Two files are needed for the conversion: the vertical text (i.e. corpus) itself and corpus configuration file that describes in detail the contents of the corpus.
+Conversion of corpora from vertical text to binary format is done by the *compilecorp* tool provided by the manatee package.
+Two files are needed for the conversion: the vertical text (i.e. corpus) itself and a corpus configuration file that describes in detail the contents of the corpus.
 
-The vertical text is documented here: http://www.sketchengine.co.uk/documentation/wiki/SkE/PrepareText<br />
-The corpus configuration file is documented here: http://www.sketchengine.co.uk/documentation/wiki/SkE/Config/FullDoc
-And a bit more about Creating a corpus in general is here: https://www.sketchengine.co.uk/documentation/
+The vertical text is documented here: https://www.sketchengine.co.uk/documentation/preparing-corpus-text/<br />
+The corpus configuration file is documented here: https://www.sketchengine.co.uk/corpus-configuration-file-all-features/<br />
+And a bit more about Creating a corpus in general is here: https://www.sketchengine.co.uk/documentation/preparing-a-text-corpus-for-the-sketch-engine-overview/
 
 ### Directory structure
 
-On {kontext-dev,kontext}, the following directories are symlinks to the actual location of the data:
+On {`kontext-dev`,`kontext`}, the following directories are symlinks to the actual location of the data:
 ```
 /opt/lindat/kontext-data/corpora
 /opt/projects/lindat-services-kontext/{devel,production}/data/corpora
@@ -32,10 +32,16 @@ The directory has the following subdirectories:
 registry       # configuration files (no subdirectories)
 data           # compiled corpora
 speech         # mp3 files
-conversion     # conversion of corpora (this git repository -- data and scripts)
-vert           # vertical text files (corpora data)
 view_treex     # files in json format for tree visualisation
+conc, tags     # ??? to be deleted
 ```
+On `kontext-dev`, additional subdirectoreis are present:
+```
+conversions    # conversion of corpora (this git repository -- data and scripts)
+vert           # vertical text files (corpora data)
+```
+
+
 
 ## <a name="cu"></a>Conversion utilities
 
@@ -60,19 +66,17 @@ Conversion of corpora is performed on development environment only and realized 
 
 See detailed description of the cluster here: https://wiki.ufal.ms.mff.cuni.cz/grid
 
-### SGE (Sun Cluster Engine) setup
+Setting up the SGE environment is documented here https://wiki.ufal.ms.mff.cuni.cz/zakladni-nastaveni-sge
 
-Set up the SGE environment as written here https://wiki.ufal.ms.mff.cuni.cz/zakladni-nastaveni-sge
+#### Disk space
 
-### Disk space
-
-For any conversion create separate directory in /net/cluster/TMP (automounted) or /net/cluster/SSD (automounted) as there is not enough space elsewhere for large corpora.
+For any conversion create separate directory in `/net/cluster/TMP` (automounted) or `/net/cluster/SSD` (automounted) as there is not enough space elsewhere for large corpora.
 Be sure to clean up any files when the conversion is finished.
 
-### Treex
+#### Treex
 
-Install perlbrew on your local computer (your $HOME will be available on the cluster as well) as described here: https://wiki.ufal.ms.mff.cuni.cz/perlbrew
-Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.html, please note that most of the prerequisites is already provided by the perlbrew.
+Install perlbrew on your local computer (your `$HOME` will be available on the cluster as well) as described here: https://wiki.ufal.ms.mff.cuni.cz/perlbrew .
+Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.html, please note that most of the prerequisites are already provided by the perlbrew.
 
 ## <a name="conv_proc"></a>Conversion process
 Corpora conversion and compilation are realized by the system of Makefiles as follows. 
