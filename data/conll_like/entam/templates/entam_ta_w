@@ -11,17 +11,17 @@ ALIGNED "entam_en_w"
 ALIGNSTRUCT align
 
 ATTRIBUTE word {
-        TYPE "FD_FGD"
-        LOCALE "ta_IN.UTF-8"
+	 TYPE "FD_FGD"
+	 LOCALE "ta_IN.UTF-8"
 }
 
 STRUCTURE doc {
-	ATTRIBUTE id
-    ATTRIBUTE wordcount
+	 ATTRIBUTE id
+	 ATTRIBUTE wordcount
 }
 
 STRUCTURE align {
-	ATTRIBUTE id
+	 ATTRIBUTE id
 }
 
 STRUCTURE s {

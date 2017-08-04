@@ -10,6 +10,3 @@ source_urls = https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234
 vertical_subdir = $(vertical_dir)/parallel/EnTam
 
 include $(ROOT_DIR)/../../../scripts/common.mk
-
-
-
