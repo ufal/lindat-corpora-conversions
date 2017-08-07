@@ -10,4 +10,3 @@ source_urls = fake_corpus.gz
 vertical_subdir = $(vertical_dir)/parallel/Haaretz/1.0
 
 include $(ROOT_DIR)/../../../scripts/common.mk
-

@@ -51,7 +51,8 @@ registry       # configuration files (no subdirectories)
 data           # compiled corpora
 speech         # mp3 files
 view_treex     # files in json format for tree visualisation
-conc, tags     # do not touch these
+conc           # empty, but is value of <conc_dir> in conf/config.xml; the value is used inside lib/{pyconc,kontext}.py
+tags           # do not touch this one either
 ```
 On `kontext-dev`, additional subdirectoreis are present:
 ```
