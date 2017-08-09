@@ -340,14 +340,15 @@ for file in /a/QUESTDATA/data/kontext-dev/opt/projects/lindat-services-kontext/d
   * Slovinsky korpus jos100k?
   * ACL RD-TEC 2.0: http://hdl.handle.net/11372/LRT-1661
 * parallel
-  * ~~English-Slovak parallel corpus~~
-  * ~~EnTam:English-Tamil parallel corpus~~
   * Summa Theologica (Latin-Czech) – contact Martin Holub
+  * CzEng 1.6: http://ufal.mff.cuni.cz/czeng
+  * ~~EnTam:English-Tamil parallel corpus~~
+  * ~~English-Slovak parallel corpus~~
   * Indonesian-English parallel corpus 
 * speech
   * English corpus of air traffic messages - Taiwanese accent
 * External:
-  * ACL corpus (https://groups.google.com/forum/#!topic/acl-anthology/GSaU_JhHUZo)
+  * ACL corpus (https://groups.google.com/forum/#!topic/acl-anthology/GSaU_JhHUZo; see also https://github.com/ufal/lindat-corpora-conversions/issues/6)
   * OPUS (http://opus.lingfil.uu.se)
       * See the OPUS search interfaces. We should serve as an alternative (hopefuly nicer) interface for the same data.
 
