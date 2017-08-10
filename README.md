@@ -7,6 +7,7 @@
  * [Treex to Manatee](#treex-manatee)
 * [Convert and compile UD](#ud-conversion)
 * [Corpora compilation](#corp-comp)
+* [Finishing touches](#afterwards)
 * [Conversion benchmarks](#benchmarks)
 * [List of corpora to convert](#corpora_list)
 
@@ -282,6 +283,11 @@ STRUCTURE doc {
 [20140612-18:33:29] encodevert error: FileAccessError (/opt/projects/lindat-services-kontext/devel/data/corpora/data/syn2013pub/s.id.rev.idx) in ToFile: fopen [Too many open files]
 ```
 In this case the system limits are too low. See the adjust limits section on Installation page.
+
+## <a name="afterwards"></a>Finishing touches
+In order to have proper links between KonText, pmltq-web and the lindat repository, the following places need to be edited:
+* `/opt/lindat/kontext-config/config.xml`   (attributes `repo` and `pmltq` of the `corpus` entry; changes of this file do not require recompilation)
+* on the lindat repository, a person with the "service managers" priviledge has to go to "Edit this item -> Services" and fill in the appropriate values; for larger batches of changes, create a file containing repo handles and "key|value" pairs for the `featuredService.kontext` and `featuredService.pmltq` metadata and contact the lindat helpdesk
 
 ## <a name="benchmarks"></a>Conversion benchmarks
 
