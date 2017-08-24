@@ -286,7 +286,7 @@ In this case the system limits are too low. See the adjust limits section on Ins
 
 ## <a name="afterwards"></a>Finishing touches
 In order to have proper links between KonText, pmltq-web and the lindat repository, the following places need to be edited:
-* `/opt/lindat/kontext-config/config.xml`   (attributes `repo` and `pmltq` of the `corpus` entry; changes of this file do not require recompilation)
+* ~~`/opt/lindat/kontext-config/config.xml`~~ `/opt/lindat/kontext/conf/corplist.xml`   (attributes `repo` and `pmltq` of the `corpus` entry; changes of this file do not require recompilation)
 * on the lindat repository, a person with the "service managers" priviledge has to go to "Edit this item -> Services" and fill in the appropriate values; for larger batches of changes, create a file containing repo handles and "key|value" pairs for the `featuredService.kontext` and `featuredService.pmltq` metadata and contact the lindat helpdesk
 
 ## <a name="benchmarks"></a>Conversion benchmarks
