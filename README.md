@@ -22,11 +22,19 @@ And a bit more about Creating a corpus in general is here: https://www.sketcheng
 
 ### Directory structure
 
-On {`kontext-dev`,`kontext`}, the following directories are symlinks to the actual location of the data:
+On {`kontext-dev`,`kontext`}, the data is situated in a NFS shared directory;
+after running `mount`, both of these paths will be available:
+```
+/export/KONTEXT/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora
+/export/KONTEXT/kontext/corpora
+```
+
+On , both machines the following directories are symlinks to the actual location of the data:
 ```
 /opt/lindat/kontext-data/corpora
 /opt/projects/lindat-services-kontext/{devel,production}/data/corpora
 ```
+These symlinks should be used except for copying data between the two machines.
 
 The directory has the following subdirectories:
 ```
@@ -41,7 +49,6 @@ On `kontext-dev`, additional subdirectoreis are present:
 conversions    # conversion of corpora (this git repository -- data and scripts)
 vert           # vertical text files (corpora data)
 ```
-
 
 
 ## <a name="cu"></a>Conversion utilities
