@@ -22,18 +22,24 @@ And a bit more about Creating a corpus in general is here: https://www.sketcheng
 
 ### Directory structure
 
-On {`kontext-dev`,`kontext`}, the data is situated in a NFS shared directory;
+On {`kontext-dev`,`kontext-new`}, the data is situated in a NFS shared directory;
 after running `mount`, both of these paths will be available:
 ```
 /export/KONTEXT/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora
 /export/KONTEXT/kontext/corpora
 ```
+(Note that the latter directory has only `kontext` in its name;
+it is shared with a virtual machine of the same name, running an old version of KonText.)
 
-On , both machines the following directories are symlinks to the actual location of the data:
+On both machines, the following directory is a symlink to the actual location of the data:
 ```
-/opt/lindat/kontext-data/corpora
 /opt/projects/lindat-services-kontext/{devel,production}/data/corpora
 ```
+and on `kontext-dev`, the following can also be used:
+```
+/opt/lindat/kontext-data/corpora
+```
+
 These symlinks should be used except for copying data between the two machines.
 
 The directory has the following subdirectories:
@@ -42,7 +48,7 @@ registry       # configuration files (no subdirectories)
 data           # compiled corpora
 speech         # mp3 files
 view_treex     # files in json format for tree visualisation
-conc, tags     # ??? to be deleted
+conc, tags     # do not touch these
 ```
 On `kontext-dev`, additional subdirectoreis are present:
 ```
