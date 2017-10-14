@@ -22,24 +22,26 @@ And a bit more about Creating a corpus in general is here: https://www.sketcheng
 
 ### Directory structure
 
-On {`kontext-dev`,`kontext-new`}, the data is situated in a NFS shared directory;
+The production server runs on a virtual machine called `kontext-new`;
+the development/staging servers run on machine called `kontext-dev`.
+You can ignore the VM called `kontext`, which is just a backup of the production server version 0.5 (???), but sharing data with `kontext-new`.
+
+The data is situated in a NFS shared directory;
 after running `mount`, both of these paths will be available:
 ```
-/export/KONTEXT/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora
-/export/KONTEXT/kontext/corpora
+production data:    /export/KONTEXT/kontext/corpora
+development data:   /export/KONTEXT/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora 
 ```
-(Note that the latter directory has only `kontext` in its name;
-it is shared with a virtual machine of the same name, running an old version of KonText.)
+(but analogous path `.../kontext/.../production/` is an empty directory).
 
-On both machines, the following directory is a symlink to the actual location of the data:
-```
-/opt/projects/lindat-services-kontext/{devel,production}/data/corpora
-```
-and on `kontext-dev`, the following can also be used:
+(Note that the production directory has only `kontext` in its name.)
+
+On both machines, the following directories are symlinks to the data:
 ```
 /opt/lindat/kontext-data/corpora
+/opt/projects/lindat-services-kontext/{devel,production}/data/corpora
 ```
-
+where `{devel,production}` corresponds to `{kontext-dev,kontext-new}`.
 These symlinks should be used except for copying data between the two machines.
 
 The directory has the following subdirectories:
