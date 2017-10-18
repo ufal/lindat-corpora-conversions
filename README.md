@@ -31,6 +31,7 @@ after running `mount`, both of these paths will be available:
 ```
 production data:    /export/KONTEXT/kontext/corpora
 development data:   /export/KONTEXT/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora 
+                    /export/KONTEXT/kontext-dev/corpora                                  = symlink to ^
 ```
 (but analogous path `.../kontext/.../production/` is an empty directory).
 
