@@ -5,8 +5,8 @@ ENCODING utf-8
 INFO "UrduCorp - Urdu - with morphological tags"
 LANGUAGE "Urdu"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
-WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php, https://pdfs.semanticscholar.org/9ed7/e61a274e61b3eacb03aec659ee10afa37bbf.pdf"
+WPOSLIST ",demonstrative,[PRKA]D,noun,[NP]N,pronoun,[PRAK]P|REP|AKP,genitive,GR?,verb,VB,auxiliary,[AT]A,adjective,ADJ,adverb,ADV,quantifier,Q,numeral,CA|OR|FR|MUL,measuring unit,U,conjunction,[CS]C,intensifier,I,particle,A|KER,title,P[RO]T,semantic marker,P|SE,wala,WALA,negation,NEG,interjection,INT,question word,QW,punctuation,[SP]M,date,DATE,other,EXP|UNK"
 DOCSTRUCTURE doc
 RIGHTTOLEFT righttoleft
 
