@@ -376,4 +376,5 @@ for file in /a/QUESTDATA/data/kontext-dev/opt/projects/lindat-services-kontext/d
   * ACL corpus (https://groups.google.com/forum/#!topic/acl-anthology/GSaU_JhHUZo; see also https://github.com/ufal/lindat-corpora-conversions/issues/6)
   * OPUS (http://opus.lingfil.uu.se)
       * See the OPUS search interfaces. We should serve as an alternative (hopefuly nicer) interface for the same data.
-
+* after the DH close reading interface will be introduced:
+  * Korpus českého verše (http://versologie.cz/v2/web_content/corpus.php)
