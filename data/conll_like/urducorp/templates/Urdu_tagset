@@ -1,0 +1,102 @@
+For full documentation of the tagset, see
+
+Jawaid Bushra, Kamran Amir, Bojar Ondřej: A Tagged Corpus and a Tagger for Urdu. In: Proceedings of LREC 2014,
+https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11858/00-097C-0000-0023-65A9-5/urmono-lrec-2014.pdf
+
+Hassan Sajjad: Statistical Part-of-Speech Tagger for Urdu, Master Thesis, 2007,
+https://pdfs.semanticscholar.org/9ed7/e61a274e61b3eacb03aec659ee10afa37bbf.pdf
+
+
+
+
+
+Sajjad’s Tagset	 CRULP	 HUM Analyzer	 SH Parser
+
+demonstrative
+AD	 —	 RelPron2	 DEM	adverbial demonstrative
+KD	 —	 InterPron	 WQ	kaf demonstrative
+PD	 DM	 DemPron	 PRP	personal demonstrative
+RD	 DMRL	 RelPron	 —	relative demonstrative
+
+noun
+NN	 NN, NNCM, NNC, NNCR, MOPE, MOPO, NNL	 N	 NN, XC	noun
+PN	 NNP, NNPC	 PN	 NNP, XC	proper noun
+
+pronoun
+AKP	 —	 InterPron1, InterPron2, InterPron3	 —	adverbial kaf pronoun
+AP	 —	 RelPron2	 NST	adverbial pronoun
+KP	 —	 InterPron	 WQ	kaf pronoun
+PP	 PR	 PersPron, RelPron1	 DEM	personal pronoun
+REP	 PRRL	 RelPron	 PRP	relative pronoun
+RP	 PRRF	 RefPron	 PRP	reflexive pronoun
+
+genitive
+G	 PRP$	 PossPron	 PRP	genitive
+GR	 PRRFP$	 —	 PRP	genitive reflexive
+
+verb
+VB	 VB, VBL, VBI, VBLI, VBT	 Verb, Verb1, Verb2	 VM
+
+auxiliary
+AA	 AUXA	 —	 VAUX	aspectual auxiliary
+TA	 AUXT	 —	 VAUX	tense auxiliary
+
+adjective
+ADJ	 JJ	 Adj, Adj1, Adj2, Adj3, AdjD	 JJ, XC	adjective
+
+adverb
+ADV	 RB, I	 Adv	 RB, INTF, NST	adverb
+
+quantifier
+Q	 Q	 IndefPron1, IndefPron2, RelPron2, IndefPron, RelPron3	 QF	quantifier
+
+numeral
+CA	 CD	 Num	 QC, ECH	cardinal
+OR	 OD	 RelPron2, N	 QO	ordinal
+FR	 FR	 —	 —	fractional
+MUL	 MUL	 Verb, Verb1	 VM	multiplicative
+
+measuring unit
+U	 U	 —	 —	measuring unit
+
+conjunction
+CC	 CC	 Conj	 CC	coordinating conjunction
+SC	 SC	 Conj	 CC	subordinating conjunction
+
+intensifier
+I	 ITRP	 Part	 RP
+
+particle
+A	 JJRP	 PostP, Part	 PSP	adjectival particle
+KER	 KER	 PossPostPos	 PSP	ker particle
+
+title
+PRT				pre-title
+POT				post-title
+
+semantic marker
+P	 CM	 PossPostPos	 —	semantic marker
+SE	 SE, RBRP	 PostP	 PSP	 س
+
+wala
+WALA	 WALA	 —	 —
+
+negation
+NEG	 NEG	 Neg	 NEG
+
+interjection
+INT	 INJ	 Intjunc	 JJ
+
+question word
+QW	 QW	 Quest	 WQ
+
+punctuation
+PM	 PM	 —	 SYM	phrase marker
+SM	 SM	 —	 SYM	sentence marker
+
+date
+DATE	 DATE	 —	 —
+
+other
+EXP	 SYM	 —	 SYM
+UNK	 UNK	 UNK, Verb3, Verb_Aux	 UNK

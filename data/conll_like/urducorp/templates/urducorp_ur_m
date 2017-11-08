@@ -1,12 +1,12 @@
-NAME "UrduCorp - Urdu - with morphological tags"
+NAME "UrduCorp - Urdu"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UrduCorp/UrduCorp_ur-m"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UrduCorp/UrduCorp_ur-m"
 ENCODING utf-8
-INFO "UrduCorp - Urdu - with morphological tags"
+INFO "with morphological tags"
 LANGUAGE "Urdu"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php, https://pdfs.semanticscholar.org/9ed7/e61a274e61b3eacb03aec659ee10afa37bbf.pdf"
 WPOSLIST ",demonstrative,[PRKA]D,noun,[NP]N,pronoun,[PRAK]P|REP|AKP,genitive,GR?,verb,VB,auxiliary,[AT]A,adjective,ADJ,adverb,ADV,quantifier,Q,numeral,CA|OR|FR|MUL,measuring unit,U,conjunction,[CS]C,intensifier,I,particle,A|KER,title,P[RO]T,semantic marker,P|SE,wala,WALA,negation,NEG,interjection,INT,question word,QW,punctuation,[SP]M,date,DATE,other,EXP|UNK"
+TAGSETDOC "http://ufal.mff.cuni.cz/biblio/servlet/File?timestamp=1510186907070&id=-5057325683766738303&field=File"
 DOCSTRUCTURE doc
 RIGHTTOLEFT righttoleft
 
@@ -17,6 +17,7 @@ ATTRIBUTE word {
 ATTRIBUTE tag {
         TYPE "FD_FGD"
 }
+
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
@@ -25,38 +26,6 @@ ATTRIBUTE lc {
         FROMATTR word
         TYPE index
         TRANSQUERY yes
-}
-ATTRIBUTE pos {
-        DYNAMIC getnchar
-        DYNLIB  internal
-        FUNTYPE i
-        ARG1    1
-        FROMATTR tag
-        TYPE index
-}
-ATTRIBUTE   k {
-	DYNAMIC getnchar
-	DYNLIB  internal
-	ARG1    1
-	FUNTYPE i
-	FROMATTR tag
-	TYPE 	index
-}
-ATTRIBUTE   g {
-	DYNAMIC getnchar
-	DYNLIB  internal
-	ARG1    3
-	FUNTYPE i
-	FROMATTR tag
-	TYPE 	index
-}
-ATTRIBUTE   c {
-	DYNAMIC getnchar
-	DYNLIB  internal
-	ARG1    5
-	FUNTYPE i
-	FROMATTR tag
-	TYPE 	index
 }
 
 STRUCTURE doc {
