@@ -1,0 +1,114 @@
+NAME "Otázky Václava Moravce - Czech - words only"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/OVM/OVM_cs-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/OVM/OVM_cs-w"
+ENCODING utf-8
+INFO "Otázky Václava Moravce - Czech - segments parsed with udpipe"
+INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-000D-EC98-3"
+LANGUAGE "Czech"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+STRUCTURE doc {
+    ATTRIBUTE wordcount
+    ATTRIBUTE id
+}
+
+STRUCTURE turn {
+	ATTRIBUTE speakers {
+        MULTIVALUE yes
+        MULTISEP "|"
+    }
+}
+
+STRUCTURE seg {
+	ATTRIBUTE soundfile
+    ATTRIBUTE id
+}
+
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE lemma_lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        ARG1 "C"
+        FUNTYPE s 
+        FROMATTR lemma
+        TYPE index
+        TRANSQUERY yes
+}
+
+ATTRIBUTE pos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ufeat {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "$locale"
+}
+
+ATTRIBUTE p_pos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_ufeat {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+ATTRIBUTE p_deprel {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE p_ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE children {
+          TYPE "FD_FGD"
+          MULTIVALUE y
+          MULTISEP "|"
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
