@@ -1,4 +1,4 @@
-ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+ROOT_DIR := $(realpath $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/..)
 langs = cs en
 top_layer = a
 name = CzEng_1.0

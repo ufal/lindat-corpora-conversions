@@ -1,4 +1,4 @@
-ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+ROOT_DIR := $(realpath $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/..)
 langs ?= ar cs da et fa fi grc la nl pt ro sv ta
 top_layer = a
 name = HamleDT_2.0

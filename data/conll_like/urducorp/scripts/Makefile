@@ -1,4 +1,4 @@
-ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/../
+ROOT_DIR := $(realpath $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))/..)
 lang_a = ur
 column_a = 1
 langs = $(lang_a)
