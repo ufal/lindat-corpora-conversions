@@ -1,6 +1,8 @@
 #/bin/bash
-ROOT_FOLDER=/net/cluster/TMP/kljueva/kontext/ud
-TRAIN_FILES=$ROOT_FOLDER/input/*/UD_*/*ud-train.conllu
+#ROOT_FOLDER=/net/cluster/TMP/kljueva/kontext/ud
+#TRAIN_FILES=$ROOT_FOLDER/input/*/UD_*/*ud-train.conllu
+ROOT_FOLDER=/net/cluster/TMP/vernerova
+TRAIN_FILES=$ROOT_FOLDER/
 TRAIN_FOLDER=$ROOT_FOLDER/input/
 TREEX_FOLDER=$ROOT_FOLDER/treex/
 #TREEX_FOLDER=/net/cluster/TMP/kljueva/kontext/ud/input.sample/

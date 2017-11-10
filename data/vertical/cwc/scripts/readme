@@ -1,0 +1,10 @@
+This scripts are for parsing the corpus CWC and converting into vertical format.
+As the corpus is huge, it needs to be splitted into many documents and then parsed.
+Scripts are adopted from some of Ondra Dusek code for parsing CNC.
+
+Makefile - for compilation of a parsed and transformed corpus (gets it directly from output folder)
+
+Makefile_parsetreex - old file for parsing on cluster, needs to be adopted for troja
+
+split_to_dirs.pl - splits corpus into smaller chunks
+
