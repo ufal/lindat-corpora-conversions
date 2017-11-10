@@ -47,7 +47,7 @@ These symlinks should be used except for copying data between the two machines.
 
 The directory has the following subdirectories:
 ```
-registry       # configuration files (no subdirectories)
+registry       # configuration files (no subdirectories; on kontext-dev contains symlinks to conversions/**/templates)
 data           # compiled corpora
 speech         # mp3 files
 view_treex     # files in json format for tree visualisation
@@ -57,7 +57,7 @@ tags           # do not touch this one either
 On `kontext-dev`, additional subdirectoreis are present:
 ```
 conversions    # conversion of corpora (this git repository -- data and scripts)
-vert           # vertical text files (corpora data)
+vert           # vertical text files (corpora data; symlinks to conversions/**/output)
 ```
 
 

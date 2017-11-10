@@ -62,10 +62,10 @@ install_speech:
 	# dummy
 
 $(vertical_paths): clean_vertical $(vertical_subdir) convert
-	cp $(output_paths) $(vertical_subdir)
+	ln -t $(vertical_subdir) -s "$$(readlink -e "$(output_dir)/$(notdir $@)")"
 
 $(registry_paths): clean_registry $(templates_paths)
-	cp $(templates_paths) $(registry_dir)
+	ln -t $(registry_dir) -s "$$(readlink -e "$(templates_dir)/$(notdir $@)")"
 
 clean_registry:
 	rm -rI $(registry_paths)
