@@ -68,10 +68,10 @@ $(registry_paths): clean_registry $(templates_paths)
 	cp $(templates_paths) $(registry_dir)
 
 clean_registry:
-	rm -f $(registry_paths)
+	rm -rI $(registry_paths)
 
 clean_vertical:
-	rm -f $(vertical_paths)
+	rm -rI $(vertical_paths)
 
 compile: install
 	$(foreach registry_path,$(registry_paths),MANATEE_REGISTRY=$(registry_dir) compilecorp --no-sketches --recompile-corpus $(registry_path);)

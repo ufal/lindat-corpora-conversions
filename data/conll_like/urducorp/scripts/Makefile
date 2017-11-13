@@ -12,8 +12,8 @@ include $(ROOT_DIR)/../../../scripts/common.mk
 input_dir = $(ROOT_DIR)/input
 
 clean:
-	rm -f $(output_paths)
-	rm -rf $(tmp_dir)
+	rm -I $(output_paths)
+	rm -rI $(tmp_dir)
 
 define make_output
 $(call output_path,$(1)):
