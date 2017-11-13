@@ -33,6 +33,10 @@ endif
 #endif
 fetch_remote_path = $(shell ssh -i $(identity_file) $(repository_server) 'cd $(python_metadata_dir) && python $(python_metadata_tool) --assetstore-path --handle="$(1)" --name="$(2)" 2>/dev/null')
 
+define rellink
+	ln -t $(1) -s $(shell python -c 'import os.path, sys; print os.path.relpath(sys.argv[2],sys.argv[1])' "$(1)" "$(2)")
+endef
+
 all: compile
 
 define input_path
@@ -66,10 +70,10 @@ install_speech:
 	# dummy
 
 $(vertical_paths): clean_vertical $(vertical_subdir) convert
-	ln -t $(vertical_subdir) -s "$$(readlink -e "$(output_dir)/$(notdir $@)")"
+	$(call rellink, $(vertical_subdir), $(output_dir)/$(notdir $@))
 
 $(registry_paths): clean_registry $(templates_paths)
-	ln -t $(registry_dir) -s "$$(readlink -e "$(templates_dir)/$(notdir $@)")"
+	$(call rellink, $(registry_dir), $(templates_dir)/$(notdir $@))
 
 clean_registry:
 	rm -If $(registry_paths)
