@@ -1,22 +1,22 @@
-NAME "Web corpus of Czech"
+NAME "Web Corpus of Czech"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/CWC/2011/CWC_cs-w"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/CWC/2011/CWC_cs-w"
 ENCODING utf-8
-INFO "Web corpus of Czech"
+INFO "Web corpus of Czech, created in 2011. Contains newspapers+magazines, discussions, blogs."
 LANGUAGE "Czech"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
 
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "cs_CS.UTF-8"
+        LOCALE "cs_CZ.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "cs_CS.UTF-8"
+        LOCALE "cs_CZ.UTF-8"
 }
 ATTRIBUTE tag {
         TYPE "FD_FGD"

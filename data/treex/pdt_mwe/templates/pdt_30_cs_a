@@ -1,12 +1,12 @@
-NAME "Prague Dependency Treebank 3.0 - Czech - with POS tags and AFUN"
+NAME "Prague Dependency Treebank 3.0"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/PDT/3.0/PDT_3.0_cs-a"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/PDT/3.0/PDT_3.0_cs-a"
 ENCODING utf-8
-INFO "Prague Dependency Treebank 3.0 - Czech - with POS tags and AFUN"
+INFO "PDT 3.0 is a new version of Prague Dependency Treebank. It contains a large amount of Czech texts with morphological, syntactic and semantic annotation. Via KonText, a corpus can be searched for form, lemma, tag and afun (shallow syntactic function)."
 LANGUAGE "Czech"
 
 SHORTREF "=issue.name"
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE article
 
@@ -21,9 +21,7 @@ ATTRIBUTE lemma {
 ATTRIBUTE tag {
         TYPE "FD_FGD"
 }
-ATTRIBUTE afun {
-        TYPE "FD_FGD"
-}
+
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
@@ -66,6 +64,9 @@ ATTRIBUTE   c {
 	TYPE 	index
 }
 
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
 STRUCTURE title {
 	ATTRIBUTE name
 }

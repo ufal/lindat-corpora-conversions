@@ -1,12 +1,12 @@
-NAME "Slovak TenTen Corpus (2011-12-16) - Slovak - words only"
+NAME "Slovak TenTen Corpus (2011-12-16)"
 PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w"
 ENCODING utf-8
-INFO "Slovak TenTen Corpus (2011-12-16) - Slovak - words only"
+INFO "Slovak large web corpus skTenTen, comprising 876,003,720 tokens."
 LANGUAGE "Slovak"
 
 SHORTREF ""
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 
 ATTRIBUTE word {

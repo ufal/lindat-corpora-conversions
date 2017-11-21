@@ -6,7 +6,7 @@ INFO "Prague Dependency Treebank 3.0 - Czech - with POS tags and AFUN"
 LANGUAGE "Czech"
 
 SHORTREF "=issue.name"
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE article
 
@@ -21,9 +21,7 @@ ATTRIBUTE lemma {
 ATTRIBUTE tag {
         TYPE "FD_FGD"
 }
-ATTRIBUTE afun {
-        TYPE "FD_FGD"
-}
+
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
@@ -66,6 +64,9 @@ ATTRIBUTE   c {
 	TYPE 	index
 }
 
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
 STRUCTURE title {
 	ATTRIBUTE name
 }

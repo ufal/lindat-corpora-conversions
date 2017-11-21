@@ -1,12 +1,11 @@
-NAME "Companions - Czech - words only"
+NAME "Companions"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/Companions"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/Companions"
 ENCODING utf-8
-INFO "Companions - Czech - words only"
-INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0023-1D76-9"
+INFO "The corpus contains Czech expressive speech recorded using scenario-based approach by a professional female speaker. The scenario was created on the basis of previously recorded natural dialogues between a computer and seniors."
+INFOHREF "http://hdl.handle.net/11858/00-097C-0000-0023-1D76-9"
 LANGUAGE "Czech"
 
-DOCSTRUCTURE doc
 
 ATTRIBUTE word {
         TYPE "FD_FGD"

@@ -1,8 +1,8 @@
-NAME "Otázky Václava Moravce - Czech - words only"
+NAME "Otázky Václava Moravce - political debates in Czech"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/OVM/OVM_cs-w"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/OVM/OVM_cs-w"
 ENCODING utf-8
-INFO "Otázky Václava Moravce - Czech - words only"
+INFO "The corpus consists of transcribed recordings from the Czech political discussion broadcast 'Otázky Václava Moravce'. It contains 35 hours of speech and corresponding word-by-word transcriptions, including the transcription of some non-speech events. "
 INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-000D-EC98-3"
 LANGUAGE "Czech"
 

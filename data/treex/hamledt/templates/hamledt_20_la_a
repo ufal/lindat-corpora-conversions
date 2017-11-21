@@ -1,25 +1,21 @@
-NAME "Prague Czech-English Dependency Treebank 2.0"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
+NAME "HamleDT 2.0 - Latin"
+PATH "/opt/projects/lindat-services-kontext/production/data/corpora/data/monolingual/HamleDT/2.0/HamleDT_2.0_la-a"
+VERTICAL "/opt/projects/lindat-services-kontext/production/data/corpora/vert/monolingual/HamleDT/2.0/HamleDT_2.0_la-a"
 ENCODING utf-8
-INFO "PCEDT 2.0 is a manually parsed Czech-English parallel corpus sized over 1.2 million words in almost 50,000 sentences for each part. PCEDT 2.0 is enchanced with a manual linguistic annotation up to tectogrammatical layer. Via KonText, one can search by word, lemma, tag and afun(shallow syntactic function)"
-LANGUAGE "Czech English"
+INFO "HamleDT 2.0 is a collection of 30 existing treebanks harmonized into a common annotation style, the Prague Dependencies. It is searchable for attributes POS and AFUN."
+LANGUAGE "Latin"
 
-SHORTREF ""
 TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
 
-ALIGNED "pcedt_20_en_a"
-ALIGNSTRUCT s
-
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "cs_CZ.UTF-8"
+        LOCALE "la.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "cs_CZ.UTF-8"
+        LOCALE "la.UTF-8"
 }
 ATTRIBUTE tag {
         TYPE "FD_FGD"
@@ -31,7 +27,7 @@ ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
         FUNTYPE s
-        ARG1 "cs_CZ.UTF-8"
+        ARG1 "la.UTF-8"
         FROMATTR word
         TYPE index
         TRANSQUERY yes

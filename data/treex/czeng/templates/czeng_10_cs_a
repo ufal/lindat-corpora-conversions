@@ -1,12 +1,12 @@
-NAME "Czech-English Parallel Corpus 1.0 - Czech - with POS tags and AFUN"
+NAME "Czech-English Parallel Corpus 1.0"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/CzEng/1.0/CzEng_1.0_cs-a"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/CzEng/1.0/CzEng_1.0_cs-a"
 ENCODING utf-8
-INFO "Czech-English Parallel Corpus 1.0 - Czech - with POS tags and AFUN"
-LANGUAGE "Czech"
+INFO "CzEng 1.0 contains 15 million parallel sentences (233 million English and 206 million Czech tokens) from seven different types of sources automatically annotated at surface and deep (a- and t-) layers of syntactic representation. Via KonText, form, lemma, tag and afun(shallow analytical function) search is supported"
+LANGUAGE "Czech English"
 
 SHORTREF "=doc.id"
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
 

@@ -1,4 +1,4 @@
-NAME "Czech-Slovak - Slovak - POS tags only"
+NAME "Czech-Slovak - Slovak"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/CzechSlovak/CzechSlovak_sk-m"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/CzechSlovak/CzechSlovak_sk-m"
 ENCODING utf-8

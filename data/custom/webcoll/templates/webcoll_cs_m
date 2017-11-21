@@ -1,11 +1,11 @@
-NAME "WebColl Corpus - Czech - with POS tags"
+NAME "WebColl Corpus of Czech"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/WebColl/WebColl_cs-m"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/WebColl/WebColl_cs-m"
 ENCODING utf-8
-INFO "WebColl Corpus - Czech - with POS tags"
+INFO "WebColl is a corpus of Czech web texts with high portion of human work involved in the corpus development process."
 LANGUAGE "Czech"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
 

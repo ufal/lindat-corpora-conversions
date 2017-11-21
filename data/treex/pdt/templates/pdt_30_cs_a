@@ -21,11 +21,54 @@ ATTRIBUTE lemma {
 ATTRIBUTE tag {
         TYPE "FD_FGD"
 }
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
 ATTRIBUTE ord {
         TYPE "FD_FGD"
 }
 
-ATTRIBUTE caluse_number {
+ATTRIBUTE clause_number {
         TYPE "FD_FGD"
 }
 
@@ -143,6 +186,11 @@ STRUCTURE article {
 	ATTRIBUTE genre
 	ATTRIBUTE id
     ATTRIBUTE number
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE doc {
+	ATTRIBUTE id
     ATTRIBUTE wordcount
 }
 

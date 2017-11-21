@@ -1,8 +1,8 @@
-NAME "UrduCorp - Urdu"
+NAME "UrduCorp"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UrduCorp/UrduCorp_ur-m"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UrduCorp/UrduCorp_ur-m"
 ENCODING utf-8
-INFO "with morphological tags"
+INFO "A monolingual Urdu corpus automatically tagged with part-of-speech tags."
 LANGUAGE "Urdu"
 
 WPOSLIST ",demonstrative,[PRKA]D,noun,[NP]N,pronoun,[PRAK]P|REP|AKP,genitive,GR?,verb,VB,auxiliary,[AT]A,adjective,ADJ,adverb,ADV,quantifier,Q,numeral,CA|OR|FR|MUL,measuring unit,U,conjunction,[CS]C,intensifier,I,particle,A|KER,title,P[RO]T,semantic marker,P|SE,wala,WALA,negation,NEG,interjection,INT,question word,QW,punctuation,[SP]M,date,DATE,other,EXP|UNK"

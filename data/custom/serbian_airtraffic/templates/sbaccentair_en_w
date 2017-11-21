@@ -1,8 +1,8 @@
-NAME "English TTS speech corpus of air traffic (pilot) messages - Serbian accent - English - words only"
+NAME "English TTS speech corpus of air traffic messages - Serbian accent"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/Sbaccentair/Sbaccentair_en-w"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/Sbaccentair/Sbaccentair_en-w"
 ENCODING utf-8
-INFO "English TTS speech corpus of air traffic (pilot) messages - Serbian accent - - English - words only"
+INFO "English TTS speech corpus of air traffic (pilot) messages - Serbian accent. The corpus contains recordings of male speaker, native in Serbian, talking in English. The sentences that were read by the speaker originate in the domain of air traffic control (ATC)."
 INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1462"
 LANGUAGE "English"
 
@@ -22,6 +22,7 @@ ATTRIBUTE lc {
         TRANSQUERY yes
 }
 STRUCTURE doc {
+	ATTRIBUTE id
     ATTRIBUTE wordcount
 }
 

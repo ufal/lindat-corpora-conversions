@@ -1,11 +1,11 @@
-NAME "HindEnCorp 0.5 - English - POS tags only"
+NAME "HindEnCorp 0.5 - English-Hindi"
 PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/HindEnCorp/0.5/HindEnCorp_0.5_en-m"
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/HindEnCorp/0.5/HindEnCorp_0.5_en-m"
 ENCODING utf-8
-INFO "HindEnCorp 0.5 - English - POS tags only"
-LANGUAGE "English"
+INFO "HindEnCorp parallel texts come from various online resources. The corpus contains 132,300 sentences"
+LANGUAGE "English Hindi"
 
-TAGSETDOC "http://ucnk.ff.cuni.cz/bonito/znacky.php"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
 

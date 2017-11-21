@@ -1,8 +1,8 @@
-NAME "English TenTen Corpus (2011-12-16) - English - words only"
+NAME "English TenTen Corpus (2011-12-16)"
 PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w"
 ENCODING utf-8
-INFO "English TenTen Corpus (2011-12-16) - English - words only"
+INFO "Very large English web corpus enTenTEn, comprising 3,268,798,627 tokens. Created in Masaryk University."
 LANGUAGE "English"
 
 ATTRIBUTE word {

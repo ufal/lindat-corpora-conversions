@@ -1,8 +1,8 @@
-NAME "Very large Czech corpus - words only"
+NAME "Very large Czech corpus"
 PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/czes/czes_cs-w
 VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/czes/czes_cs-w"
 ENCODING utf-8
-INFO "Very large Czech corpus - words only"
+INFO "First version of the very large Czech corpus Czes created with a new set of tools in Masaryk university. It comprises 465,102,710 tokens."
 LANGUAGE "Czech"
 
 SHORTREF ""
