@@ -24,17 +24,14 @@ And a bit more about Creating a corpus in general is here: https://www.sketcheng
 
 The production server runs on a virtual machine called `kontext-new`;
 the development/staging servers run on machine called `kontext-dev`.
-You can ignore the VM called `kontext`, which is just a backup of the production server version 0.5 (???), but sharing data with `kontext-new`.
 
-The data is situated in a NFS shared directory;
-after running `mount`, both of these paths will be available:
+The data is situated in a NFS shared directory.
+On `kontext-new`, both of these paths will be available after running `mount`,
+while on `kontext-dev`, only the development data is visible.
 ```
 production data:    /export/KONTEXT/kontext/corpora
-development data:   /export/KONTEXT/kontext-dev/opt/projects/lindat-services-kontext/devel/data/corpora 
-                    /export/KONTEXT/kontext-dev/corpora                                  = symlink to ^
+development data:   /export/KONTEXT/kontext-dev/corpora                                  = symlink to ^
 ```
-(but analogous path `.../kontext/.../production/` is an empty directory).
-
 (Note that the production directory has only `kontext` in its name.)
 
 On both machines, the following directories are symlinks to the data:
