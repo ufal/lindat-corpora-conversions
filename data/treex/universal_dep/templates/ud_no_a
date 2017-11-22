@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Norwegian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_no-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/no-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_no-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/no-ud-train.vert"
 ENCODING utf-8
 INFO "The Norwegian UD treebank is based on the Bokmål section of the Norwegian Dependency Treebank (NDT), which is a syntactic treebank of Norwegian."
 LANGUAGE "Norwegian"

@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Spanish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_es-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/es-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_es-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/es-ud-train.vert"
 ENCODING utf-8
 INFO "The Spanish UD conforms to the UD guidelines, but there are some exceptions."
 LANGUAGE "Spanish"

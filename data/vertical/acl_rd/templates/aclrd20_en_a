@@ -1,6 +1,6 @@
 NAME "ACL RD-TEC 2.0"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/aclrd/2.0/aclrd20_en-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/aclrd/2.0/aclrd20_en-m"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/aclrd/2.0/aclrd20_en-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/aclrd/2.0/aclrd20_en-m"
 ENCODING utf-8
 INFO " ACL RD-TEC 2.0 consists of 300 abstracts from articles in the ACL Anthology Reference Corpus, published between 1978-2006. In these abstracts, terms are manually annotated."
 LANGUAGE "English"

@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Polish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_pl-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/pl-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_pl-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/pl-ud-train.vert"
 ENCODING utf-8
 INFO "The UD Polish treebank is based on “Składnica zależnościowa” (the Polish dependency treebank) version 0.5. "
 LANGUAGE "Polish"

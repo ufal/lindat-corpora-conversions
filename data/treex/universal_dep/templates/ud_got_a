@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Gothic"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_got-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/got-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_got-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/got-ud-train.vert"
 ENCODING utf-8
 INFO "The UD Gothic treebank is based on the Gothic data from the PROIEL treebank, which is maintained at the Department of Philosophy, Classics, History of Arts and Ideas at the University of Oslo. The treebank contains the text of Wulfila's Bible translation."
 LANGUAGE "Gothic"

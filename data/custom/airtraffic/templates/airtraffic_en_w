@@ -1,8 +1,8 @@
 NAME "Air Traffic Control Communication"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/Airtraffic/Airtraffic_en-w"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/Airtraffic/Airtraffic_en-w"
+PATH "/opt/lindat/kontext-data/corpora/data/speech/Airtraffic/Airtraffic_en-w"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/speech/Airtraffic/Airtraffic_en-w"
 ENCODING utf-8
-INFO "Corpus contains recordings of communication between air traffic controllers and pilots. The speech is manually transcribed and labeled with the information about the speaker (pilot/controller, not the full identity of the person). "
+INFO "Corpus contains recordings of communication between air traffic controllers and pilots. The speech is manually transcribed and labeled with the information about the speaker (pilot/controller, not the full identity of the person)."
 INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0001-CCA1-0"
 LANGUAGE "English"
 

@@ -1,6 +1,6 @@
 NAME "HindEnCorp 0.5 - Hindi - POS tags only"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/HindEnCorp/0.5/HindEnCorp_0.5_hi-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/HindEnCorp/0.5/HindEnCorp_0.5_hi-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/HindEnCorp/0.5/HindEnCorp_0.5_hi-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/HindEnCorp/0.5/HindEnCorp_0.5_hi-m"
 ENCODING utf-8
 INFO "HindEnCorp 0.5 - Hindi - POS tags only"
 LANGUAGE "Hindi"

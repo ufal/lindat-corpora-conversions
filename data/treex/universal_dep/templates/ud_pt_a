@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Portuguese"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_pt-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/pt-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_pt-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/pt-ud-train.vert"
 ENCODING utf-8
 INFO "The UD Portuguese treebank is based on the Bosque part of the Floresta Sintá(c)tica project."
 LANGUAGE "Portuguese"

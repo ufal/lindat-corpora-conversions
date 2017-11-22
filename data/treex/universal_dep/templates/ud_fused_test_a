@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.1 - Czech-test"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_fused_test-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/data/treex/universal_dep/scripts/10000-cs-test.out2"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.1/ud_fused_test-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/conversions/data/treex/universal_dep/scripts/10000-cs-test.out2"
 ENCODING utf-8
 INFO "Testing fused tokens conversion"
 LANGUAGE "Czech"

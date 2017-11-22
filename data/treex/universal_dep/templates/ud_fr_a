@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - French"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_fr-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/fr-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_fr-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/fr-ud-train.vert"
 ENCODING utf-8
 INFO "The French UD conforms to the UD guidelines, but there are some exceptions. The primary exception is that there are no morphological features defined."
 LANGUAGE "French"

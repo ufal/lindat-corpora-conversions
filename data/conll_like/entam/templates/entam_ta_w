@@ -1,6 +1,6 @@
 NAME "English-Tamil parallel corpus"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/EnTam/EnTam_ta-w"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/EnTam/EnTam_ta-w"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/EnTam/EnTam_ta-w"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/EnTam/EnTam_ta-w"
 ENCODING utf-8
 INFO "English-Tamil parallel corpus"
 LANGUAGE "Tamil"

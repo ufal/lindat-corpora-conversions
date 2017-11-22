@@ -1,6 +1,6 @@
 NAME "UMC 0.1 - Russian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_enru_ru-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_enru_ru-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/UMC/0.1/UMC_0.1_enru_ru-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/UMC/0.1/UMC_0.1_enru_ru-m"
 ENCODING utf-8
 INFO "UMC 0.1 - Russian"
 LANGUAGE "Russian"

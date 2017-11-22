@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Slovenian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_sl-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/sl-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_sl-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/sl-ud-train.vert"
 ENCODING utf-8
 INFO "The Slovenian UD Treebank is based on the ssj500k treebank (Krek et al. 2013), a balanced collection of sampled texts from the FidaPLUS reference corpus of written Slovene (Arhar and Gorjanc 2007). "
 LANGUAGE "Slovenian"

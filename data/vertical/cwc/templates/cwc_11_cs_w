@@ -1,6 +1,6 @@
 NAME "Web Corpus of Czech"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/CWC/2011/CWC_cs-w"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/CWC/2011/CWC_cs-w"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/CWC/2011/CWC_cs-w"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/CWC/2011/CWC_cs-w"
 ENCODING utf-8
 INFO "Web corpus of Czech, created in 2011. Contains newspapers+magazines, discussions, blogs."
 LANGUAGE "Czech"

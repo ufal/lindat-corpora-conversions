@@ -1,8 +1,8 @@
-NAME "Syntactically annotated corpus CWC"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/parsed_cwc"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/parsed_cwc/parsedcwc_cs-a"
+NAME "Web Corpus of Czech, syntactically annotated"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/cwc_parsed"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/parsed_cwc/parsedcwc_cs-a"
 ENCODING utf-8
-INFO "Cwc corpus parsed up to analytical layer. The attributes are: node: form, lemma, tag, afun, parent: p_form, p_lemma, p_tag, p_afun, p_distance (if parent is immediate/distant wrt to a node), p_position(if parent is left/right wrt to a node), effective parent: ep_form, ep_lemma, ep_tag, ep_afun, ep_distance, ep_position"
+INFO "CWC corpus tagged with Featurama tagger and parsed up to analytical layer with MST parser (the corpus in LINDAT is in plain-text format only!!). The attributes are: node, form, lemma, tag, afun, parent: p_form, p_lemma, p_tag, p_afun, p_distance (if parent is immediate/distant wrt to a node), p_position(if parent is left/right wrt to a node), effective parent: ep_form, ep_lemma, ep_tag, ep_afun, ep_distance, ep_position"
 LANGUAGE "Czech"
 
 SHORTREF ""

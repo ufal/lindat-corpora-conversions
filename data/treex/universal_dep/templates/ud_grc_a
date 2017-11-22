@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Ancient Greek"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_grc-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/grc-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_grc-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/grc-ud-train.vert"
 ENCODING utf-8
 INFO "The data is a selection from the Ancient Greek Dependency Treebank 2 currently developed at the Humboldt Chair in DH (Prof. Gregory Crane), Leipzig University."
 LANGUAGE "Greek"

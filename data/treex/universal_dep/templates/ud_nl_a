@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Dutch"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_nl-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/nl-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_nl-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/nl-ud-train.vert"
 ENCODING utf-8
 INFO "The UD Dutch treebank is based on the Alpino treebank."
 LANGUAGE "Dutch"

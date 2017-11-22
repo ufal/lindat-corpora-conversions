@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Old Church Slavonic"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_cu-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/cu-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_cu-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/cu-ud-train.vert"
 ENCODING utf-8
 INFO "The Old Church Slavonic (OCS) UD treebank is based on the Old Church Slavonic data from the PROIEL treebank, which is maintained at the Department of Philosophy, Classics, History of Arts and Ideas at the University of Oslo."
 LANGUAGE "Old Church Slavonic"

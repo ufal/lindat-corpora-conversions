@@ -1,6 +1,6 @@
 NAME "WebColl Corpus of Czech"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/WebColl/WebColl_cs-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/WebColl/WebColl_cs-m"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/WebColl/WebColl_cs-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/WebColl/WebColl_cs-m"
 ENCODING utf-8
 INFO "WebColl is a corpus of Czech web texts with high portion of human work involved in the corpus development process."
 LANGUAGE "Czech"

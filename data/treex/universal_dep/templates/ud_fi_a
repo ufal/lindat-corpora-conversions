@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Finnish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_fi-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/fi-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_fi-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/fi-ud-train.vert"
 ENCODING utf-8
 INFO "UD 1.2. - Finnish"
 LANGUAGE "Finnish"

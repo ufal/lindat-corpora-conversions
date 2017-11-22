@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Arabic"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_ar-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/ar-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_ar-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/ar-ud-train.vert"
 ENCODING utf-8
 INFO "The Arabic UD treebank is based on the Prague Arabic Dependency Treebank (PADT), created at the Charles University in Prague. The treebank consists of 7,664 sentences (282,384 tokens) and its domain is mainly newswire."
 LANGUAGE "Arabic"

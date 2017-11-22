@@ -1,8 +1,8 @@
 NAME "Czech-Slovak - Slovak"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/CzechSlovak/CzechSlovak_sk-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/CzechSlovak/CzechSlovak_sk-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/CzechSlovak/CzechSlovak_sk-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/CzechSlovak/CzechSlovak_sk-m"
 ENCODING utf-8
-INFO "CzechSlovak - Slovak - POS tags only"
+INFO "POS tags only"
 LANGUAGE "Slovak"
 
 TAGSETDOC "http://korpus.sk/attachments/morpho/tagset-www.pdf"

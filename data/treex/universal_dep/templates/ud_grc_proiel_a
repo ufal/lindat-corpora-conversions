@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Ancient Greek"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_grc_proiel-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/grc_proiel-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_grc_proiel-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/grc_proiel-ud-train.vert"
 ENCODING utf-8
 INFO "The Ancient Greek PROIEL treebank is based on the Ancient Greek data from the PROIEL treebank, which is maintained at the Department of Philosophy, Classics, History of Arts and Ideas at the University of Oslo. The treebank contains most of the New Testament plus selections from Herodotus' Histories."
 LANGUAGE "Greek"

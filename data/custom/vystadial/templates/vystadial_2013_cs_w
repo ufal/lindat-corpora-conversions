@@ -1,6 +1,6 @@
 NAME "Vystadial 2013 - phone calls speech corpus (Czech)"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/Vystadial/2013/Vystadial_2013"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/Vystadial/2013/Vystadial_2013"
+PATH "/opt/lindat/kontext-data/corpora/data/speech/Vystadial/2013/Vystadial_2013"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/speech/Vystadial/2013/Vystadial_2013"
 ENCODING utf-8
 INFO "Vystadial 2013 is a dataset of telephone conversations in English and Czech, developed for training acoustic models for automatic speech recognition in spoken dialogue systems. The data comprise over 15 hours of speech in Czech."
 LANGUAGE "Czech"

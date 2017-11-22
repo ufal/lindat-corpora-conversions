@@ -1,6 +1,6 @@
 NAME "Very large Czech corpus"
-PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/czes/czes_cs-w
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/czes/czes_cs-w"
+PATH /opt/lindat/kontext-data/corpora/data/monolingual/czes/czes_cs-w
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/czes/czes_cs-w"
 ENCODING utf-8
 INFO "First version of the very large Czech corpus Czes created with a new set of tools in Masaryk university. It comprises 465,102,710 tokens."
 LANGUAGE "Czech"

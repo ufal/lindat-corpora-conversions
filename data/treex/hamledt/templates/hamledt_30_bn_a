@@ -1,6 +1,6 @@
 NAME "HamleDT 3.0 - Bengali"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/HamleDT/3.0/hamledt_bn-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/HamleDT/3.0/hamledt_bn-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/HamleDT/3.0/hamledt_bn-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/HamleDT/3.0/hamledt_bn-a"
 ENCODING utf-8
 INFO "HamleDT 3.0 is a compilation of existing dependency treebanks (or dependency conversions of other treebanks), transformed so that they all conform to the same annotation style."
 LANGUAGE "Bengali"

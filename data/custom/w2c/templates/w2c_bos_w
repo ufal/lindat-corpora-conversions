@@ -1,6 +1,6 @@
 NAME "Web to Corpus - Bosnian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/W2C/W2C_bos-w"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/W2C/W2C_bos-w"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/W2C/W2C_bos-w"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/W2C/W2C_bos-w"
 ENCODING utf-8
 INFO "A set of corpora for 120 languages automatically collected from wikipedia and the web."
 LANGUAGE "Bosnian"

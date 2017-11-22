@@ -1,6 +1,6 @@
 NAME "English TenTen Corpus (2011-12-16)"
-PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w"
+PATH /opt/lindat/kontext-data/corpora/data/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/enTenTen/2011-12-16/enTenTen_2011-12-16_en-w"
 ENCODING utf-8
 INFO "Very large English web corpus enTenTEn, comprising 3,268,798,627 tokens. Created in Masaryk University."
 LANGUAGE "English"
@@ -59,20 +59,26 @@ ATTRIBUTE   c {
 }
 
 STRUCTURE doc {
+	TYPE "file64"
 	ATTRIBUTE wordcount
     ATTRIBUTE url
 }
 
 STRUCTURE p {
+  TYPE "file64"
   DISPLAYTAG 0                                 
 
 }
 
 STRUCTURE g {
+    TYPE  "file64"
     DISPLAYTAG 0
     DISPLAYBEGIN "_EMPTY_"
 }
 
+STRUCTURE word {
+	TYPE    file64
+}
 
 MAXCONTEXT 50
 MAXDETAIL 50

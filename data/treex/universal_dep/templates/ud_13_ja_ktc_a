@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.3 - Japan"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.3/ud_ja_ktc-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.3/ud_ja_ktc-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.3/ud_ja_ktc-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.3/ud_ja_ktc-a"
 ENCODING utf-8
 INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages."
 LANGUAGE "Japan"

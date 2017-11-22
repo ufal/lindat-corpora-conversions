@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Danish"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_da-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/da-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_da-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/da-ud-train.vert"
 ENCODING utf-8
 INFO "UD 1.2 - Danish. The Danish UD treebank has been converted from the Danish Dependency Treebank (Buch-Kromman,2003) into Universal Dependencies (UD). It consists of 5,512 sentences (100,238 words). The Danish source texts and the Danish part-of-speech tags were created by the PAROLE-DK project (Keson 1998) by the Danish Society for Language and Literature."
 

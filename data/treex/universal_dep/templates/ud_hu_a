@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Hungarian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_hu-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/hu-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_hu-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/hu-ud-train.vert"
 ENCODING utf-8
 INFO "The Hungarian UD treebank is derived from the Szeged Dependency Treebank (Vincze et al. 2010). One of its newspaper sections (Népszava) has been semi-automatically converted to the Universal Dependencies scheme, and linguists have corrected the annotation manually. Tree count:1032. Word count:  20764. Token count: 20764. "
 LANGUAGE "Hungarian"

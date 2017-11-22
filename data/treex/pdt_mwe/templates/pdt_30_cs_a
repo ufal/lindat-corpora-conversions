@@ -1,6 +1,6 @@
 NAME "Prague Dependency Treebank 3.0"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/PDT/3.0/PDT_3.0_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/PDT/3.0/PDT_3.0_cs-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/PDT/3.0/PDT_3.0_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/PDT/3.0/PDT_3.0_cs-a"
 ENCODING utf-8
 INFO "PDT 3.0 is a new version of Prague Dependency Treebank. It contains a large amount of Czech texts with morphological, syntactic and semantic annotation. Via KonText, a corpus can be searched for form, lemma, tag and afun (shallow syntactic function)."
 LANGUAGE "Czech"

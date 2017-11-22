@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Tamil"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_ta-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/ta-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_ta-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/ta-ud-train.vert"
 ENCODING utf-8
 INFO "The UD Tamil treebank is based on the Tamil Dependency Treebank created at the Charles University in Prague by Loganathan Ramasamy. "
 LANGUAGE "Tamil"

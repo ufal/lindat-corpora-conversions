@@ -1,6 +1,6 @@
 NAME "HamleDT 2.0 - Latin"
-PATH "/opt/projects/lindat-services-kontext/production/data/corpora/data/monolingual/HamleDT/2.0/HamleDT_2.0_la-a"
-VERTICAL "/opt/projects/lindat-services-kontext/production/data/corpora/vert/monolingual/HamleDT/2.0/HamleDT_2.0_la-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/HamleDT/2.0/HamleDT_2.0_la-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/HamleDT/2.0/HamleDT_2.0_la-a"
 ENCODING utf-8
 INFO "HamleDT 2.0 is a collection of 30 existing treebanks harmonized into a common annotation style, the Prague Dependencies. It is searchable for attributes POS and AFUN."
 LANGUAGE "Latin"

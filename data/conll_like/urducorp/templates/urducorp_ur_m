@@ -1,6 +1,6 @@
 NAME "UrduCorp"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UrduCorp/UrduCorp_ur-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UrduCorp/UrduCorp_ur-m"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UrduCorp/UrduCorp_ur-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UrduCorp/UrduCorp_ur-m"
 ENCODING utf-8
 INFO "A monolingual Urdu corpus automatically tagged with part-of-speech tags."
 LANGUAGE "Urdu"

@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Hindi"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_hi-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/hi-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_hi-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/hi-ud-train.vert"
 ENCODING utf-8
 INFO "The Hindi Universal Dependency Treebank was automatically converted from Hindi Dependency Treebank (HDTB) which is part of an ongoing effort of creating multi-layered treebanks for Hindi and Urdu." 
 LANGUAGE "Hindi"

@@ -1,6 +1,6 @@
 NAME "CzechParl (2012-03-28)"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/CzechParl/2012-03-28/CzechParl_2012-03-28"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/CzechParl/2012-03-28/CzechParl_2012-03-28"
+PATH "/opt/lindat/kontext-data/corpora/data/speech/CzechParl/2012-03-28/CzechParl_2012-03-28"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/speech/CzechParl/2012-03-28/CzechParl_2012-03-28"
 ENCODING utf-8
 INFO "The corpus consists of recordings from the Chamber of Deputies of the Parliament of the Czech Republic. It currently consists of 88 hours of speech data, which corresponds roughly to 0.5 million tokens. "
 INFOHREF "https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0005-CF9C-4"

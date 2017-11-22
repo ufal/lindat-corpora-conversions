@@ -1,6 +1,6 @@
 NAME "Parsed Parallel Corpus Haaretz"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/Haaretz/1.0/Haaretz_1.0_he-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/Haaretz/1.0/Haaretz_1.0_he-a"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/Haaretz/1.0/Haaretz_1.0_he-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Haaretz/1.0/Haaretz_1.0_he-a"
 ENCODING utf-8
 INFO "Parallel English-Hebrew cospus parsedwith UDPipe parser"
 LANGUAGE "Hebrew"

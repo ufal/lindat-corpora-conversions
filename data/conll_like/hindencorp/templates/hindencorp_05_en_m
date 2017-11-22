@@ -1,6 +1,6 @@
 NAME "HindEnCorp 0.5 - English-Hindi"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/HindEnCorp/0.5/HindEnCorp_0.5_en-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/HindEnCorp/0.5/HindEnCorp_0.5_en-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/HindEnCorp/0.5/HindEnCorp_0.5_en-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/HindEnCorp/0.5/HindEnCorp_0.5_en-m"
 ENCODING utf-8
 INFO "HindEnCorp parallel texts come from various online resources. The corpus contains 132,300 sentences"
 LANGUAGE "English Hindi"

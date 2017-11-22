@@ -1,6 +1,6 @@
 NAME "Czech Legal Text Treebank 1.0"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/legaltext/legaltext_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/legaltext/legaltext_cs-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/legaltext/legaltext_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/legaltext/legaltext_cs-a"
 ENCODING utf-8
 INFO "The Czech Legal Text Treebank (CLTT) is a collection of 1133 manually annotated dependency trees. CLTT consists of two legal documents: The Accounting Act (563/1991 Coll., as amended) and Decree on Double-entry Accounting for undertakers (500/2002 Coll., as amended)."
 LANGUAGE "Czech"

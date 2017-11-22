@@ -1,6 +1,6 @@
 NAME "Czech-Slovak parallel corpus"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/CzechSlovak/CzechSlovak_cs-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/CzechSlovak/CzechSlovak_cs-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/CzechSlovak/CzechSlovak_cs-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/CzechSlovak/CzechSlovak_cs-m"
 ENCODING utf-8
 INFO "Czech-Slovak parallel corpus consists of several freely available corpora (Acquis, Europarl, Official Journal of the European Union and part of OPUS corpus) and downloaded website of European Commission. The corpus was released with an automatic morphological annotation, so it is searchable for form, lemma and tag."
 LANGUAGE "Czech Slovak"

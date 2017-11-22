@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Bulgarian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_bg-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/bg-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_bg-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/bg-ud-train.vert"
 ENCODING utf-8
 INFO "The original treebank is HPSG-based. The BTB-UD contains in its first release 9 405 sentences( 125 592 tokens) which exclude ellipses and some rare phenomena."
 LANGUAGE "Bulgarian"

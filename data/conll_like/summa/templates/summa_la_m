@@ -1,6 +1,6 @@
 NAME "Summa Contra Genties"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/Summa/Summa_la-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/Summa/Summa_la-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_la-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_la-m"
 ENCODING utf-8
 INFO "Czech-Latin corpus"
 LANGUAGE "Latin"

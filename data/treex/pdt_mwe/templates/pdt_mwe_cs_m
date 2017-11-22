@@ -1,6 +1,6 @@
 NAME "Multiword expressions in the Prague Dependency Treebank 2.0"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/PDT/3.0/PDT_3.0_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/PDT/3.0/PDT_3.0_cs-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/PDT/3.0/PDT_3.0_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/PDT/3.0/PDT_3.0_cs-a"
 ENCODING utf-8
 INFO "Prague Dependency Treebank 3.0 - Czech - with POS tags and AFUN"
 LANGUAGE "Czech"

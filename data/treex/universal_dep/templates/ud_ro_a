@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Romanian"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_ro-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/ro-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_ro-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/ro-ud-train.vert"
 ENCODING utf-8
 INFO "The Romanian UD treebank (called RoRefTrees) is based on RACAI-RoTb (Irimia and BarbuBarbu Mititelu, 2015) and on UAIC-RoTb (Perez, 2014). "
 LANGUAGE "Romanian"

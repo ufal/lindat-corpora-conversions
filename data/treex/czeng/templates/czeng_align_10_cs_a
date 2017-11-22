@@ -1,6 +1,6 @@
 NAME "Aligned Czech-English Parallel Corpus 1.0 - Czech - with POS tags and AFUN"
-PATH "/opt/projects/lindat-services-kontext/production/data/corpora/data/parallel/CzEng-align/1.0/CzEng-align_1.0_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/production/data/corpora/vert/parallel/CzEng-align/1.0/CzEng-align_1.0_cs-a"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/CzEng-align/1.0/CzEng-align_1.0_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/CzEng-align/1.0/CzEng-align_1.0_cs-a"
 ENCODING utf-8
 INFO "Aligned Czech-English Parallel Corpus 1.0 - Czech - with POS tags and AFUN"
 LANGUAGE "Czech"
@@ -12,7 +12,7 @@ DOCSTRUCTURE doc
 
 ALIGNSTRUCT "align"
 ALIGNED "czeng_align_0_en_a"
-ALIGNDEF "/opt/projects/lindat-services-kontext/production/data/corpora/vert/parallel/CzEng-align/1.0/CzEng-align_1.0_cs-a.map"
+ALIGNDEF "/opt/lindat/kontext-data/corpora/vert/parallel/CzEng-align/1.0/CzEng-align_1.0_cs-a.map"
 
 ATTRIBUTE word {
         TYPE "FD_FGD"

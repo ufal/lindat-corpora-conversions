@@ -1,6 +1,6 @@
 NAME "UMC 0.1 - English-Russian corpus"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/UMC/0.1/UMC_0.1_enru_en-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/UMC/0.1/UMC_0.1_enru_en-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/UMC/0.1/UMC_0.1_enru_en-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/UMC/0.1/UMC_0.1_enru_en-m"
 ENCODING utf-8
 INFO "UMC 0.1  is a parallel corpus of texts in Czech and Russian downloaded from the single source - The Project Syndicate. It is automatically lemmatized and tagged, so it is searchable for form, lemma and tag."
 LANGUAGE "English"

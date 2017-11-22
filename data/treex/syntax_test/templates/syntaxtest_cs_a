@@ -1,6 +1,6 @@
 NAME "Testing syntax annotation"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/test_syntax"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/test_syntax/testsyntax_cs-a"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/test_syntax"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/test_syntax/testsyntax_cs-a"
 ENCODING utf-8
 INFO "5792 sentences from cwc parsed up to analytical layer. The attributes are: node: form, lemma, tag, afun, parent: p_form, p_lemma, p_tag, p_afun" 
 LANGUAGE "Czech"

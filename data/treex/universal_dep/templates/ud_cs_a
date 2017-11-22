@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.1 - Czech"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.1/ud_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.1/cs-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.1/ud_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.1/cs-ud-train.vert"
 ENCODING utf-8
 INFO "The Czech UD treebank is based on the Prague Dependency Treebank 3.0 (PDT). The treebank consists of 87,913 sentences (1.5 M tokens) and its domain is mainly newswire, reaching also to business and popular scientific articles from the 1990s."
 LANGUAGE "Czech"

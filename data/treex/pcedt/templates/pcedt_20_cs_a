@@ -1,6 +1,6 @@
 NAME "Prague Czech-English Dependency Treebank 2.0"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/PCEDT/2.0/PCEDT_2.0_cs-a"
 ENCODING utf-8
 INFO "PCEDT 2.0 is a manually parsed Czech-English parallel corpus sized over 1.2 million words in almost 50,000 sentences for each part. PCEDT 2.0 is enchanced with a manual linguistic annotation up to tectogrammatical layer. Via KonText, one can search by word, lemma, tag and afun(shallow syntactic function)"
 LANGUAGE "Czech English"

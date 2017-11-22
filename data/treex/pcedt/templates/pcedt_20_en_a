@@ -1,6 +1,6 @@
 NAME "Prague Czech-English Dependency Treebank 2.0 - English - with POS tags and AFUN"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/PCEDT/2.0/PCEDT_2.0_en-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/PCEDT/2.0/PCEDT_2.0_en-a"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/PCEDT/2.0/PCEDT_2.0_en-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/PCEDT/2.0/PCEDT_2.0_en-a"
 ENCODING utf-8
 INFO "Prague Czech-English Dependency Treebank 2.0 - English - with POS tags and AFUN"
 LANGUAGE "English"

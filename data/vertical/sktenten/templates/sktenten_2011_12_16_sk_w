@@ -1,6 +1,6 @@
 NAME "Slovak TenTen Corpus (2011-12-16)"
-PATH /opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/skTenTen/2011-12-16/skTenTen_2011-12-16_sk-w"
 ENCODING utf-8
 INFO "Slovak large web corpus skTenTen, comprising 876,003,720 tokens."
 LANGUAGE "Slovak"

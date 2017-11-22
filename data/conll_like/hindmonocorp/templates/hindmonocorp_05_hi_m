@@ -1,6 +1,6 @@
 NAME "HindMonoCorp 0.5 - Hindi"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/HindMonoCorp/0.5/HindMonoCorp_0.5-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/HindMonoCorp/0.5/HindMonoCorp_0.5-m"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/HindMonoCorp/0.5/HindMonoCorp_0.5-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/HindMonoCorp/0.5/HindMonoCorp_0.5-m"
 ENCODING utf-8
 INFO "HindMonoCorp 0.5 is a Hindi monolingual corpus. It is based primarily on web crawls performed using various tools and at various times. "
 LANGUAGE "Hindi"

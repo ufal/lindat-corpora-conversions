@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - Japanese"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_ja-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/ja-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_ja-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/ja-ud-train.vert"
 ENCODING utf-8
 INFO "This treebank is produced by automatically converting Kaede treebank, which is built over the source material of Kyoto corpus."
 LANGUAGE "Japanese"

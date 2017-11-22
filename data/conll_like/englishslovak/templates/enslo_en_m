@@ -1,6 +1,6 @@
 NAME "English-Slovak parallel corpus"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/parallel/EnglishSlovak/EnglishSlovak_en-m"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/parallel/EnglishSlovak/EnglishSlovak_en-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/EnglishSlovak/EnglishSlovak_en-m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/EnglishSlovak/EnglishSlovak_en-m"
 ENCODING utf-8
 INFO "EnglishSlovak - English"
 LANGUAGE "English"

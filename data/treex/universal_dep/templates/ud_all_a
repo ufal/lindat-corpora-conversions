@@ -1,6 +1,6 @@
 NAME "Universal Dependencies 1.2 - several languages"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.2/ud_all-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.2/all-ud-train.vert"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.2/ud_all-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.2/all-ud-train.vert"
 ENCODING utf-8
 INFO "Joint dependencies: concatenated 5000 sentences from 33 treebanks. To be searched only for grammatical attributes."
 LANGUAGE "English"

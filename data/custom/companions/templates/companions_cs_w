@@ -1,6 +1,6 @@
 NAME "Companions"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/speech/Companions"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/speech/Companions"
+PATH "/opt/lindat/kontext-data/corpora/data/speech/Companions/Companions_2014-01-10_cs-w"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/speech/Companions/Companions_2014-01-10_cs-w"
 ENCODING utf-8
 INFO "The corpus contains Czech expressive speech recorded using scenario-based approach by a professional female speaker. The scenario was created on the basis of previously recorded natural dialogues between a computer and seniors."
 INFOHREF "http://hdl.handle.net/11858/00-097C-0000-0023-1D76-9"
@@ -21,6 +21,7 @@ ATTRIBUTE lc {
         TRANSQUERY yes
 }
 STRUCTURE doc {
+	ATTRIBUTE id
     ATTRIBUTE wordcount
 }
 
