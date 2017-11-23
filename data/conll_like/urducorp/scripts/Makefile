@@ -19,7 +19,7 @@ $(call output_path,$(1)):
 	@for file in $(input_dir)/*; do \
 		echo -n "Processing file $$$$file ..."; \
 		echo "<doc id=\"Urdu Corpus\">" >>$$@; \
-		cut $$$$file -f$(2) | cat -n | sed 's/^ *\([0-9][0-9]*\)\t\(.*\)$$$$/<s id="\1">\n\2\n<\/s>/' | sed '/|/s/ /\n/g;s/|/\t/g; s/\t\t/|\t/' >>$$@; \
+		cut $$$$file -f$(2) | cat -n | sed 's/^ *\([0-9][0-9]*\)\t\(.*\)$$$$/<s id="\1">\n\2\n<\/s>/' | sed '/|/s/ /\n/g; s/||/|\t/g; s/|/\t/g; s/\t\t/|\t/g' >>$$@; \
 		echo "</doc>" >>$$@; \
 		echo " DONE"; \
 	done
