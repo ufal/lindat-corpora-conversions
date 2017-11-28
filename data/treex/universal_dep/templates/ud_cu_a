@@ -10,11 +10,11 @@ DOCSTRUCTURE doc
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "it_IT.UTF-8"
+        LOCALE "ru_RU.UTF-8"
 }
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
-        LOCALE "it_IT.UTF-8"
+        LOCALE "ru_RU.UTF-8"
 }
 ATTRIBUTE pos {
         TYPE "FD_FGD"
@@ -29,11 +29,11 @@ ATTRIBUTE deprel {
 
 ATTRIBUTE p_word {
           TYPE "FD_FGD"
-          LOCALE "it_IT.UTF-8"
+          LOCALE "ru_RU.UTF-8"
 }
 ATTRIBUTE p_lemma {
           TYPE "FD_FGD"
-          LOCALE "it_IT.UTF-8"
+          LOCALE "ru_RU.UTF-8"
 }
 ATTRIBUTE p_pos {
           TYPE "FD_FGD"

@@ -1,4 +1,4 @@
-NAME "Universal Dependencies 1.3 - Japan"
+NAME "Universal Dependencies 1.3 - Japanese"
 PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.3/ud_ja_ktc-a"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/1.3/ud_ja_ktc-a"
 ENCODING utf-8
