@@ -29,14 +29,14 @@ while (@ARGV) {
 }
 
 if ($HELP) {
-    print "Usage ./split-sentences.perl (-l [en|de|...]) [-q] [-b] < textfile > splitfile\n";
+    print "Usage: ./split-sentences.perl (-l [en|de|...]) [-q] [-b] < textfile > splitfile\n";
     print "-q: quiet mode\n";
     print "-b: no output buffering (for use in bidirectional pipes)\n";
+    print "  Sentences on input may span over multiple lines.\n";
+    print "  Paragraphs on input are delimited by blank lines or <p>.\n";
+    print "  Paragraphs on output are delimited by <P>.\n";
+    print "  Sentences on output are delimited by line breaks.\n";
     exit;
-}
-if (!$QUIET) {
-	print STDERR "Sentence Splitter v3\n";
-	print STDERR "Language: $language\n";
 }
 
 my $prefixfile = "$mydir/nonbreaking_prefix.$language";
@@ -48,6 +48,12 @@ if (!(-e $prefixfile)) {
 	die ("ERROR: No abbreviations files found in $mydir\n") unless (-e $prefixfile);
 }
 
+if (!$QUIET) {
+	print STDERR "Sentence Splitter v3\n";
+	print STDERR "Language: $language\n";
+    print STDERR "Prefixfile: $prefixfile\n";
+}
+
 if (-e "$prefixfile") {
 	open(PREFIX, "<:utf8", "$prefixfile") or die "Cannot open: $!";
 	while (<PREFIX>) {
@@ -56,6 +62,8 @@ if (-e "$prefixfile") {
 		if (($item) && (substr($item,0,1) ne "#")) {
 			if ($item =~ /(.*)[\s]+(\#NUMERIC_ONLY\#)/) {
 				$NONBREAKING_PREFIX{$1} = 2;
+			} elsif ($item =~ /(.*)[\s]+(\#ABBR\#)/) {
+				$NONBREAKING_PREFIX{$1} = 3;
 			} else {
 				$NONBREAKING_PREFIX{$item} = 1;
 			}
@@ -65,29 +73,17 @@ if (-e "$prefixfile") {
 }
 
 ##loop text, add lines together until we get a blank line or a <p>
-my $text = "";
+my $text = '';
 while(<STDIN>) {
-	chop;
-	if (/^<.+>$/ || /^\s*$/) {
-		#time to process this block, we've hit a blank or <p>
-		&do_it_for($text,$_);
-		print "<P>\n" if (/^\s*$/ && $text); ##if we have text followed by <P>
-		$text = "";
-	}
-	else {
-		#append the text, with a space
-		$text .= $_. " ";
-	}
+	chomp;
+	&do_it_for($_);
 }
-#do the leftover text
-&do_it_for($text,"") if $text;
-
 
 sub do_it_for {
-	my($text,$markup) = @_;
+	my($text) = shift;
 	print &preprocess($text) if $text;
-	print "$markup\n" if ($markup =~ /^<.+>$/);
-	#chop($text);
+	print "\n" unless $text =~ /\n$/;
+	#add trailing break
 }
 
 sub preprocess {
@@ -104,16 +100,19 @@ sub preprocess {
 	#####add sentence breaks as needed#####
 
 	#non-period end of sentence markers (?!) followed by sentence starters.
-	$text =~ s/([?!]) +([\'\"\(\[\¿\¡\p{IsPi}]*[\p{IsUpper}])/$1\n$2/g;
+	$text =~ s/([?!]) +([\'\"\(\[\¿\¡\p{IsPi}]*[\p{IsUpper}])/$1 \n $2/g;
 
 	#multi-dots followed by sentence starters
-	$text =~ s/(\.[\.]+) +([\'\"\(\[\¿\¡\p{IsPi}]*[\p{IsUpper}])/$1\n$2/g;
+	$text =~ s/(\.[\.]+) +([\'\"\(\[\¿\¡\p{IsPi}]*[\p{IsUpper}])/$1 \n $2/g;
 
 	# add breaks for sentences that end with some sort of punctuation inside a quote or parenthetical and are followed by a possible sentence starter punctuation and upper case
-	$text =~ s/([?!\.][\ ]*[\'\"\)\]\p{IsPf}]+) +([\'\"\(\[\¿\¡\p{IsPi}]*[\ ]*[\p{IsUpper}])/$1\n$2/g;
+	$text =~ s/([?!\.][\ ]*[\'\"\)\]\p{IsPf}]+) +([\'\"\(\[\¿\¡\p{IsPi}]*[\ ]*[\p{IsUpper}])/$1 \n $2/g;
 
 	# add breaks for sentences that end with some sort of punctuation are followed by a sentence starter punctuation and upper case
-	$text =~ s/([?!\.]) +([\'\"\(\[\¿\¡\p{IsPi}]+[\ ]*[\p{IsUpper}])/$1\n$2/g;
+	$text =~ s/([?!\.]) +([\'\"\(\[\¿\¡\p{IsPi}]+[\ ]*[\p{IsUpper}])/$1 \n $2/g;
+
+    $text =~ s/(\s\p{IsUpper}.{0,6}\.)([0-9]+[\s\p{IsPunctuation}])/$1 $2/g;   # missing space between book name and chapter number
+    $text =~ s/  */ /g;
 
 	# special punctuation cases are covered. Check all remaining periods.
 	my $word;
@@ -129,10 +128,20 @@ sub preprocess {
 				#not breaking;
 			} elsif ($words[$i] =~ /(\.)[\p{IsUpper}\-]+(\.+)$/) {
 				#not breaking - upper case acronym
+			} elsif ($words[$i] =~ /^([\dIVXC]+|\p{IsUpper}.{0,6})\.$/ && $words[$i+1] =~ /^\p{IsUpper}.{0,6}\.\p{IsPunctuation}?$/ ) {
+                # not breaking inside a sequence of words ending in periods (possibly followed by other punctuation)
+			} elsif ($words[$i+2] && $words[$i] =~ /^[\dIVXC]+\.$/ && $words[$i+1] =~ /^\p{IsUpper}/ && $words[$i+2] =~ /^[\p{Isupper}\p{Number}]/) {
+                # not breaking after ordinal number followed by what might be a book title
+            } elsif ($words[$i] =~ /^\p{IsUpper}.{0,6}\.$/ && $words[$i+1] =~ /^[\p{IsNumber}IVXC]+/) {
+                # abbreviation followed by a (possibly Roman) number - probably chapter/section number
 			} elsif($words[$i+1] =~ /^([ ]*[\'\"\(\[\¿\¡\p{IsPi}]*[ ]*[\p{IsUpper}0-9])/) {
 				#the next word has a bunch of initial quotes, maybe a space, then either upper case or a number
 				$words[$i] = $words[$i]."\n" unless ($prefix && $NONBREAKING_PREFIX{$prefix} && $NONBREAKING_PREFIX{$prefix} == 2 && !$starting_punct && ($words[$i+1] =~ /^[0-9]+/));
 				#we always add a return for these unless we have a numeric non-breaker and a number start
+			} elsif($words[$i+2] && $words[$i+1] =~ /^<[^>]*>$/ && $words[$i+2] =~ /^([ ]*[\'\"\(\[\¿\¡\p{IsPi}]*[ ]*[\p{IsUpper}0-9])/) {
+				#between this and the next word is a tag AND the next word has a bunch of initial quotes, maybe a space, then either upper case or a number
+				$words[$i] = $words[$i]."\n";
+				#we always add a return for these
 			}
 
 		}
@@ -148,9 +157,6 @@ sub preprocess {
 	$text =~ s/ \n/\n/g;
 	$text =~ s/^ //g;
 	$text =~ s/ $//g;
-
-	#add trailing break
-	$text .= "\n" unless $text =~ /\n$/;
 
 	return $text;
 
