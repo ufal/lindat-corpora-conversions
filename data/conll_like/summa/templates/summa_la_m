@@ -26,15 +26,21 @@ ATTRIBUTE lc {
         TRANSQUERY yes
 }
 
-STRUCTURE doc {
-    ATTRIBUTE id
+STRUCTURE pars {
+	ATTRIBUTE id
+	DISPLAYTAG 0
     ATTRIBUTE wordcount
 }
-
-STRUCTURE align {
+STRUCTURE p {
 }
-
 STRUCTURE s {
+}
+STRUCTURE h {
+    ATTRIBUTE level {
+      NUMERIC y
+    }
+}
+STRUCTURE i {
 }
 
 MAXCONTEXT 50

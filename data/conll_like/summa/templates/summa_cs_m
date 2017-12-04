@@ -65,18 +65,23 @@ ATTRIBUTE   c {
 	TYPE 	index
 }
 
-STRUCTURE doc {
+STRUCTURE pars {
 	ATTRIBUTE id
 	DISPLAYTAG 0
     ATTRIBUTE wordcount
 }
-
-STRUCTURE align {
-	ATTRIBUTE id
+STRUCTURE p {
 }
-
 STRUCTURE s {
 }
+STRUCTURE h {
+    ATTRIBUTE level {
+      NUMERIC y
+    }
+}
+STRUCTURE i {
+}
+
 
 MAXCONTEXT 50
 MAXDETAIL 50
