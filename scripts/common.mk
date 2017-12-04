@@ -18,7 +18,7 @@ cluster_params ?= -p -j 100
 else
 cluster_params ?=
 endif
-repository_server = josifko@lindat.mff.cuni.cz
+repository_server = vernerova@lindat.mff.cuni.cz
 python_metadata_tool = /sources/dspace-1.8.2/bits/tools/python-dspace-metadata/main.py
 python_metadata_dir = $(dir $(python_metadata_tool))
 extract_filename = $(shell echo -n "$(1)" | rev | cut -d/ -f1 | rev)
@@ -68,10 +68,10 @@ $(registry_paths): clean_registry $(templates_paths)
 	ln -t $(registry_dir) -s "$$(readlink -e "$(templates_dir)/$(notdir $@)")"
 
 clean_registry:
-	rm -rI $(registry_paths)
+	rm -If $(registry_paths)
 
 clean_vertical:
-	rm -rI $(vertical_paths)
+	rm -If $(vertical_paths)
 
 compile: install
 	$(foreach registry_path,$(registry_paths),MANATEE_REGISTRY=$(registry_dir) compilecorp --no-sketches --recompile-corpus $(registry_path);)
