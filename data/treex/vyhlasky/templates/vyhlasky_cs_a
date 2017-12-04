@@ -1,0 +1,87 @@
+NAME "Vzorový korpus osmi pražských vyhlášek o psech"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/vyhlasky"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/vyhlasky/vyhlasky_cs-a"
+ENCODING utf-8
+INFO "The files were downloaded from http://www.praha.eu/jnp/cz/o_meste/vyhlasky_a_narizeni/vyhledavani_v_pravnich_predpisech/, manually cleaned from most of the html formatting and then run through a Treex pipeline. The attributes are: node, form, lemma, tag, afun, parent: p_form, p_lemma, p_tag, p_afun, p_distance (if parent is immediate/distant wrt to a node), p_position(if parent is left/right wrt to a node), effective parent: ep_form, ep_lemma, ep_tag, ep_afun, ep_distance, ep_position"
+LANGUAGE "Czech"
+
+SHORTREF "=doc.id"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_form {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE p_tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE p_afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_distance {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_position {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ep_form {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ep_lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ep_tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ep_afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ep_distance {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ep_position {
+        TYPE "FD_FGD"
+}
+
+STRUCTURE s {
+}
+
+STRUCTURE doc {
+    ATTRIBUTE title
+    ATTRIBUTE ucinnost
+    ATTRIBUTE content    
+    ATTRIBUTE sbirka
+    ATTRIBUTE id
+    ATTRIBUTE vydani
+}
+
+MAXCONTEXT 100
+MAXDETAIL 100
+

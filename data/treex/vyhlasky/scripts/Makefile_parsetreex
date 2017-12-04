@@ -1,27 +1,28 @@
 #(partially copied from Ondrej Dusek script with cnk)
 SHELL = bash
-PLAIN_PATH=/net/cluster/TMP/vernerova/kontext/cwc/input
-TMP_PATH=/net/cluster/TMP/vernerova/kontext/cwc/tmp
-PARSE_PATH=/net/cluster/TMP/vernerova/kontext/cwc/output
-TMP_PATH_TEST=/net/cluster/TMP/vernerova/kontext/cwc/tmp_test
-PARSE_PATH_TEST=/net/cluster/TMP/vernerova/kontext/cwc/output_test
-OUTFILE=/net/cluster/TMP/vernerova/kontext/cwc/output/vertical_all
+PLAIN_PATH=/net/cluster/TMP/vernerova/kontext/vyhlasky/input
+TMP_PATH=/net/cluster/TMP/vernerova/kontext/vyhlasky/tmp
+PARSE_PATH=/net/cluster/TMP/vernerova/kontext/vyhlasky/output
+TMP_PATH_TEST=/net/cluster/TMP/vernerova/kontext/vyhlasky/tmp_test
+PARSE_PATH_TEST=/net/cluster/TMP/vernerova/kontext/vyhlasky/output_test
+OUTFILE=/net/cluster/TMP/vernerova/kontext/vyhlasky/output/vertical_all
 
-#OUTFOLDER=/net/cluster/TMP/vernerova/kontext/cwc/output
-PARALLEL=1
+#OUTFOLDER=/net/cluster/TMP/vernerova/kontext/vyhlasky/output
+PARALLEL=0
 ifdef P # Shortcut P -> PARALLEL
   PARALLEL := $(P)
 endif
 SCRIPTS=~/tectomt/treex/devel/analysis/cs/cnk/extras
 # "Survive" by default (turn off by setting empty value)
-SURVIVE := --survive
+#SURVIVE := --survive
+SURVIVE := ""
 
 # Parallel processing settings (default: 6 files per job per subdirectory)
 ifeq ($(PARALLEL), 1)
   QUEUE := '*'
   MEM=8G
   QPARAMS := "-q $(QUEUE)"
-  JOBS=50
+  JOBS=10
   FLAGS= --parallel --qsub=$(QPARAMS) --jobs=$(JOBS) $(SURVIVE) --mem=$(MEM)
 endif
 ifdef J # Shortcut J -> JOBS
@@ -43,12 +44,13 @@ prepare_subdirs:
 #parse: FILE=*.txt
 parse:        
 	treex --language=cs $(FLAGS) \
-		Read::Sentences from="!$(TMP_PATH)/*/*" \
+		Read::Text from="$(PLAIN_PATH)/raw_input.txt" \
+		W2A::CS::Segment \
 		W2A::CS::Tokenize \
                 W2A::CS::TagMorphoDiTa lemmatize=1 \
                 W2A::CS::FixMorphoErrors \
                 W2A::CS::ParseMSTAdapted \
-                Write::Manatee substitute={$(TMP_PATH)}{$(PARSE_PATH)}
+                Write::Manatee substitute={$(PLAIN_PATH)}{$(PARSE_PATH)}
 
 clean:
 	#rm -r $(PARSE_PATH)/_treex-run
@@ -56,7 +58,7 @@ clean:
 	rm -r $(PARSE_PATH)/d*
 
 split:
-	./split_to_dirs.pl $(TMP_PATH) 200 < $(PLAIN_PATH)/plain_concatenated
+	./split_to_dirs.pl $(TMP_PATH) 200 < $(PLAIN_PATH)/raw_input.txt
 
 concatenate:
 	echo "<doc>" > $(OUTFILE)
