@@ -1,0 +1,3 @@
+[submodule "data/vertical/parseme/mwe_gitrepo"]
+	path = data/vertical/parseme/mwe_gitrepo
+	url = https://github.com/natalink/mwe_noske
