@@ -1,0 +1,109 @@
+NAME "Parseme VMWE 1.0 - German"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/parseme/1.0/parseme_de-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/parseme/1.0/parseme_de-a"
+ENCODING utf-8
+INFO "The PARSEME shared task is a collection of corpora in 18 languages with annotation of verbal MWEs in running texts. Verbal MWEs include idioms (let the cat out of the bag), light verb constructions (make a decision), verb-particle constructions (give up), and inherently reflexive verbs (se suicider 'to suicide' in French). VMWEs were annotated according to universal guidelines. For most languages, parts of speech, lemmas, morphological features and/or syntactic dependencies are also provided."
+LANGUAGE "German"
+
+SHORTREF "=doc.id"
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+SUBCORPATTRS "doc.id"
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "de_DE.UTF-8"
+}
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "de_DE.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "de_DE.UTF-8"
+}
+
+ATTRIBUTE lemma_lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        ARG1 "C"
+        FUNTYPE s 
+        FROMATTR lemma
+        TYPE index
+        TRANSQUERY yes
+}
+
+ATTRIBUTE ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE upostag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE xpostag {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+ATTRIBUTE feats {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE head {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE nospaceafter {
+          TYPE "FD_FGD"
+}
+
+ATTRIBUTE vmwe_type {
+          TYPE "FD_FGD"
+	LOCALE "de_DE.UTF-8"
+          MULTIVALUE y
+          MULTISEP ";"
+}
+ATTRIBUTE vmwe_first {
+          TYPE "FD_FGD"
+        LOCALE "de_DE.UTF-8"
+          MULTIVALUE y
+          MULTISEP ";"
+}
+ATTRIBUTE vmwe_id {
+          TYPE "FD_FGD"
+        LOCALE "de_DE.UTF-8"
+          MULTIVALUE y
+          MULTISEP ";"
+}
+ATTRIBUTE vmwe_lemma {
+          TYPE "FD_FGD"
+	LOCALE "de_DE.UTF-8"
+          MULTIVALUE y
+          MULTISEP ";"
+}
+
+STRUCTURE doc {
+    ATTRIBUTE id
+    ATTRIBUTE "wordcount"
+}
+
+STRUCTURE s {
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
