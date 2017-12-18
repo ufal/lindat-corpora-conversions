@@ -40,7 +40,7 @@ ATTRIBUTE lemma_lc {
         TRANSQUERY yes
 }
 
-ATTRIBUTE ord {
+ATTRIBUTE id {
         TYPE "FD_FGD"
 }
 
@@ -66,29 +66,29 @@ ATTRIBUTE deprel {
         TYPE "FD_FGD"
 }
 
-ATTRIBUTE nospaceafter {
+ATTRIBUTE misc {
           TYPE "FD_FGD"
 }
 
-ATTRIBUTE vmwe_type {
+ATTRIBUTE mwe {
           TYPE "FD_FGD"
 	LOCALE "es_ES.UTF-8"
           MULTIVALUE y
           MULTISEP ";"
 }
-ATTRIBUTE vmwe_first {
+ATTRIBUTE mwe_order {
           TYPE "FD_FGD"
         LOCALE "es_ES.UTF-8"
           MULTIVALUE y
           MULTISEP ";"
 }
-ATTRIBUTE vmwe_id {
+ATTRIBUTE mwe_id {
           TYPE "FD_FGD"
         LOCALE "es_ES.UTF-8"
           MULTIVALUE y
           MULTISEP ";"
 }
-ATTRIBUTE vmwe_lemma {
+ATTRIBUTE mwe_lemma {
           TYPE "FD_FGD"
 	LOCALE "es_ES.UTF-8"
           MULTIVALUE y
