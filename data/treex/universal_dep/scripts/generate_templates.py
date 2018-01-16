@@ -6,7 +6,7 @@ from Cheetah.Template import Template
 treebankname=sys.argv[1]
 
 def get_fulllang(lang):
-    langmap = {'ar': 'Arabic', 'bn': 'Bengali', 'bg': 'Bulgarian', 'ca': 'Catalan', 'cs': 'Czech', 'cu': 'Church Slavonic','da': 'Danish', 'de': 'German', 'el': 'Greek','en': 'English', 'es': 'Spanish', 'et': 'Estonian', 'eu': 'Basque','fa': 'Persian', 'fi': 'Finnish', 'fr': 'French', 'ga': 'Irish', 'gl': 'Galician', 'grc': 'Greek', 'hi': 'Hindi', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'ja': 'Japan', 'kk': 'Kazakh', 'la': 'Latin', 'lv': 'Latvian', 'nl': 'Dutch', 'pl': 'Polish', 'pt': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'sk': 'Slovak',  'sl': 'Slovenian','sv': 'Swedish', 'ta': 'Tamil', 'te': 'Telugu', 'tr': 'Turkish', 'zh':'Chinese'}
+    langmap = {'ar': 'Arabic', 'bn': 'Bengali', 'bg': 'Bulgarian', 'ca': 'Catalan', 'cs': 'Czech', 'cu': 'Church Slavonic','da': 'Danish', 'de': 'German', 'el': 'Greek','en': 'English', 'es': 'Spanish', 'et': 'Estonian', 'eu': 'Basque','fa': 'Persian', 'fi': 'Finnish', 'fr': 'French', 'ga': 'Irish', 'gl': 'Galician', 'grc': 'Greek', 'hi': 'Hindi', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'ja': 'Japanese', 'kk': 'Kazakh', 'la': 'Latin', 'lv': 'Latvian', 'nl': 'Dutch', 'pl': 'Polish', 'pt': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'sk': 'Slovak',  'sl': 'Slovenian','sv': 'Swedish', 'ta': 'Tamil', 'te': 'Telugu', 'tr': 'Turkish', 'zh':'Chinese'}
     return langmap[lang]
 
 def get_locale(locales_abbr):

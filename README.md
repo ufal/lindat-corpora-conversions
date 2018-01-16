@@ -95,9 +95,9 @@ Install Treex from SVN as described here: http://ufal.mff.cuni.cz/treex/install.
 
 ## <a name="conv_proc"></a>Conversion process
 Corpora conversion and compilation are realized by the system of Makefiles as follows. 
-The corpus specific Makefile is stored in a directory script and it usually contains the conversion steps. 
+The corpus specific Makefile is stored in a directory `script` and it usually contains the conversion steps. 
 The common steps - like copying the corpora in vertical format and registry files into the sufficient place
-and executing *compilecorp* - are incorporated into common.mk. 
+and executing `compilecorp` - are incorporated into `common.mk`. 
 
 We have disabled the function of automatical downloading because of the security reasons, see the [commit](https://github.com/ufal/lindat-corpora-conversions/commit/cd9a26865fbf970f3aa71bcda5decf7c9fc1eda9#diff-217673f9edaf6c9c1a73a57462e208a8).
 
@@ -176,9 +176,16 @@ Prefixes:
 
 Shell script was created to easily convert the whole set of PDT documents to a single corpus.
 
-### <a name="treex-manatee"></a>Treex to Manatee
+### <a name="treex-manatee"></a>Treex and CoNLL-U to Manatee
 
-Conversion of treex files was implemenented in perl as a Block for Treex (Treex::Block::Write::Manatee). This block converts documents in treex to <doc> structures in vertical files for Manatee.
+Conversion of treex files was implemenented in perl as a Block for Treex `Treex::Block::Write::Manatee`.
+This block converts documents in treex to <doc> structures in vertical files for Manatee.
+
+As many corpora will be parsed by UD-pipe or a tool alike, there is a need for a common script to convert into Manatee.
+The script cloned from the respective block in Treex for Manatee was adjusted to the
+needs of UD, and it is still under the development `Treex::Block::Write::ManateeU`.
+For fused tokens, see #3.
+Detailed pipeline for converting UD-style corpora is described in [data/treex/universal_dep/scripts](data/treex/universal_dep/scripts).
 
 ### <a name="treex-view"></a>Tree visualisation
 The tree visualisation is implemented using the same mechanism as with audio files, see [issue 9](https://github.com/ufal/lindat-kontext/issues/9). In order for a syntactic tree to be displayed, the json files needed to be generated, which
@@ -189,56 +196,6 @@ treex Read::Treex from=cmpr9406_001.treex.gz bundles_per_doc=1 Write::ViewJSON p
 The IDs of the sentences in the vertical should correspond with the name of a respective json file, all json files
 are stored in the directory /opt/lindat/kontext-data/corpora/view_treex/$registry_filename . 
 
-### <a name="conllu-manatee"></a>CoNLL-U to Manatee
-As the corpora will be parsed by UD-pipe or a tool alike, there is a need for a common script to convert into Manatee.
-The script cloned from the respective block in Treex for Manatee was adjusted to the
-needs of UD, and it is still under the development (Treex::Block::Write::ManateeU).
-
-Following the [issue 3](https://github.com/ufal/lindat-corpora-conversions/issues/3) the script to process 
-fused tokens was created, but there are still issues to be resolved. 
-
-## <a name="ud-conversion"></a> Whole pipeline of UD processing on the cluster
-### Conversion
-```bash
-# SSH to the cluster:
-ssh lrc1 (or troja - in this case all data should be stored in troja)
-# Use screen
-screen
-
-#Create directory in cluster TMP directory: 
-mkdir -p /net/cluster/TMP/$USER/kontext/ud20
-mkdir input output scripts input.sample tree-view treex
-
-# Download UD data from the repository (e.g. using wget)
-
-# Chomp some sample into input.sample to test if the script does things correctly (optional), then change paths in ud_convert
-
-# Copy scripts from some older UD version, e.g.:
-cp /net/cluster/TMP/kljueva/kontext/ud/scripts . #at least one script should be in theory synchronized with kontext-dev:/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/scripts/ud_convert.sh
-
-# adjust perl block https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm according to which attributes you need to generate 
-
-# Generate vertical, treex (and then jsons from treex)
-cd scripts & time ./ud_convert.sh  #generates files into the same directory!! it needs to be changed
-
-# Leave screen
-exit
-# Move all the data to kontext-dev:
-
-ssh quest & kontext-dev & cd /opt/projects/lindat-services-kontext/devel/data/corpora/conversions/data/treex/universal_dep/
-cd input # %TODO change paths in ud_convert.sh, now everything is stored into input folder 
-
-# SCP vertical to kontext-dev:
-scp $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/*-train.vert output
-cd output &for file in *; do echo $(basename $file); rename 's/(.*?)-ud-train.vert/ud_$1-a/' $(basename $file); done
- # rename vertical files according to what is in registry
-
-# SCP jsons to kontext-dev:
-scp -r $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/ud_20_*_a /opt/projects/lindat-services-kontext/devel/data/corpora/view_treex
-
-# Clean up (optional, or at least remove treex folder)
-rm -r /net/cluster/TMP/$USER/kontext/ud20
-```
 ### Compilation
 1. Adjust registry files in the directory **templates** according to the used attributes. Alternitevely, use generate_templates.py to generate the new ones; this script will also generate XML you have to put to config.xml.
 2. The script to process fused tokens [manatee_conllu-w2t.py](https://github.com/ufal/lindat-corpora-conversions/commit/d1fd25464a382820229ebf7ec969236d40971993) can be applied to the corpora, but further testing is needed - see [comment](https://github.com/ufal/lindat-corpora-conversions/issues/3#issuecomment-298621358). This script does not work on cyan (but on quest it does).
