@@ -8,7 +8,7 @@ form lemma pos ufeatures deprel parent_form parent_lemma parent_pos parent_ufeat
 ```
 After the new version of KonText will be released, we will be able to use global conditions and search for attributes 
 of a parent via its id. 
-For more, see #11
+For more, see [#11](https://github.com/ufal/lindat-corpora-conversions/issues/11)
 
 ## Autogenerate registry
 
@@ -23,7 +23,7 @@ Should we include it into UD, and thus those treebanks will be inconsistent with
 
 ## Process fused tokens
 
-All related discussion can be found in #3.
+All related discussion can be found in [#3](https://github.com/ufal/lindat-corpora-conversions/issues/3) .
 `process_fusion.py` was the original script intended for preprocessing the data before using treex.
 `manatee_conllu-w2t.py` is a later solution to the problem of fused tokens.
 
