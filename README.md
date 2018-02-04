@@ -29,7 +29,7 @@ On `kontext-new`, both of these paths will be available after running `mount`,
 while on `kontext-dev`, only the development data is visible.
 ```
 production data:    /export/KONTEXT/kontext/corpora
-development data:   /export/KONTEXT/kontext-dev/corpora                                  = symlink to ^
+development data:   /export/KONTEXT/kontext-dev/corpora
 ```
 (Note that the production directory has only `kontext` in its name.)
 
@@ -62,10 +62,33 @@ vert           # vertical text files (corpora data; symlinks to conversions/**/o
 This directory contains conversion utilities for converting corpora into LINDAT KonText format.
 Corpora utilities are grouped in subdirectories by the input format.
 
-* conll_like - input files have form of a tab delimited columns
-* custom - input files have custom formats
-* treex - input files are processable by treex perl framework
-* vertical - input file are already in output format
+```
+conll_like     # input files have form of a tab delimited columns
+custom         # input files have custom formats
+treex          # input files are processable by treex perl framework
+vertical       # input file are already in output format
+
+all            # contains links to all subfolders of the other four folders
+```
+
+The standard structure of the directory of each corpus is as follows:
+
+```diff
+input          # the original data as downloaded from Lindat or elsewhere,
+               # possibly with local edits that are tracked in the "local" git branch
+               # but not commited to github
+templates      # Manatee registry files
+-               # !!! BEWARE: common.mk will try to compile each file present in this directory  !!!
+-               # !!! which involves deleting the old content of the dir specified in PATH       !!!
+-               # !!! variable in the template; placing non-templates into this dir may          !!!
+-               # !!!                      ERASE THE WHOLE HARD-DRIVE                            !!!
+scripts        # Makefile, which typically includes common.mk, for converting the input data
+               #   into the vertical format and then feeding it to compilecorp
+               # any scripts needed for the conversion of input into vertical
+               # any other files (documentation etc.)
+output         # vertical format, typically created automatically by "cd scripts; make"
+```
+
 
 ### Tools
 
