@@ -1,13 +1,13 @@
 #(partially copied from Ondrej Dusek script with cnk)
 SHELL = bash
-PLAIN_PATH=/net/cluster/TMP/kljueva/kontext/cwc/input
-TMP_PATH=/net/cluster/TMP/kljueva/kontext/cwc/tmp
-PARSE_PATH=/net/cluster/TMP/kljueva/kontext/cwc/output
-TMP_PATH_TEST=/net/cluster/TMP/kljueva/kontext/cwc/tmp_test
-PARSE_PATH_TEST=/net/cluster/TMP/kljueva/kontext/cwc/output_test
-OUTFILE=/net/cluster/TMP/kljueva/kontext/cwc/output/vertical_all
+PLAIN_PATH=/net/cluster/TMP/vernerova/kontext/cwc/input
+TMP_PATH=/net/cluster/TMP/vernerova/kontext/cwc/tmp
+PARSE_PATH=/net/cluster/TMP/vernerova/kontext/cwc/output
+TMP_PATH_TEST=/net/cluster/TMP/vernerova/kontext/cwc/tmp_test
+PARSE_PATH_TEST=/net/cluster/TMP/vernerova/kontext/cwc/output_test
+OUTFILE=/net/cluster/TMP/vernerova/kontext/cwc/output/vertical_all
 
-#OUTFOLDER=/net/cluster/TMP/kljueva/kontext/cwc/output
+#OUTFOLDER=/net/cluster/TMP/vernerova/kontext/cwc/output
 PARALLEL=1
 ifdef P # Shortcut P -> PARALLEL
   PARALLEL := $(P)
@@ -42,7 +42,7 @@ prepare_subdirs:
 #parse: TARGET_PATH=$(PARSE_PATH)
 #parse: FILE=*.txt
 parse:        
-	treex -Lcs $(FLAGS) \
+	treex --language=cs $(FLAGS) \
 		Read::Sentences from="!$(TMP_PATH)/*/*" \
 		W2A::CS::Tokenize \
                 W2A::CS::TagMorphoDiTa lemmatize=1 \
