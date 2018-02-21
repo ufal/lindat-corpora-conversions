@@ -21,27 +21,31 @@ ATTRIBUTE lemma {
 ATTRIBUTE tag {
         TYPE "FD_FGD"
 }
-
 ATTRIBUTE ord {
         TYPE "FD_FGD"
 }
 
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+} 
+ATTRIBUTE p_ord {
+        TYPE "FD_FGD"
+} 
+
 ATTRIBUTE pdt_afun {
         TYPE "FD_FGD"
 }
-
-ATTRIBUTE pdt_head {
+ATTRIBUTE pdt_parent {
         TYPE "FD_FGD"
         LOCALE "cs_CZ.UTF-8"
 }
-
-ATTRIBUTE school_deprel {
+ATTRIBUTE pdt_p_ord {
         TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
 }
-
-ATTRIBUTE school_head {
-        TYPE "FD_FGD"
-} 
 
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase

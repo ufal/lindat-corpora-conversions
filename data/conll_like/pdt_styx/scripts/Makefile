@@ -23,7 +23,7 @@ $(call output_path,$(1)):
 		echo -n "Processing file $$$$file ..."; \
 		id=`basename $$$$file`; \
 		echo "<doc id=\"$$$$id\">" >>$$@; \
-        awk -v OFS='\t' '/^#/ {print "<s id=\"" substr($$$$0,2,length($$$$0)-2) "\">"; next}; /^\s*$$$$/ {print "</s>"; next}; $$2 {print $$$$2,$$$$3,$$$$4,$$$$1,$$$$5,$$$$6,$$$$7,$$$$8} ' $$$$file >>$$@; \
+        awk -v OFS='\t' 'function add_plus(num) {if (num<0) {return num } else {return "+" num}} /^#/ {print "<s id=\"" substr($$$$0,2,length($$$$0)-2) "\">"; next}; /^\s*$$$$/ {print "</s>"; next}; $$2 {print $$$$2,$$$$3,$$$$4,$$$$1,$$$$7,add_plus($$$$8-$$$$1),$$$$8,$$$$5,add_plus($$$$6-$$$$1),$$$$6} ' $$$$file >>$$@; \
 		echo "</doc>" >>$$@; \
 		echo " DONE"; \
 	done
