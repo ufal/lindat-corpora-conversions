@@ -9,8 +9,6 @@ vertical_subdir = $(vertical_dir)/monolingual/UrduCorp
 
 include $(ROOT_DIR)/../../../scripts/common.mk
 
-input_dir = $(ROOT_DIR)/input
-
 clean:
 	rm -I $(output_paths)
 	rm -rI $(tmp_dir)

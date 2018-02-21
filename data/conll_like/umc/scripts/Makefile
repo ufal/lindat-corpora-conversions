@@ -11,8 +11,6 @@ vertical_subdir = $(vertical_dir)/parallel/UMC/0.1
 
 include $(ROOT_DIR)/../../../scripts/common.mk
 
-input_dir =  $(ROOT_DIR)/input
-
 clean:
 	rm -f $(output_paths)
 	rm -rf $(tmp_dir)

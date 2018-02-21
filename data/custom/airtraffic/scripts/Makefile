@@ -14,7 +14,6 @@ convert: download mp3
 
 include $(ROOT_DIR)/../../../scripts/common.mk
 
-input_dir =  $(ROOT_DIR)/input
 input_paths = $(ROOT_DIR)/input/*
 output_file = $(name)_$(lang)-$(top_layer)
 output_path = $(output_dir)/$(output_file)
