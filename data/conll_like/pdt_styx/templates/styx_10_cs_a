@@ -1,0 +1,99 @@
+NAME "STYX 1.0"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/Styx/1.0/styx10_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/Styx/1.0/styx10_cs-a"
+ENCODING utf-8
+INFO "STYX 1.0 is a corpus of Czech sentences selected from the Prague Dependency treebank. The criterion for including sentences into STYX was their suitability for practicing Czech morphology and syntax in elementary schools. The sentences contain both the PDT annotations and the school sentence analyses. The school sentence analyses were created by transforming the PDT annotations using handcrafted rules. Altogether the STYX 1.0 corpus contains 11 655 sentences."
+LANGUAGE "Czech"
+
+SHORTREF "=doc.id"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE article
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE ord {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE pdt_afun {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE pdt_head {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+
+ATTRIBUTE school_deprel {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE school_head {
+        TYPE "FD_FGD"
+} 
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE   k {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    1
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   g {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    3
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+ATTRIBUTE   c {
+	DYNAMIC getnchar
+	DYNLIB  internal
+	ARG1    5
+	FUNTYPE i
+	FROMATTR tag
+	TYPE 	index
+}
+
+
+STRUCTURE doc {
+	ATTRIBUTE id
+}
+
+STRUCTURE s {
+	ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
