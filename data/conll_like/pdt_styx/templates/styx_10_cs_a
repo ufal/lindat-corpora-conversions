@@ -34,17 +34,38 @@ ATTRIBUTE parent {
 ATTRIBUTE p_ord {
         TYPE "FD_FGD"
 } 
+ATTRIBUTE p_word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+} 
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+} 
+ATTRIBUTE p_tag {
+        TYPE "FD_FGD"
+} 
+
 
 ATTRIBUTE pdt_afun {
         TYPE "FD_FGD"
 }
 ATTRIBUTE pdt_parent {
         TYPE "FD_FGD"
-        LOCALE "cs_CZ.UTF-8"
 }
 ATTRIBUTE pdt_p_ord {
         TYPE "FD_FGD"
+}
+ATTRIBUTE pdt_p_word {
+        TYPE "FD_FGD"
         LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE pdt_p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE pdt_p_tag {
+        TYPE "FD_FGD"
 }
 
 ATTRIBUTE lc {

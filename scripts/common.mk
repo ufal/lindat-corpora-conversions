@@ -23,7 +23,11 @@ python_metadata_tool = /sources/dspace-1.8.2/bits/tools/python-dspace-metadata/m
 python_metadata_dir = $(dir $(python_metadata_tool))
 extract_filename = $(shell echo -n "$(1)" | rev | cut -d/ -f1 | rev)
 extract_handle = $(shell echo -n "$(1)" | rev | cut -d/ -f2,3 | rev)
+
+ifndef input_paths
 input_paths = $(addprefix $(input_dir)/,$(foreach source_url,$(source_urls),$(call extract_filename,$(source_url))))
+endif
+
 #ifndef download_method
 #	download_method = scp
 #endif
@@ -54,7 +58,7 @@ $(tmp_dir):
 
 download: $(input_paths)
 
-convert: download $(output_paths)
+convert: $(input_paths) $(output_paths)
 
 install: $(registry_paths) $(vertical_paths) install_speech
 
@@ -75,3 +79,5 @@ clean_vertical:
 
 compile: install
 	$(foreach registry_path,$(registry_paths),MANATEE_REGISTRY=$(registry_dir) compilecorp --no-sketches --recompile-corpus $(registry_path);)
+
+.PHONY: download
