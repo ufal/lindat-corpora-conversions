@@ -1,6 +1,6 @@
 
 # Corpora conversion
-* [Introduction](#intro)
+* [Directory structure on kontext-dev and kontext-new](#dirs)
 * [Conversion utilities](#cu)
 * [Conversion process](#conv_proc)
  * [PDT to Manatee](#pdt-manatee)
@@ -10,7 +10,7 @@
 * [Conversion benchmarks](#benchmarks)
 * [List of corpora to convert](#corpora_list)
 
-## <a name="intro"></a>Introduction
+### Introduction
 
 Conversion of corpora from vertical text to binary format is done by the *compilecorp* tool provided by the manatee package.
 Two files are needed for the conversion: the vertical text (i.e. corpus) itself and a corpus configuration file that describes in detail the contents of the corpus.
@@ -19,10 +19,20 @@ The vertical text is documented here: https://www.sketchengine.co.uk/documentati
 The corpus configuration file is documented here: https://www.sketchengine.co.uk/corpus-configuration-file-all-features/<br />
 And a bit more about Creating a corpus in general is here: https://www.sketchengine.co.uk/documentation/preparing-a-text-corpus-for-the-sketch-engine-overview/
 
-### Directory structure
+## <a name="dirs"></a>Directory structure on kontext-dev and kontext-new
 
 The production server runs on a virtual machine called `kontext-new`;
 the development/staging servers run on machine called `kontext-dev`.
+Both are located on the `quest` machine;
+in order to be able to ssh directly to `kontext-dev/kontext-new` from your machine, add the following lines to your `.ssh/config`:
+```
+host kontext-dev
+  ProxyCommand ssh quest -W %h:%p
+  user your_username
+```
+If you are using ssh keys, you'll need to add the public key of your machine to the authorized keys on `quest`, and your quest public key to the authorized keys on `kontext-dev/kontext-new`.
+
+### Directory structure
 
 The data is situated in a NFS shared directory.
 On `kontext-new`, both of these paths will be available after running `mount`,
@@ -61,9 +71,7 @@ vert           vertical text files (corpora data; symlinks to conversions/**/out
 ```
 
 
-## <a name="cu"></a>Conversion utilities
-
-This directory contains conversion utilities for converting corpora into LINDAT KonText format.
+The `conversions` directory contains conversion utilities for converting corpora into LINDAT KonText format.
 Corpora utilities are grouped in subdirectories by the input format.
 
 ```
@@ -94,7 +102,7 @@ output         vertical format, typically created automatically by "cd scripts; 
 ```
 
 
-### Tools
+## <a name="cu"></a>Conversion utilities
 
 Conversion of corpora is performed on development environment only and realized by the following tools:
 
