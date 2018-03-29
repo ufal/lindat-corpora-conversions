@@ -101,6 +101,10 @@ scripts        Makefile, which typically includes common.mk, for converting the 
 output         vertical format, typically created automatically by "cd scripts; make"
 ```
 
+Besides the files in the above listed directories, you will have to edit the `corplist.xml` file with the configuration of the main KonText page.
+It is located in `/opt/{kontext,kontext-USERNAME}/configs`; on production, the history of the file is tracked in a local git repo.
+After upgrading `corplist.xml`, you have to run `pm2 restart KONTEXT-INSTANCE`.
+
 
 ## <a name="cu"></a>Conversion utilities
 
@@ -295,13 +299,15 @@ I find it useful to create these symlinks in my home folder on `kontext-new`:
 ```
 ln -s /export/KONTEXT/kontext-dev/corpora corpora-development
 ln -s /export/KONTEXT/kontext/corpora corpora-production
-ln -s /opt/kontext/configs/corplist.xml corplist.xml
+ln -s /opt/kontext/configs configs
 ```
 Copying the compiled corpus from development to production then consists of these steps:
 ```
 cp corpora-development/registry/TEMPLATE_NAME corpora-production/registry
 cp -r corpora-development/data/{monolingual,parallel,speech}/CORPUS_DIR_NAME corpora-production/data/CORRECT_SUBDIR
+cd configs
 vim corplist.xml   ### ADD THE RELEVANT ENTRY
+git commit -a      ### commit the updated corplist.xml to keep track of the changes
 pm2 restart kontext
 ```
 
