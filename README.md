@@ -290,7 +290,22 @@ STRUCTURE doc {
 In this case the system limits are too low. See the adjust limits section on Installation page.
 
 ## <a name="afterwards"></a>Finishing touches
-In order to have proper links between KonText, pmltq-web and the lindat repository, the following places need to be edited:
+Once you are finished with testing the compiled corpus on the development server (`kontext-dev`), you can copy/move it to production (`kontext-new`).
+I find it useful to create these symlinks in my home folder on `kontext-new`:
+```
+ln -s /export/KONTEXT/kontext-dev/corpora corpora-development
+ln -s /export/KONTEXT/kontext/corpora corpora-production
+ln -s /opt/kontext/configs/corplist.xml corplist.xml
+```
+Copying the compiled corpus from development to production then consists of these steps:
+```
+cp corpora-development/registry/TEMPLATE_NAME corpora-production/registry
+cp -r corpora-development/data/{monolingual,parallel,speech}/CORPUS_DIR_NAME corpora-production/data/CORRECT_SUBDIR
+vim corplist.xml   ### ADD THE RELEVANT ENTRY
+pm2 restart kontext
+```
+
+In order to have proper links between KonText, pmltq-web and the Lindat repository, the following places need to be edited:
 * ~~`/opt/lindat/kontext-config/config.xml`~~ `/opt/lindat/kontext/conf/corplist.xml`   (attributes `repo` and `pmltq` of the `corpus` entry; changes of this file do not require recompilation)
 * on the lindat repository, a person with the "service managers" priviledge has to go to "Edit this item -> Services" and fill in the appropriate values; for larger batches of changes, create a file containing repo handles and "key|value" pairs for the `featuredService.kontext` and `featuredService.pmltq` metadata and contact the lindat helpdesk
 
