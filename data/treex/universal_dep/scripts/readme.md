@@ -76,3 +76,20 @@ scp -r $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/ud_
 rm -r /net/cluster/TMP/$USER/kontext/ud20
 ```
  
+
+## File dependencies
+process_fusion.py
+  = original solution to the problem of fused tokens
+
+manatee_conllu-w2t.py
+  - import file_util
+  = later solution to the problem of fused tokens
+
+split_to_docs
+  = use the document name meta-information present in some treebanks
+
+process.sh
+  - python generate_templates.py
+      - with open('locale','r')
+
+ud_convert.sh

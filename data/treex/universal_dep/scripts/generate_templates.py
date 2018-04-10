@@ -5,10 +5,6 @@ import os
 from Cheetah.Template import Template
 treebankname=sys.argv[1]
 
-def get_fulllang(lang):
-    langmap = {'ar': 'Arabic', 'bn': 'Bengali', 'bg': 'Bulgarian', 'ca': 'Catalan', 'cs': 'Czech', 'cu': 'Church Slavonic','da': 'Danish', 'de': 'German', 'el': 'Greek','en': 'English', 'es': 'Spanish', 'et': 'Estonian', 'eu': 'Basque','fa': 'Persian', 'fi': 'Finnish', 'fr': 'French', 'ga': 'Irish', 'gl': 'Galician', 'grc': 'Greek', 'hi': 'Hindi', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'ja': 'Japanese', 'kk': 'Kazakh', 'la': 'Latin', 'lv': 'Latvian', 'nl': 'Dutch', 'pl': 'Polish', 'pt': 'Portuguese', 'ro': 'Romanian', 'ru': 'Russian', 'sk': 'Slovak',  'sl': 'Slovenian','sv': 'Swedish', 'ta': 'Tamil', 'te': 'Telugu', 'tr': 'Turkish', 'zh':'Chinese'}
-    return langmap[lang]
-
 def get_locale(locales_abbr):
     with open('locale','r') as loc:
         for line in loc.readlines():
@@ -25,19 +21,20 @@ class PrintTemplates:
 
     def printRegistry(self):
         has_orig_file = re.compile("la|lv|it")
-        templateDef = """NAME "Universal Dependencies 1.3 - $language"
-PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/UD/1.3/ud_$treebankname-a"
-VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.3/ud_$treebankname-a"
+        templateDef = """NAME "Universal Dependencies 2.2 - $treebankname"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/UD/2.2/ud_$treebankname-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/ud_$treebankname-a"
 ENCODING utf-8
-INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages."
+INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2, the training and development data released in April 2018 for the UD Shared Task."
 LANGUAGE "$language"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
-DOCSTRUCTURE doc
-#if $lang=='ar' or $lang=='he' or $lang=='fa':
-RIGHTTOLEFT righttoleft
-#end if 
-
+DOCSTRUCTURE doc"""
+        if $lang=='ar' or $lang=='he' or $lang=='fa':
+          templatedef += """
+RIGHTTOLEFT righttoleft"""
+        end if 
+        templatedef +="""
 ATTRIBUTE word {
         TYPE "FD_FGD"
         LOCALE "$locale"
