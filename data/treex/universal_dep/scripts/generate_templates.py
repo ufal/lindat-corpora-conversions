@@ -3,6 +3,7 @@ import sys
 import re
 import os
 from Cheetah.Template import Template
+import locale
 treebankname=sys.argv[1]
 
 def get_locale(locales_abbr):
@@ -12,6 +13,10 @@ def get_locale(locales_abbr):
                 return re.split('\s+', line)[0]
            # else:
            #     return locales_abbr
+#alllocale = locale.locale_alias
+#for k in alllocale.keys():
+#    print 'locale[%s] %s' % (k, alllocale[k])    
+
 
 
 class PrintTemplates:

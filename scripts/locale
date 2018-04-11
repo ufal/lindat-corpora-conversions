@@ -1,3 +1,5 @@
+# This file names the currently supported and somewhat tested locales.
+# If you have any additions please file a glibc bug report.
 aa_DJ.UTF-8 UTF-8
 aa_DJ ISO-8859-1
 aa_ER UTF-8
@@ -72,6 +74,8 @@ ca_AD ISO-8859-15
 ca_ES.UTF-8 UTF-8
 ca_ES ISO-8859-1
 ca_ES@euro ISO-8859-15
+ca_ES.UTF-8@valencia UTF-8
+ca_ES@valencia ISO-8859-15
 ca_FR.UTF-8 UTF-8
 ca_FR ISO-8859-15
 ca_IT.UTF-8 UTF-8
@@ -96,6 +100,7 @@ de_CH ISO-8859-1
 de_DE.UTF-8 UTF-8
 de_DE ISO-8859-1
 de_DE@euro ISO-8859-15
+de_LI.UTF-8 UTF-8
 de_LU.UTF-8 UTF-8
 de_LU ISO-8859-1
 de_LU@euro ISO-8859-15
@@ -113,9 +118,11 @@ en_BW ISO-8859-1
 en_CA.UTF-8 UTF-8
 en_CA ISO-8859-1
 en_DK.UTF-8 UTF-8
+en_DK.ISO-8859-15 ISO-8859-15
 en_DK ISO-8859-1
 en_GB.UTF-8 UTF-8
 en_GB ISO-8859-1
+en_GB.ISO-8859-15 ISO-8859-15
 en_HK.UTF-8 UTF-8
 en_HK ISO-8859-1
 en_IE.UTF-8 UTF-8
@@ -131,11 +138,15 @@ en_SG.UTF-8 UTF-8
 en_SG ISO-8859-1
 en_US.UTF-8 UTF-8
 en_US ISO-8859-1
+en_US.ISO-8859-15 ISO-8859-15
 en_ZA.UTF-8 UTF-8
 en_ZA ISO-8859-1
 en_ZM UTF-8
 en_ZW.UTF-8 UTF-8
 en_ZW ISO-8859-1
+eo.UTF-8 UTF-8
+eo ISO-8859-3
+eo_US.UTF-8 UTF-8
 es_AR.UTF-8 UTF-8
 es_AR ISO-8859-1
 es_BO.UTF-8 UTF-8
@@ -184,6 +195,9 @@ et_EE.ISO-8859-15 ISO-8859-15
 eu_ES.UTF-8 UTF-8
 eu_ES ISO-8859-1
 eu_ES@euro ISO-8859-15
+eu_FR.UTF-8 UTF-8
+eu_FR ISO-8859-1
+eu_FR@euro ISO-8859-15
 fa_IR UTF-8
 ff_SN UTF-8
 fi_FI.UTF-8 UTF-8
@@ -237,6 +251,7 @@ hu_HU.UTF-8 UTF-8
 hu_HU ISO-8859-2
 hy_AM UTF-8
 hy_AM.ARMSCII-8 ARMSCII-8
+ia UTF-8
 id_ID.UTF-8 UTF-8
 id_ID ISO-8859-1
 ig_NG UTF-8
@@ -257,6 +272,7 @@ ka_GE.UTF-8 UTF-8
 ka_GE GEORGIAN-PS
 kk_KZ.UTF-8 UTF-8
 kk_KZ PT154
+kk_KZ RK1048
 kl_GL.UTF-8 UTF-8
 kl_GL ISO-8859-1
 km_KH UTF-8
@@ -282,7 +298,6 @@ lt_LT.UTF-8 UTF-8
 lt_LT ISO-8859-13
 lv_LV.UTF-8 UTF-8
 lv_LV ISO-8859-13
-mag_IN UTF-8
 mai_IN UTF-8
 mg_MG.UTF-8 UTF-8
 mg_MG ISO-8859-15
@@ -339,6 +354,7 @@ ro_RO ISO-8859-2
 ru_RU.KOI8-R KOI8-R
 ru_RU.UTF-8 UTF-8
 ru_RU ISO-8859-5
+ru_RU.CP1251 CP1251
 ru_UA.UTF-8 UTF-8
 ru_UA KOI8-U
 rw_RW UTF-8
@@ -346,6 +362,7 @@ sa_IN UTF-8
 sc_IT UTF-8
 sd_IN UTF-8
 sd_IN@devanagari UTF-8
+sd_PK UTF-8
 se_NO UTF-8
 shs_CA UTF-8
 si_LK UTF-8
@@ -375,6 +392,7 @@ sv_FI ISO-8859-1
 sv_FI@euro ISO-8859-15
 sv_SE.UTF-8 UTF-8
 sv_SE ISO-8859-1
+sv_SE.ISO-8859-15 ISO-8859-15
 sw_KE UTF-8
 sw_TZ UTF-8
 ta_IN UTF-8
@@ -399,14 +417,17 @@ ts_ZA UTF-8
 tt_RU UTF-8
 tt_RU@iqtelif UTF-8
 ug_CN UTF-8
+ug_CN@latin UTF-8
 uk_UA.UTF-8 UTF-8
 uk_UA KOI8-U
 unm_US UTF-8
 ur_IN UTF-8
 ur_PK UTF-8
+uz_UZ.UTF-8 UTF-8
 uz_UZ ISO-8859-1
 uz_UZ@cyrillic UTF-8
 ve_ZA UTF-8
+vi_VN.TCVN TCVN5712-1
 vi_VN UTF-8
 wa_BE ISO-8859-1
 wa_BE@euro ISO-8859-15
