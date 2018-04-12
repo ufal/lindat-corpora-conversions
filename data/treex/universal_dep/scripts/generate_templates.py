@@ -4,15 +4,29 @@ import re
 import os
 from Cheetah.Template import Template
 import locale
-treebankname=sys.argv[1]
+filename=sys.argv[1]      # e.g. vi_vtb
+languagecode=sys.argv[2]  # e.g. vi
+language=sys.argv[3]      # e.g. Vietnamese
+corpname=sys.argv[4]      # e.g. VTB
 
-def get_locale(locales_abbr):
-    with open('locale','r') as loc:
+def get_locale(langcode):
+    if (langcode == 'cu'):   ## Old Church Slavonic
+        return 'ru_RU.UTF-8'   ## when cu_RU (Church Slavic) locale becomes available, it probably should be used; but really, I have no idea even whether the corpus is in Cyrillic or Glagolitic script - either way, the language uses characters that are not present in current Russian
+    elif (langcode == 'grc'):    ## Ancient Greek
+        return 'el_GR.UTF-8'
+    elif (langcode == 'la'):     ## Latin, we could rely on the default of en_US, but anyway
+        return 'en_US.UTF-8'
+    elif (langcode == 'fro'):    ## Old French
+        return 'fr_FR.UTF8'
+    elif (langcode == 'kmr'):    ## Kurmanji = Northern Kurdish
+        return 'ku_TR.UTF8'
+    elif (langcode == 'sme'):    ## North Sami, also can be coded as se
+        return 'se_NO.utf8';
+    else:
+      with open('locale','r') as loc:
         for line in loc.readlines():
-            if ( line.startswith(locales_abbr) and 'UTF-8' in line):# & line.startswith(locales_abbr):
-                return re.split('\s+', line)[0]
-           # else:
-           #     return locales_abbr
+            if ( line.startswith(langcode + "_")):
+                return line
 #alllocale = locale.locale_alias
 #for k in alllocale.keys():
 #    print 'locale[%s] %s' % (k, alllocale[k])    
@@ -25,21 +39,20 @@ class PrintTemplates:
         self.nameSpace = nameSpace	
 
     def printRegistry(self):
-        has_orig_file = re.compile("la|lv|it")
-        templateDef = """NAME "Universal Dependencies 2.2 - $treebankname"
-PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/UD/2.2/ud_$treebankname-a"
-VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/ud_$treebankname-a"
+        templateDef = """NAME "UD 2.2 - $language $corpname"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/2.2/ud_$filename-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/ud_$filename-a"
 ENCODING utf-8
 INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2, the training and development data released in April 2018 for the UD Shared Task."
 LANGUAGE "$language"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
 DOCSTRUCTURE doc"""
-        if $lang=='ar' or $lang=='he' or $lang=='fa':
-          templatedef += """
+        if languagecode=='ar' or languagecode=='he' or languagecode=='fa' or languagecode=='ur':
+          templateDef += """
 RIGHTTOLEFT righttoleft"""
-        end if 
-        templatedef +="""
+        templateDef +="""
+
 ATTRIBUTE word {
         TYPE "FD_FGD"
         LOCALE "$locale"
@@ -53,29 +66,43 @@ ATTRIBUTE lc {
         FROMATTR word
         TYPE index
         TRANSQUERY yes
+        LOCALE "$locale"
 }
 
 
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
         LOCALE "$locale"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE lemma_lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
-        ARG1 "C"
+        ARG1 "$locale"
         FUNTYPE s 
         FROMATTR lemma
         TYPE index
         TRANSQUERY yes
+        MULTIVALUE y
+        MULTISEP "|"
+        LOCALE "$locale"
 }
 
-ATTRIBUTE pos {
+ATTRIBUTE upos {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
-ATTRIBUTE ufeat {
+ATTRIBUTE xpos {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE feats {
         TYPE "FD_FGD"
         MULTIVALUE y
         MULTISEP "|"
@@ -83,9 +110,11 @@ ATTRIBUTE ufeat {
 
 ATTRIBUTE deprel {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
-ATTRIBUTE ord {
+ATTRIBUTE parent {
         TYPE "FD_FGD"
 }
 
@@ -99,31 +128,40 @@ ATTRIBUTE p_lemma {
         LOCALE "$locale"
 }
 
-ATTRIBUTE p_pos {
+ATTRIBUTE p_upos {
         TYPE "FD_FGD"
 }
 
-ATTRIBUTE p_ufeat {
+ATTRIBUTE p_xpos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE p_feats {
         TYPE "FD_FGD"
         MULTIVALUE y
         MULTISEP "|"
 }
+
 ATTRIBUTE p_deprel {
         TYPE "FD_FGD"
 }
-ATTRIBUTE p_ord {
+
+ATTRIBUTE deps {
         TYPE "FD_FGD"
 }
 
-ATTRIBUTE parent {
+ATTRIBUTE id {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE p_id {
         TYPE "FD_FGD"
 }
 
-ATTRIBUTE children {
-          TYPE "FD_FGD"
-          MULTIVALUE y
-          MULTISEP "|"
+
+ATTRIBUTE misc {
+        TYPE "FD_FGD"
 }
+
 
 STRUCTURE doc {
         ATTRIBUTE id
@@ -132,7 +170,7 @@ STRUCTURE doc {
 
 STRUCTURE s {
         ATTRIBUTE id
-#if $lang=='ar' or $lang=='ca' or $lang=='cs' or $lang=='es' or $lang=='et' or $treebankname=='la_ittb' or $treebankname=='es_ancora' or $lang=='nl' or $lang=='pl' or $lang=='pt' or $lang=='ta':
+#if $languagecode=='ar' or $languagecode=='ca' or $languagecode=='cs' or $languagecode=='es' or $languagecode=='et' or $filename=='la_ittb' or $filename=='es_ancora' or $languagecode=='nl' or $languagecode=='pl' or $languagecode=='pt' or $languagecode=='ta':
         ATTRIBUTE orig_file_sentence
 #end if
 }
@@ -147,30 +185,17 @@ MAXDETAIL 50
         return templ
 
     def printConf(self):
-        configDef = """		<corpus id="$registry" sentence_struct="s" features="morphology, syntax" num_tag_pos="16" keyboard_lang="$keyboard" repo="http://hdl.handle.net/11234/1-1699" pmltq="https://lindat.mff.cuni.cz/services/pmltq/#!/treebank/ud_$lang" />
+        configDef = """		<corpus id="$registry" sentence_struct="s" features="morphology, syntax" num_tag_pos="16" keyboard_lang="$keyboard" repo="http://hdl.handle.net/11234/1-1699" pmltq="https://lindat.mff.cuni.cz/services/pmltq/#!/treebank/ud$languagecode$filename" />
 """
         conf = Template(configDef, searchList=[nameSpace])
         return conf
 
 if __name__ == "__main__":
-    lang = re.split('_', treebankname)[0]
- 
-    if (lang == 'grc'):
-        language = 'Greek'
-        locale = 'el_GR.UTF-8'
-        keyboard = 'el'
-    elif (lang == 'la'):
-        language = 'Latin'
-        locale = 'en_US.UTF-8'
-        keyboard = 'en'
-    else:
-        language = get_fulllang(lang)
-        locale = get_locale(lang)
-        keyboard= locale.split("_", 1)[0]
-        #print locale
+    locale = str(get_locale(languagecode)).rstrip()
+    keyboard = locale.split("_", 1)[0]
 
-    registry_name = "ud_13_" + treebankname + "_a"
-    nameSpace = {'treebankname': treebankname, 'locale': locale, 'language': language, 'lang' : lang, 'keyboard' : keyboard, 'registry' : registry_name}
+    registry_name = "ud_22_" + filename + "_a"
+    nameSpace = {'filename': filename, 'locale': locale, 'language': language, 'languagecode' : languagecode, 'keyboard' : keyboard, 'registry' : registry_name, 'corpname': corpname}
 
     registry = PrintTemplates(nameSpace)
     basepath = os.path.dirname(__file__)

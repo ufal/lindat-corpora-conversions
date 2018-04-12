@@ -21,12 +21,6 @@ Use the script `split_to_docs.py` before conversions.
 Should we include it into UD, and thus those treebanks will be inconsistent with others?
    
 
-## Process fused tokens
-
-All related discussion can be found in [#3](https://github.com/ufal/lindat-corpora-conversions/issues/3) .
-`process_fusion.py` was the original script intended for preprocessing the data before using treex.
-`manatee_conllu-w2t.py` is a later solution to the problem of fused tokens.
-
 ## Whole conversion pipeline on the cluster (outdated?)
 
 ```bash
@@ -36,24 +30,21 @@ ssh lrc1 (or troja - in this case all data should be stored in troja)
 screen
 
 #Create directory in cluster TMP directory: 
-mkdir -p /net/cluster/TMP/$USER/kontext/ud20
-mkdir input output scripts input.sample tree-view treex
+mkdir -p /net/cluster/TMP/$USER/kontext/ud22
+mkdir input output scripts input.sample 
 
 # Download UD data from the repository (e.g. using wget)
 
 # Chomp some sample into input.sample to test if the script does things correctly (optional),
 # then change paths in ud_convert
 
-# Copy scripts from some older UD version, e.g.:
-cp /net/cluster/TMP/kljueva/kontext/ud/scripts . 
-# in theory, at least one script should be synchronized with 
-#kontext-dev:/opt/projects/lindat-services-kontext/devel/data/corpora/conversions/scripts/ud_convert.sh
+# Get the scripts from the git repo
 
 # adjust the perl block 
 # https://github.com/ufal/treex/blob/master/lib/Treex/Block/Write/ManateeU.pm 
 # according to which attributes you need to generate 
 
-# Generate vertical, treex (and then jsons from treex)
+# Generate vertical
 cd scripts & time ./ud_convert.sh  
 # TODO change paths in ud_convert.sh, now everything is stored into input folder 
 
@@ -69,27 +60,30 @@ scp $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/*-trai
 cd output &for file in *; do echo $(basename $file); rename 's/(.*?)-ud-train.vert/ud_$1-a/' $(basename $file); done
 # rename vertical files according to what is in registry
 
-# SCP jsons to kontext-dev:
-scp -r $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/ud_20_*_a /opt/projects/lindat-services-kontext/devel/data/corpora/view_treex
-
 # Clean up (optional, or at least remove treex folder)
-rm -r /net/cluster/TMP/$USER/kontext/ud20
+rm -r /net/cluster/TMP/$USER/kontext/ud22
 ```
  
 
 ## File dependencies
-process_fusion.py
-  = original solution to the problem of fused tokens
-
-manatee_conllu-w2t.py
-  - import file_util
-  = later solution to the problem of fused tokens
-
 split_to_docs
-  = use the document name meta-information present in some treebanks
+  = split original input files by document name meta-information that is present in some of them
+
+ud_convert.sh
+  = run this script on cluster to convert conllu to vertical (Manatee) format
 
 process.sh
   - python generate_templates.py
       - with open('locale','r')
+  = run this script on kontext-dev to create templates and move all files to their correct locations
 
-ud_convert.sh
+
+## Hints
+
+if treex complains of missing modules, first check that you are using at least version 5.18.2 of perl
+
+if not, run
+source /net/work/projects/perlbrew/init
+
+and see if it helps
+(after running it, cpanm -i will install to shared directories, which is what you probably want)

@@ -1,16 +1,14 @@
 #!/bin/bash
 template_dir=../templates
 links_filename=sample_list
-vertical_dir=/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/UD/1.3/
-registry_dir=/opt/projects/lindat-services-kontext/devel/data/corpora/registry
-data_dir=/opt/lindat/kontext-data/corpora/data/monolingual/UD/1.3
+vertical_dir=/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/
+registry_dir=/opt/lindat/kontext-data/corpora/registry
+data_dir=/opt/lindat/kontext-data/corpora/data/monolingual/UD/2.2
 input_dir=../input
 output_dir=../output
 
-echo "Performing cp ../templates/* to $registry_dir"
-#cp -u ../templates/* $registry_dir
 
-for vertical_file in $output_dir/ud_cs-a
+for input_corpus in $input_dir
 do
 	filename=$(basename "$vertical_file")
 	lang=`echo -n $filename | cut -d"-" -f1 | cut -d"_" -f2`
@@ -18,7 +16,7 @@ do
 	echo "Performing cp -u ../templates/* to $registry_dir"
         echo "LANGUAGE: $lang" 
 	echo "FULL: $lang_full"
-	python generate_templates.py $lang_full;
+	python generate_templates.py $lang_full $lang;
         cp -u ../templates/ud_13_$lang_full""_a $registry_dir
         echo "Performing cp -u $vertical_file $vertical_dir"
 	mkdir -p $vertical_dir
