@@ -2,20 +2,39 @@ NAME "Web Corpus of Czech, syntactically annotated"
 PATH "/opt/lindat/kontext-data/corpora/data/monolingual/cwc_parsed"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/parsed_cwc/parsedcwc_cs-a"
 ENCODING utf-8
-INFO "CWC corpus tagged with Featurama tagger and parsed up to analytical layer with MST parser (the corpus in LINDAT is in plain-text format only!!). The attributes are: node, form, lemma, tag, afun, parent: p_form, p_lemma, p_tag, p_afun, p_distance (if parent is immediate/distant wrt to a node), p_position(if parent is left/right wrt to a node), effective parent: ep_form, ep_lemma, ep_tag, ep_afun, ep_distance, ep_position"
+INFO "Web corpus of Czech, created in 2011. Contains newspapers+magazines, discussions, blogs. The original corpus is in plaintext format.
+      This version was tagged with the Featurama tagger and parsed up to analytical layer with MST parser. 
+      The attributes are: node, form, lemma, tag, afun, parent: p_form, p_lemma, p_tag, p_afun, p_distance (if parent is immediate/distant wrt to a node), p_position(if parent is left/right wrt to a node), effective parent: ep_form, ep_lemma, ep_tag, ep_afun, ep_distance, ep_position"
 LANGUAGE "Czech"
 
-SHORTREF ""
 TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE doc
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
         LOCALE "cs_CZ.UTF-8"
 }
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CS.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
         LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
 }
 ATTRIBUTE tag {
         TYPE "FD_FGD"
