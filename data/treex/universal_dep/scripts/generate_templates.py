@@ -77,19 +77,6 @@ ATTRIBUTE lemma {
         MULTISEP "|"
 }
 
-ATTRIBUTE lemma_lc {
-        DYNAMIC utf8lowercase
-        DYNLIB internal
-        ARG1 "$locale"
-        FUNTYPE s 
-        FROMATTR lemma
-        TYPE index
-        TRANSQUERY yes
-        MULTIVALUE y
-        MULTISEP "|"
-        LOCALE "$locale"
-}
-
 ATTRIBUTE upos {
         TYPE "FD_FGD"
         MULTIVALUE y
@@ -116,24 +103,34 @@ ATTRIBUTE deprel {
 
 ATTRIBUTE parent {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE p_word {
           TYPE "FD_FGD"
           LOCALE "$locale"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE p_lemma {
         TYPE "FD_FGD"
         LOCALE "$locale"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE p_upos {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE p_xpos {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE p_feats {
@@ -144,17 +141,25 @@ ATTRIBUTE p_feats {
 
 ATTRIBUTE p_deprel {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE deps {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 ATTRIBUTE id {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "-"
 }
 ATTRIBUTE p_id {
         TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
 }
 
 
