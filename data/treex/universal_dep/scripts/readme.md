@@ -65,17 +65,22 @@ rm -r /net/cluster/TMP/$USER/kontext/ud22
 ```
  
 
-## File dependencies
+## File dependencies and the order in which they are used
 split_to_docs
   = split original input files by document name meta-information that is present in some of them
+  without running this or a similar script, the beginning and end of original documents is marked only as a sentence attribute newdoc on the first sentence of the document
 
 ud_convert.sh
+  - run_treex.sh
+      wrapper for a single treex job because when I submitted treex directly, it did not find the Treex blocks
   = run this script on cluster to convert conllu to vertical (Manatee) format
+    (this requires checking out the directory universal_dep and whole Treex to the cluster, and possibly adjusting the paths in ud_convert and run_treex
 
 process.sh
   - python generate_templates.py
+      works only on kontext-dev because I was too lazy to install Cheetah (a python templating module) on cluster or another machine
       - with open('locale','r')
-  = run this script on kontext-dev to create templates and move all files to their correct locations
+  = run this script on kontext-dev to create the registry files and compile the vertical files
 
 
 ## Hints

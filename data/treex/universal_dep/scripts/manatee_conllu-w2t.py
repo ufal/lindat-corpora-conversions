@@ -1,1 +1,0 @@
-../../../../scripts/manatee_conllu-w2t.py
