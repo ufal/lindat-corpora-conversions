@@ -8,6 +8,9 @@ filename=sys.argv[1]      # e.g. vi_vtb
 languagecode=sys.argv[2]  # e.g. vi
 language=sys.argv[3]      # e.g. Vietnamese
 corpname=sys.argv[4]      # e.g. VTB
+dirname=sys.argv[5]       # e.g. UD_Vietnamese-VTB
+lindatrepo=""
+pmltqprefix=""
 
 def get_locale(langcode):
     if (langcode == 'cu'):   ## Old Church Slavonic
@@ -41,7 +44,7 @@ class PrintTemplates:
     def printRegistry(self):
         templateDef = """NAME "UD 2.2 - $language $corpname"
 PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/2.2/ud_$filename-a"
-VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/ud_$filename-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/$dirname"
 ENCODING utf-8
 INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2, the training and development data released in April 2018 for the UD Shared Task."
 LANGUAGE "$language"
@@ -95,13 +98,13 @@ ATTRIBUTE feats {
         MULTISEP "|"
 }
 
-ATTRIBUTE deprel {
+ATTRIBUTE parent {
         TYPE "FD_FGD"
         MULTIVALUE y
         MULTISEP "|"
 }
 
-ATTRIBUTE parent {
+ATTRIBUTE deprel {
         TYPE "FD_FGD"
         MULTIVALUE y
         MULTISEP "|"
@@ -151,6 +154,10 @@ ATTRIBUTE deps {
         MULTISEP "|"
 }
 
+ATTRIBUTE misc {
+        TYPE "FD_FGD"
+}
+
 ATTRIBUTE id {
         TYPE "FD_FGD"
         MULTIVALUE y
@@ -162,22 +169,17 @@ ATTRIBUTE p_id {
         MULTISEP "|"
 }
 
-
-ATTRIBUTE misc {
-        TYPE "FD_FGD"
-}
-
-
 STRUCTURE doc {
-        ATTRIBUTE id
+    ATTRIBUTE id
     ATTRIBUTE wordcount
 }
 
 STRUCTURE s {
-        ATTRIBUTE id
-#if $languagecode=='ar' or $languagecode=='ca' or $languagecode=='cs' or $languagecode=='es' or $languagecode=='et' or $filename=='la_ittb' or $filename=='es_ancora' or $languagecode=='nl' or $languagecode=='pl' or $languagecode=='pt' or $languagecode=='ta':
-        ATTRIBUTE orig_file_sentence
-#end if
+    ATTRIBUTE id
+	ATTRIBUTE text
+	ATTRIBUTE orig_file_sentence
+    ATTRIBUTE newdoc
+    ATTRIBUTE newpar
 }
 
 
@@ -190,7 +192,7 @@ MAXDETAIL 50
         return templ
 
     def printConf(self):
-        configDef = """		<corpus id="$registry" sentence_struct="s" features="morphology, syntax" num_tag_pos="16" keyboard_lang="$keyboard" repo="http://hdl.handle.net/11234/1-1699" pmltq="https://lindat.mff.cuni.cz/services/pmltq/#!/treebank/ud$languagecode$filename" />
+        configDef = """		<corpus ident="$registry" sentence_struct="s" features="morphology, syntax" keyboard_lang="$keyboard" repo="$lindatrepo" pmltq="$pmltqlink" />
 """
         conf = Template(configDef, searchList=[nameSpace])
         return conf
@@ -200,7 +202,8 @@ if __name__ == "__main__":
     keyboard = locale.split("_", 1)[0]
 
     registry_name = "ud_22_" + filename + "_a"
-    nameSpace = {'filename': filename, 'locale': locale, 'language': language, 'languagecode' : languagecode, 'keyboard' : keyboard, 'registry' : registry_name, 'corpname': corpname}
+    pmltqlink = pmltqprefix   #TODO: adjust
+    nameSpace = {'filename': filename, 'locale': locale, 'language': language, 'languagecode': languagecode, 'keyboard': keyboard, 'registry': registry_name, 'corpname': corpname, 'lindatrepo': lindatrepo, 'pmltqlink': pmltqlink, 'dirname': dirname}
 
     registry = PrintTemplates(nameSpace)
     basepath = os.path.dirname(__file__)
@@ -208,6 +211,6 @@ if __name__ == "__main__":
     registry_file = open(filepath, "w")
     registry_file.write(str(registry.printRegistry()))
 
-    config_file=open('to_config','a')
+    config_file=open('to_corplist','a')
     config_file.write(str(registry.printConf()))
 
