@@ -5,7 +5,7 @@ TRAIN_FOLDER=$ROOT_FOLDER/input
 OUT_FOLDER=$ROOT_FOLDER/output
 SCRIPT_FOLDER=$ROOT_FOLDER/scripts
 
-for dir in $TRAIN_FOLDER/UD_Old_French*; do
+for dir in $TRAIN_FOLDER/UD_*; do
   if [ ! -f $dir/*train.conllu ]; then
     continue   ## skip corpora with no training data
   else
