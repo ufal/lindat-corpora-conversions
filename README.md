@@ -63,12 +63,16 @@ tags           do not touch this one either
 On `kontext-dev`, additional subdirectoreis are present:
 ```
 conversions    conversion of corpora (this git repository -- data and scripts)
-vert           vertical text files (corpora data; symlinks to conversions/**/output
+vert           vertical text files (corpora data; symlinks to conversions/**/output)
                  value of the variable VERTICAL in the corpora templates, i.e. 
                  this is the directory where compilecorp looks for the files for indexing
                  - this dir could be removed, but the values of VERTICAL would have to be
                  adjusted and some changes in scripts/common.mk would be necessary
+alignment      definition of alignment for parallel corpora if it is not 1-1
+                 symlinks to conversions/**/not-yet-decided-where-to-put-them
 ```
+
+In case that we got a finished compiled corpus from someone else, vert and alignment dirs contain the actual files and there is no corresponding directory in conversions (this is the case of the DGT corpus that we got from the guys in Slovenia).
 
 
 The `conversions` directory contains conversion utilities for converting corpora into LINDAT KonText format.
