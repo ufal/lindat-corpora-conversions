@@ -2,7 +2,7 @@ NAME "English-Slovak parallel corpus"
 PATH "/opt/lindat/kontext-data/corpora/data/parallel/EnglishSlovak/EnglishSlovak_en-m"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/EnglishSlovak/EnglishSlovak_en-m"
 ENCODING utf-8
-INFO "EnglishSlovak - English"
+INFO "English-Slovak Parallel corpus consists of several freely available corpora (Acquis, Europarl, Official Journal of the European Union and part of OPUS corpus and downloaded website of European Commission."
 LANGUAGE "English"
 
 TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
