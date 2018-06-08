@@ -1,5 +1,23 @@
 #!/bin/bash
 
+r9292:
+    source_{cz,en,la}.txt jsou data od Martina Holuba, spojená do jednoho souboru, s několika ručními opravami
+    - části jsou označené značkou <pars>, ta odpovídá jak původním souborům, tak dělení Summy na čtyři části
+    - všechny soubory mají stejný počet řádků, každý řádek začíná identifikátorem, který končí | (později přepsáno na tab)
+    - zjevně existují kusy textu, které přeložené nejsou, minimálně v anglické části chybí celý úvod (na třetím řádku souboru je jen nadpis, v latině tam ale je několik odstavců)
+    - naopak v angličtině jsou navíc např. odstavce obsahující jen v závorkách kapitálkami uvedený text o počtu pododdílů, např. (TEN ARTICLES) na řádku 6, a ty zas neodpovídají ničemu v latině
+    
+    for lang in cz en la; do cat source_$lang.txt | sed -e 's/\([|>]\)[^<]*\(<\|$\)/\1\2/g; s/Článek/Article/; s/Articulus/Article/; s/Otázka/Question/; s/Quaestio/Question/; s/Prooemium/Preamble/; s/Předmluva/Preamble/; s/<I>//g; s@</I>@@g' > tags.$lang; done
+    
+    OCR chyby
+    - v českém textu jsem koukala na místa, kde je naopak malé písmeno po tečce. Jenomže na nahrazení prostým regexpem se mi nezdají, protože v textu je velká spousta zkratek knih - asi v polovině případů je tedy to malé písmeno po tečce správně, a kde správně není, je někdy špatně tečka (má být čárka) a jindy písmeno po ní (má být velké). Nejlépe by se to opravilo asi až podle sentence alignmentu nebo vím já podle čeho, ale v plaintextu úplně nevidím, jak na to.
+    Ta místa jsem si ručně prohlížela ve vimu tímto regexpem (tečka po číslovce, ať už latinské nebo římské, mě nezajímala):
+    /|.*[^IV0-9]\zs\. [a-z]
+    přesněji pro jejich interaktivní nahrazování
+    :.,$ s/|.*[^IV0-9]\zs\. \([a-z]\)/, \1/gc
+    ale je jich příliš mnoho na to, aby se mi chtělo každý výskyt ručně kontrolovat a rozhodovat, jestli ano nebo ne.
+
+================
 sed -e 's/^.*|//;s/<[^>]*>/ /g' source_la.txt > plaintext.la
 
 #zkusíme odhalit podezřelé znaky:
@@ -27,6 +45,7 @@ touch empty.input.dic
 
 ## jak pouštím alignment na clusteru
 rm DATA/in/*aligned*; for file in DATA/in/*; do qsub -cwd -N $(basename $file) ./make.sh $file; done;
+  # make.sh must be run on cluster because of memory requirements
 ## opakovaně pouštím qstat a neúspěšné joby pustím znovu:
 for file in DATA/in/x17; do qsub -cwd -N $(basename $file) ./make.sh $file; done; qstat
 ## když už jsem spokojená, pustím
