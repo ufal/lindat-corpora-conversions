@@ -1,0 +1,134 @@
+# MAINTAINER "CLARIN.SI <info@clarin.si>"		#manatee@clarin
+MAINTAINER "Tomaž Erjavec <tomaz.erjavec@ijs.si>"	#manatee@ijs
+# MAINTAINER "Tomaž Erjavec <tomaz.erjavec@ijs.si>"	#manatee@cjvt
+NAME "EU DGT-UD: Hungarian"
+INFO "JRC EU DG Translation Memory (2016) annotated with UD-Pipe: Hungarian part"
+ENCODING utf-8
+LOCALE "hu_HU.UTF-8"
+DEFAULTLOCALE "hu_HU.UTF-8"
+LANGUAGE "Hungarian"
+INFOHREF "https://ec.europa.eu/jrc/en/language-technologies/dgt-translation-memory"
+TAGSETDOC "http://universaldependencies.org/guidelines.html"
+
+# PATH "/data/manatee-data/dgtud_hu/"			#manatee@clarin
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/DGT/dgtud_hu/"		#manatee@ijs
+# PATH "/var/lib/ske/manatee/dgtud_hu/"			#manatee@cjvt
+
+# VERTICAL "| zcat /project/corpora/vert/dgtud-hu.vert.gz | cut -f1-11"	#manatee@clarin
+VERTICAL "| zcat /opt/lindat/kontext-data/corpora/vert/parallel/DGT/dgtud-hu.vert.gz | cut -f1-11"	#manatee@ijs
+# VERTICAL "| zcat /var/lib/ske/vertical/dgtud-hu.vert.gz | cut -f1-11"	#manatee@cjvt
+
+# WSPOSLIST ",Noun,-n,Verb,-v,Adjective,-a,Adverb,-r"			#manatee@cjvt
+WPOSLIST ",Noun,NOUN.*,Noun proper,PROPN.*,Verb,VERB.*,Adjective,Adj.*,Pronoun,PRON.*,Adverb,ADV.*,Adposition,ADP.*,Coord_Conjunction,CCONJ.*,Subord_Conjunction,SCONJ.*,Numeral,NUM.*,Particle,PART.*,Determiner,DET.*,Interjection,INTJ.*,Symbol,SYM.*,Residual,X.*"
+
+DOCSTRUCTURE text
+MAXDETAIL 10000
+
+SUBCORPATTRS "text.id,text.year"
+SHORTREF "=text.id,=text.year"
+FULLREF "text.id,text.year"
+
+ALIGNSTRUCT ab
+ALIGNED "dgtud_bg,dgtud_cs,dgtud_da,dgtud_de,dgtud_el,dgtud_en,dgtud_es,dgtud_et,dgtud_fi,dgtud_fr,dgtud_ga,dgtud_hr,dgtud_it,dgtud_lt,dgtud_lv,dgtud_nl,dgtud_pl,dgtud_pt,dgtud_ro,dgtud_sk,dgtud_sl,dgtud_sv"
+ALIGNDEF "/project/cqp/alignments/dgtud/dgtud_hu-bg.tbl,/project/cqp/alignments/dgtud/dgtud_hu-cs.tbl,/project/cqp/alignments/dgtud/dgtud_hu-da.tbl,/project/cqp/alignments/dgtud/dgtud_hu-de.tbl,/project/cqp/alignments/dgtud/dgtud_hu-el.tbl,/project/cqp/alignments/dgtud/dgtud_hu-en.tbl,/project/cqp/alignments/dgtud/dgtud_hu-es.tbl,/project/cqp/alignments/dgtud/dgtud_hu-et.tbl,/project/cqp/alignments/dgtud/dgtud_hu-fi.tbl,/project/cqp/alignments/dgtud/dgtud_hu-fr.tbl,/project/cqp/alignments/dgtud/dgtud_hu-ga.tbl,/project/cqp/alignments/dgtud/dgtud_hu-hr.tbl,/project/cqp/alignments/dgtud/dgtud_hu-it.tbl,/project/cqp/alignments/dgtud/dgtud_hu-lt.tbl,/project/cqp/alignments/dgtud/dgtud_hu-lv.tbl,/project/cqp/alignments/dgtud/dgtud_hu-nl.tbl,/project/cqp/alignments/dgtud/dgtud_hu-pl.tbl,/project/cqp/alignments/dgtud/dgtud_hu-pt.tbl,/project/cqp/alignments/dgtud/dgtud_hu-ro.tbl,/project/cqp/alignments/dgtud/dgtud_hu-sk.tbl,/project/cqp/alignments/dgtud/dgtud_hu-sl.tbl,/project/cqp/alignments/dgtud/dgtud_hu-sv.tbl"
+STRUCTURE text {
+    ATTRIBUTE id
+    ATTRIBUTE year
+    ATTRIBUTE release
+    ATTRIBUTE "wordcount"
+}
+STRUCTURE ab {
+	  DISPLAYTAG 0
+	  DISPLAYEND " ¶ "
+}	  
+STRUCTURE s {
+	  DISPLAYTAG 0
+}
+STRUCTURE g {
+	  DISPLAYTAG 0
+	  DISPLAYBEGIN "_EMPTY_"
+}
+
+ATTRIBUTE word
+ATTRIBUTE lemma {
+	DYNAMIC   "striplastn"
+	DYNLIB    "internal"
+	ARG1      "2"
+	FUNTYPE   "i"
+	FROMATTR  "lempos"
+	TYPE      "index"
+}
+ATTRIBUTE lempos
+ATTRIBUTE pos {
+}
+ATTRIBUTE tag {
+}
+ATTRIBUTE feats {
+}
+
+ATTRIBUTE deprel {
+}
+
+ATTRIBUTE p_word {
+}
+ATTRIBUTE p_lemma {
+	DYNAMIC   "striplastn"
+	DYNLIB    "internal"
+	ARG1      "2"
+	FUNTYPE   "i"
+	FROMATTR "p_lempos"
+	TYPE      "index"
+}
+ATTRIBUTE p_lempos
+ATTRIBUTE p_pos {
+}
+ATTRIBUTE p_tag {
+}
+ATTRIBUTE p_feats {
+}
+
+ATTRIBUTE lc {
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR word
+	DYNTYPE  index
+	TRANSQUERY	yes
+}
+ATTRIBUTE lemma_lc {
+	DYNAMIC     "utf8lowercase"
+	DYNLIB      "internal"
+	ARG1        "C"
+	FUNTYPE     "s"
+	FROMATTR    "lemma"
+	TYPE        "index"
+	TRANSQUERY  "yes"
+}
+
+ATTRIBUTE p_lc {
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR head_word
+	DYNTYPE  index
+	TRANSQUERY	yes
+}
+ATTRIBUTE p_lemma {
+	DYNAMIC   "striplastn"
+	DYNLIB    "internal"
+	ARG1      "2"
+	FUNTYPE   "i"
+	FROMATTR "p_lempos"
+	TYPE      "index"
+}
+ATTRIBUTE p_lemma_lc {
+	DYNAMIC     "utf8lowercase"
+	DYNLIB      "internal"
+	ARG1        "C"
+	FUNTYPE     "s"
+	FROMATTR "p_lemma"
+	TYPE        "index"
+	TRANSQUERY  "yes"
+}
