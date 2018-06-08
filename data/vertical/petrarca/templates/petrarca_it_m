@@ -1,0 +1,73 @@
+NAME "Petrarca+ -- a Corpus of Petrarch and the Petrarchists"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/petrarca/petrarca_it_m"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/petrarca/petrarca.txt"
+ENCODING utf-8
+INFO "The corpus includes Petrarch's 'Canzoniere' and some of the Petrarchists' collections of poems. It has been annotated using UDPipe, the model version is 2.0"
+LANGUAGE "Old Italian"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "it_CH.utf8"
+}
+
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "it_CH.utf8"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE upos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE xpos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE feats {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+STRUCTURE doc {
+    ATTRIBUTE id
+    ATTRIBUTE author
+    ATTRIBUTE title
+    ATTRIBUTE publisher
+    ATTRIBUTE pubplace
+    ATTRIBUTE pubyear
+    ATTRIBUTE srclang
+    ATTRIBUTE txtype_group
+    ATTRIBUTE txtype
+    ATTRIBUTE genre
+    ATTRIBUTE med
+}
+
+STRUCTURE text {
+    ATTRIBUTE id
+}
+
+STRUCTURE p {
+    ATTRIBUTE id
+	ATTRIBUTE title
+	ATTRIBUTE type
+}
+
+STRUCTURE s {
+}
+
+STRUCTURE v {
+    ATTRIBUTE vnum
+}
+
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
