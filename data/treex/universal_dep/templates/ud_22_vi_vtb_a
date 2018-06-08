@@ -1,0 +1,141 @@
+NAME "UD 2.2 - Vietnamese VTB"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/2.2/ud_vi_vtb-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/UD_Vietnamese-VTB"
+ENCODING utf-8
+INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2, the training and development data released in April 2018 for the UD Shared Task."
+LANGUAGE "Vietnamese"
+
+TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "vi_VN.utf8"
+}
+
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "vi_VN.utf8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+        LOCALE "vi_VN.utf8"
+}
+
+
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "vi_VN.utf8"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE upos {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE xpos {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE feats {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE p_word {
+          TYPE "FD_FGD"
+          LOCALE "vi_VN.utf8"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+        LOCALE "vi_VN.utf8"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE p_upos {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE p_xpos {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE p_feats {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE p_deprel {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE deps {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE misc {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE id {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "-"
+}
+ATTRIBUTE p_id {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+STRUCTURE doc {
+    ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+    ATTRIBUTE id
+	ATTRIBUTE text
+	ATTRIBUTE orig_file_sentence
+    ATTRIBUTE newdoc
+    ATTRIBUTE newpar
+}
+
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
