@@ -22,11 +22,11 @@ cp $INPUT_FOLDER/$outname $OUTPUT_FOLDER/$outname
 
 echo "Linking to the vertical file $vertical_dir/$outname"
 mkdir -p $vertical_dir
-ln -s $OUTPUT_FOLDER/$outname -t $vertical_dir
+ln -is $OUTPUT_FOLDER/$outname -t $vertical_dir
 if [ $? -ne 0 ]; then echo "linking to the vertical failed"; exit; fi
 
 echo "Linking to the template file $TEMPLATE_FOLDER/$registryname"
-ln -s $TEMPLATE_FOLDER/$registryname -t $registry_dir
+ln -is $TEMPLATE_FOLDER/$registryname -t $registry_dir
 if [ $? -ne 0 ]; then echo "linking to template failed"; exit; fi
 
 echo "Compiling the corpus  /opt/projects/lindat-services-kontext/devel/data/corpora/registry/$registryname"

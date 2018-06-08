@@ -1,8 +1,8 @@
-NAME "Petrarca+ -- a Corpus of Petrarch and the Petrarchists"
+NAME "Petrarca+"
 PATH "/opt/lindat/kontext-data/corpora/data/monolingual/petrarca/petrarca_it_m"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/petrarca/petrarca.txt"
 ENCODING utf-8
-INFO "The corpus includes Petrarch's 'Canzoniere' and some of the Petrarchists' collections of poems. It has been annotated using UDPipe, the model version is 2.0"
+INFO "A corpus of Petrarch's 'Canzoniere' and some of the Petrarchists' collections of poems. It has been annotated using UDPipe, the model version is 2.0. The tagset used is the one of the Universal Dependencies project."
 LANGUAGE "Old Italian"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -66,6 +66,8 @@ STRUCTURE v {
     ATTRIBUTE vnum
 }
 
+STRUCTURE g {
+}
 
 MAXCONTEXT 50
 MAXDETAIL 50
