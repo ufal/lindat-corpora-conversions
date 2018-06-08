@@ -32,43 +32,10 @@ ATTRIBUTE lc {
         TYPE index
         TRANSQUERY yes
 }
-ATTRIBUTE pos {
-        DYNAMIC getnchar
-        DYNLIB  internal
-        FUNTYPE i
-        ARG1    1
-        FROMATTR tag
-        TYPE index
-}
-ATTRIBUTE   k {
-	DYNAMIC getnchar
-	DYNLIB  internal
-	ARG1    1
-	FUNTYPE i
-	FROMATTR tag
-	TYPE 	index
-}
-ATTRIBUTE   g {
-	DYNAMIC getnchar
-	DYNLIB  internal
-	ARG1    3
-	FUNTYPE i
-	FROMATTR tag
-	TYPE 	index
-}
-ATTRIBUTE   c {
-	DYNAMIC getnchar
-	DYNLIB  internal
-	ARG1    5
-	FUNTYPE i
-	FROMATTR tag
-	TYPE 	index
-}
-
 STRUCTURE pars {
 	ATTRIBUTE id
 	DISPLAYTAG 0
-    ATTRIBUTE wordcount
+        ATTRIBUTE wordcount
 }
 STRUCTURE p {
 }
@@ -81,7 +48,6 @@ STRUCTURE h {
 }
 STRUCTURE i {
 }
-
 
 MAXCONTEXT 50
 MAXDETAIL 50

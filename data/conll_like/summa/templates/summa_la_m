@@ -14,13 +14,19 @@ ALIGNSTRUCT align
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
-        LOCALE "la_LA.UTF-8"
+        LOCALE "en_US.UTF-8"
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CS.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
 }
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
         FUNTYPE s
-        ARG1 "la_LA.UTF-8"
+        ARG1 "en_US.UTF-8"
         FROMATTR word
         TYPE index
         TRANSQUERY yes
@@ -29,7 +35,7 @@ ATTRIBUTE lc {
 STRUCTURE pars {
 	ATTRIBUTE id
 	DISPLAYTAG 0
-    ATTRIBUTE wordcount
+        ATTRIBUTE wordcount
 }
 STRUCTURE p {
 }
