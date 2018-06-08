@@ -31,10 +31,10 @@ for dir in $INPUT_FOLDER/UD_*; do
     echo "Creating the template for $filename and linking to it"
     python generate_templates.py "$filename" "$languagecode" "$language" "$corpname" "$dir"  # writes to ../templates/$corpname and a line to to_corplist
     #echo "<corpus ident=\"$filename\" sentence_struct=\"s\" features=\"morphology, syntax\" keyboard_lang=\"$languagecode\" repo=\"$lindatrepo\" pmltq=\"$pmltqlink\"/>" >> to_corplist
-    ln -s $TEMPLATE_FOLDER/$registryname -t $registry_dir
+    ln -is $TEMPLATE_FOLDER/$registryname -t $registry_dir
     if [ $? -ne 0 ]; then echo "linking to template failed"; exit; fi
     echo "Linking to the vertical file $vertical_dir/$dir"
-	ln -s $OUTPUT_FOLDER/$dir -t $vertical_dir
+	ln -is $OUTPUT_FOLDER/$dir -t $vertical_dir
     if [ $? -ne 0 ]; then echo "linking to the vertical failed"; exit; fi
 	echo "Compiling the corpus  /opt/projects/lindat-services-kontext/devel/data/corpora/registry/$registryname"
 	mkdir -p $data_dir/$registryname
