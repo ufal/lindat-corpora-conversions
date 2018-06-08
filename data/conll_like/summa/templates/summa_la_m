@@ -1,8 +1,8 @@
-NAME "Summa Contra Genties"
+NAME "Summa Theologica"
 PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_la-m"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_la-m"
 ENCODING utf-8
-INFO "Czech-Latin corpus"
+INFO "Latin-Czech-English"
 LANGUAGE "Latin"
 
 TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
