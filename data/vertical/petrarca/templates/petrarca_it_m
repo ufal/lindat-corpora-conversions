@@ -6,7 +6,8 @@ INFO "A corpus of Petrarch's 'Canzoniere' and some of the Petrarchists' collecti
 LANGUAGE "Old Italian"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
-DOCSTRUCTURE doc
+DOCSTRUCTURE p
+SHORTREF "=doc.author,=p.title"
 
 
 ATTRIBUTE word {
@@ -67,6 +68,8 @@ STRUCTURE v {
 }
 
 STRUCTURE g {
+	DISPLAYTAG 0
+	DISPLAYBEGIN "_EMPTY_"
 }
 
 MAXCONTEXT 50
