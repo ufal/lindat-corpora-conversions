@@ -111,7 +111,7 @@ ATTRIBUTE p_lc {
 	DYNLIB   internal
 	ARG1     "C"
 	FUNTYPE  s
-	FROMATTR head_word
+	FROMATTR p_word
 	DYNTYPE  index
 	TRANSQUERY	yes
 }
