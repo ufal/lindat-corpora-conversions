@@ -39,10 +39,11 @@ STRUCTURE text {
 }
 STRUCTURE ab {
 	  DISPLAYTAG 0
-	  DISPLAYEND " ¶ "
+	  DISPLAYEND " ↲ "
 }	  
 STRUCTURE s {
 	  DISPLAYTAG 0
+	  DISPLAYEND " ¶ "	  
 }
 STRUCTURE g {
 	  DISPLAYTAG 0
@@ -114,6 +115,14 @@ ATTRIBUTE p_lc {
 	FROMATTR p_word
 	DYNTYPE  index
 	TRANSQUERY	yes
+}
+ATTRIBUTE p_lemma {
+	DYNAMIC   "striplastn"
+	DYNLIB    "internal"
+	ARG1      "2"
+	FUNTYPE   "i"
+	FROMATTR "p_lempos"
+	TYPE      "index"
 }
 ATTRIBUTE p_lemma_lc {
 	DYNAMIC     "utf8lowercase"
