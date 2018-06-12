@@ -14,6 +14,7 @@ out_laen=${1}.aligned.la-en
 out_lacs=${1}.aligned.la-cs
 rm -f $out_laen $out_lacs
 
+#		cut -f$(2) $$$$file | cat -n | sed 's/^ *\([0-9][0-9]*\)\t\(.*\)$$$$/<align id="\1">\n\2\n<\/align>/' | sed '/|/s/ /\n/g;s/|/\t/g' | sed -e '/<s>/i <\/s>' -e '/<\/align>/i <\/s>' -e '/<align/a <s>' >>$$@; \
 
 echo Temporary directory: $temp_dir    
 cut -f1 $1 | sed -e 's@\(</\?h[123]>\)@#\1#@g; s@\(</\?p>\)@ \1 @g; s/##\+/#/g; s/^#//; s/#$//; s/#/\n/g' | $SPLITTER -l cs > $temp_dir/tmp.cs

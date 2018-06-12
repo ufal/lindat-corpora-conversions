@@ -34,8 +34,8 @@ words words.la
 #ve vimu nahradit | taby 
 #a přesunout "Otázka #" jako <h1> a "Předmluva", "Článek #" jako <h2> až za tab
 #(to tu nemám); potom:
-paste source_* | awk -F$'\t' '{if ($1==$3 && $1==$5) {print $2"\t"$4"\t"$6"\t"$1} else {print $2"\t"$4"\t"$6"\tBEWARE: "$1"!="$3"!="$5}}' > paste
-grep BEWARE paste   #pro kontrolu: po několika drobných úpravách by neměl nic vrátit!
+paste source_* | awk -F$'\t' '{if ($1==$3 && $1==$5) {print $2"\t"$4"\t"$6"\t"$1} else {print $2"\t"$4"\t"$6"\tBEWARE: "$1"!="$3"!="$5}}' > Summa
+grep BEWARE Summa   #pro kontrolu: po několika drobných úpravách by neměl nic vrátit!
 
 
 ## jak pustit hunalign bez hunalignwrapperu tak, aby uložil "slovník" do output.dic
@@ -51,17 +51,59 @@ for file in DATA/in/x17; do qsub -cwd -N $(basename $file) ./make.sh $file; done
 ## když už jsem spokojená, pustím
 qdel '*'
 rm x??.[oe]??????
-cd DATA/; for lang in en cs; do cat in/x??.aligned.la-$lang > paste.aligned.la-$lang; done
-scp paste.aligned.la-?? kontext-dev:~/corpora/conversions/data/conll_like/summa/input
+cd DATA/; for lang in en cs; do cat in/x??.aligned.la-$lang > Summa.aligned.la-$lang; done
+scp Summa.aligned.la-?? kontext-dev:~/corpora/conversions/data/conll_like/summa/input
 
-#### !!!! z nějakého důvodu jsou v souboru paste.aligned.la-cs ukončující znaky tagů, které nikde nezačínají,
+#### !!!! z nějakého důvodu jsou v souboru Summa.aligned.la-cs ukončující znaky tagů, které nikde nezačínají,
 #### a také tam chybí některé řádky, které ve vstupních souborech byly (jsou to ty, které jsou poslední v některých z 80 souborů, na které jsem si to rozdělila --- ale ne všechny, které jsou poslední, takže nechápu, co se děje :-( )
-#### zatím jsem to opravila ručně a je to v souboru paste.aligned.manually-adjusted
+#### zatím jsem to opravila ručně a je to v souboru Summa.aligned.manually-adjusted
 
 ==============================
-opsano od Dusana:
 Latin lemmatization:
+#except for UD-pipe, the tools I know do not do desambiguation
 
+"LEMLAT"
 git clone https://github.com/CIRCSE/LEMLAT3.git LEMLAT3
 cd LEMLAT3
 tar xzfv bin/linux_embedded.tar.gz
+# I could not get it to work on kontext-dev - I kept getting the following error:
+# ./lemlat: error while loading shared libraries: libz.so.1: cannot open shared object file: No such file or directory
+# even though I made sure multiple times that libz.so.1 was present on the system and ran
+  export LD_LIBRARY_PATH=/path/to/the/dir/with/the/library
+  sudo ldconfig -v
+# and the library was listed in the output of ldconfig
+# ... so I gave up on lemlat :-(
+
+"cltk" https://github.com/cltk/cltk
+"whitaker words"
+
+"UDpipe" 
+# udpipe seems to be quick enough to be run on stargate:
+scp vernerova@kontext-dev:corpora/conversions/data/conll_like/summa/input/plaintext.* .
+sed -i 's/^\(\(Articulus\|Article\|Článek\|Quaestio\|Question\|Otázka\) [0-9][0-9]*\)\s\s*\([^\s]\)/\1\n\n\2/g;s/$/\n/g' plaintext.*
+/net/projects/udpipe/bin/udpipe-latest /net/projects/udpipe/models/udpipe-ud-2.0-170801/latin-ittb-ud-2.0-170801.udpipe --immediate --tokenize --tag --parse --outfile=ud_piped.la_ittb plaintext.la &
+
+## NOTES on the available models:
+## proiel does not do well on tokenizing punctuation (it is still glued to the preceding word) - so if we would like to use it, we would have to supply already tokenized data
+
+## it might be better to run one splitter+tokenizer and then supply the same data to all taggers+parsers (at least it would be easier to apply the resulting annotation to the tokens)
+
+
+## note that the udpipe tagger recognizes the option "dictionary_file"
+## dictionary_file (default empty): use a given custom morphological dictionary, where each line contains 5 tab-separated fields FORM, LEMMA, UPOSTAG, XPOSTAG and FEATS. Note that this dictionary data is appended to the dictionary created from the UD training data, not replacing it.
+## supply the option as 
+## --tag --tagger='dictionary_file=dictionary;other_options'
+
+## TODO add commonly used abbreviations to the dictionary
+
+## other options for ud-pipe:
+## --input=    (used instead of the trained tokenizer!!!)
+## 'format=generic_tokenizer' will tokenize the sentence as is common for English; supports the ranges parameter described below under tokenizer!!! that means, if we could tweak it to throw away xml-like tags, it would allow us to reconstruct the original text including them; also note the 
+## 'format=conllu' will assume the input is in conllu format (this may be better, because the udpipe specific MISC fields 
+## --tokenizer=
+##    presegmented  : the input file is assumed to be already segmented, with each sentence on a separate line, and is only tokenized (respecting sentence breaks)
+##    ranges        :  for each token, a range in the original document is stored in MISC field as TokenRange=start:end (where start is 0-based document-level index of the start of the token and end is a zero-based document-level index of the first character following the token)
+
+===============================
+English and Czech lemmatization:
+# Dušan was using treex
