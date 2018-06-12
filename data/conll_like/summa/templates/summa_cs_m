@@ -10,7 +10,8 @@ WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,
 DOCSTRUCTURE doc
 
 ALIGNED "summa_la_m"
-ALIGNSTRUCT align
+ALIGNED "summa_en_m"
+ALIGNSTRUCT seg
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
@@ -36,11 +37,13 @@ ATTRIBUTE lc {
 STRUCTURE pars {
 	ATTRIBUTE id
 	DISPLAYTAG 0
+	DISPLAYBEGIN "Část %(id)"
         ATTRIBUTE wordcount
 }
-STRUCTURE p {
+STRUCTURE seg {
+	ATTRIBUTE id
 }
-STRUCTURE s {
+STRUCTURE p {
 }
 STRUCTURE h {
     ATTRIBUTE level {
@@ -48,6 +51,8 @@ STRUCTURE h {
     }
 }
 STRUCTURE i {
+}
+STRUCTURE footnote {
 }
 
 MAXCONTEXT 50

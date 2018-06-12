@@ -2,19 +2,21 @@ NAME "Summa Theologica"
 PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_la-m"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_la-m"
 ENCODING utf-8
-INFO "Latin-Czech-English"
+INFO "Latin-Czech-English corpus"
 LANGUAGE "Latin"
 
 TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
 WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
 DOCSTRUCTURE doc
 
+ALIGNED "summa_en_m"
 ALIGNED "summa_cs_m"
-ALIGNSTRUCT align
+ALIGNSTRUCT seg
 
 ATTRIBUTE word {
         TYPE "FD_FGD"
         LOCALE "en_US.UTF-8"
+}
 ATTRIBUTE lemma {
         TYPE "FD_FGD"
         LOCALE "cs_CS.UTF-8"
@@ -35,11 +37,13 @@ ATTRIBUTE lc {
 STRUCTURE pars {
 	ATTRIBUTE id
 	DISPLAYTAG 0
+	DISPLAYBEGIN "Pars %(id)"
         ATTRIBUTE wordcount
 }
-STRUCTURE p {
+STRUCTURE seg {
+	ATTRIBUTE id
 }
-STRUCTURE s {
+STRUCTURE p {
 }
 STRUCTURE h {
     ATTRIBUTE level {
@@ -47,6 +51,8 @@ STRUCTURE h {
     }
 }
 STRUCTURE i {
+}
+STRUCTURE footnote {
 }
 
 MAXCONTEXT 50
