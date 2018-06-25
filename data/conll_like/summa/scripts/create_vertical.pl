@@ -59,29 +59,39 @@ sub _debug {
 #}
 
 foreach my $filename (@ARGV) {
-  open SOURCE, "<:encoding(utf-8)", $filename;
-  open PLAIN, ">:encoding(utf-8)", "$filename.plaintext";
-  open XML, ">:encoding(utf-8)", "$filename.xml_positions";
-  my $position = 0;
-  while (<SOURCE>) {
+  open XML, "<:encoding(utf-8)", "$filename.xml_positions";
+  my @structures; my @structure_positions;
+  while (<XML>) {
+    my @line = split /\t/;
+    push @structures, $line[0];
+    push @structure_positions, $line[1];
+  }
+  
+  open CONLLU, "<:encoding(utf-8)", "$filename.parsed";
+  open VERTICAL, ">:encoding(utf-8)", "$filename.vertical";
+  my $insentence = 0;
+  while (<CONLLU>) {
     chomp;
-    my ($id, $text) = split /\t/;
-    say XML "<seg id=\"$id\">\t$position" unless $text =~ m/<pars id="[^"]*">|<\/pars>;/;
-    my @text = split /(<[^>]*>)/, $text;
-      my $i=0;
-      while ($i<=$#text) {
-        print PLAIN "$text[$i]" if $text[$i];
-        $position+=length($text[$i]);
-        if ($i+1<=$#text) {
-          say XML "$text[$i+1]\t".$position;
-          if ($text[$i+1] =~ m!</h>!) {
-            say PLAIN ""; $position++;
-          }
-        }
-        $i+=2;
-      }      
-    say XML "</seg>\t$position" unless $text =~ m/<pars id="[^"]*">|<\/pars>;/;
-    say PLAIN ""; $position++;
+    if (m/^# sent_id/) {
+      if ($insentence==1) { say VERTICAL "</s>"; $insentence = 2 }
+    } elsif (m/TokenRange=(\d*):\d*/) {
+      my $token_start=$1;
+      my @line = split /\t/, $_, 3;
+      while ($structure_positions[0] <= $token_start) {
+        shift @structure_positions;
+	my $element = shift @structures;
+	say VERTICAL $element;
+      }
+      if ($insentence!=1) {
+	say VERTICAL "<s>"; $insentence = 1
+      }
+      say VERTICAL "$line[1]\t$line[2]\t$line[0]";
+    }
+  }
+  say VERTICAL "</s>" if $insentence==1;
+  while (shift @structure_positions) {
+    my $element = shift @structures;
+    say VERTICAL $element;
   }
 }
 
