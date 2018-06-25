@@ -17,13 +17,6 @@ ATTRIBUTE word {
         TYPE "FD_FGD"
         LOCALE "en_US.UTF-8"
 }
-ATTRIBUTE lemma {
-        TYPE "FD_FGD"
-        LOCALE "cs_CS.UTF-8"
-}
-ATTRIBUTE tag {
-        TYPE "FD_FGD"
-}
 ATTRIBUTE lc {
         DYNAMIC utf8lowercase
         DYNLIB internal
@@ -33,11 +26,46 @@ ATTRIBUTE lc {
         TYPE index
         TRANSQUERY yes
 }
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "en_US.UTF-8"
+}
+
+ATTRIBUTE upos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE xpos {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE feats {
+        TYPE "FD_FGD"
+        MULTIVALUE y
+        MULTISEP "|"
+}
+
+ATTRIBUTE parent_id {
+        TYPE "FD_FGD"
+}
+
+ATTRIBUTE deprel {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE deps {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE misc {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE id {
+        TYPE "FD_FGD"
+}
 
 STRUCTURE pars {
 	ATTRIBUTE id
 	DISPLAYTAG 0
-	DISPLAYBEGIN "Pars %(id)"
+	DISPLAYBEGIN "Part %(id)"
         ATTRIBUTE wordcount
 }
 STRUCTURE seg {
@@ -50,11 +78,25 @@ STRUCTURE h {
       NUMERIC y
     }
 }
-STRUCTURE i {
+STRUCTURE ref {
+    ATTRIBUTE author
+    ATTRIBUTE text
+    ATTRIBUTE true
+}
+STRUCTURE showref {
+    ATTRIBUTE author
+    ATTRIBUTE text
+    ATTRIBUTE true
+}
+STRUCTURE cf {
+    ATTRIBUTE author
+    ATTRIBUTE text
 }
 STRUCTURE footnote {
+    ATTRIBUTE text
 }
-
+STRUCTURE i {
+}
 MAXCONTEXT 50
 MAXDETAIL 50
 
