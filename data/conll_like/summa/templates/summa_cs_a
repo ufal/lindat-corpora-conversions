@@ -1,13 +1,11 @@
 NAME "Summa Theologica"
-PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_cs-m"
-VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_cs-m"
+PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_cs-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_cs-a"
 ENCODING utf-8
 INFO "Latin-Czech-English corpus"
 LANGUAGE "Czech"
 
-TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
-WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
-DOCSTRUCTURE doc
+DOCSTRUCTURE seg
 
 ALIGNED "summa_la_m"
 ALIGNED "summa_en_m"
