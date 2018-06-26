@@ -1,4 +1,4 @@
-NAME "Summa Theologica"
+NAME "Summa Theologica in English"
 PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_en-a"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_en-a"
 ENCODING utf-8
@@ -6,9 +6,8 @@ INFO "Latin-Czech-English corpus"
 LANGUAGE "English"
 
 DOCSTRUCTURE seg
-
-ALIGNED "summa_la_m"
-ALIGNED "summa_cs_m"
+STRUCTCTX seg
+ALIGNED "summa_la_a,summa_cs_a"
 ALIGNSTRUCT seg
 
 ATTRIBUTE word {
@@ -62,19 +61,25 @@ ATTRIBUTE id {
 
 STRUCTURE pars {
 	ATTRIBUTE id
-	DISPLAYTAG 0
-	DISPLAYBEGIN "Part %(id)"
         ATTRIBUTE wordcount
+	DISPLAYBEGIN "  PART %(id)  "
+	DISPLAYEND "  END OF PART %(id)  "
+	DISPLAYTAG 0
 }
 STRUCTURE seg {
 	ATTRIBUTE id
+	DISPLAYBEGIN "%(id)"
+	DISPLAYTAG 0
 }
 STRUCTURE p {
 }
+STRUCTURE s {
+}
 STRUCTURE h {
     ATTRIBUTE level {
-      NUMERIC y
     }
+    DISPLAYCLASS "col0"
+    DISPLAYTAG 0
 }
 STRUCTURE ref {
     ATTRIBUTE author
@@ -85,17 +90,22 @@ STRUCTURE showref {
     ATTRIBUTE author
     ATTRIBUTE text
     ATTRIBUTE true
-}
+    DISPLAYBEGIN "%(author): %(text) // %(true)" }
 STRUCTURE cf {
     ATTRIBUTE author
     ATTRIBUTE text
+    DISPLAYBEGIN "%(author): %(text)"
+    DISPLAYCLASS "conc-detail"
 }
 STRUCTURE footnote {
     ATTRIBUTE text
+    DISPLAYBEGIN "%(text)"
+    DISPLAYTAG 0
+    DISPLAYCLASS "conc-detail"
 }
 STRUCTURE i {
 }
 
 MAXCONTEXT 50
-MAXDETAIL 50
+MAXDETAIL 500
 
