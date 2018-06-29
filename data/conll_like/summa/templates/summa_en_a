@@ -90,7 +90,8 @@ STRUCTURE showref {
     ATTRIBUTE author
     ATTRIBUTE text
     ATTRIBUTE true
-    DISPLAYBEGIN "%(author): %(text) // %(true)" }
+    DISPLAYBEGIN "%(author): %(text) // %(true)" 
+}
 STRUCTURE cf {
     ATTRIBUTE author
     ATTRIBUTE text
