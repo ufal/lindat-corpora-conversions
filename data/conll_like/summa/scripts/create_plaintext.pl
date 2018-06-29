@@ -66,7 +66,7 @@ foreach my $filename (@ARGV) {
   while (<SOURCE>) {
     chomp;
     my ($id, $text) = split /\t/;
-    say XML "<seg id=\"$id\">\t$position" unless $text =~ m/<pars id="[^"]*">|<\/pars>;/;
+    say XML "<seg id=\"$id\">\t$position" unless $text =~ m/<pars|<\/pars>/;
     my @text = split /(<[^>]*>)/, $text;
       my $i=0;
       while ($i<=$#text) {
@@ -80,7 +80,7 @@ foreach my $filename (@ARGV) {
         }
         $i+=2;
       }      
-    say XML "</seg>\t$position" unless $text =~ m/<pars id="[^"]*">|<\/pars>;/;
+    say XML "</seg>\t$position" unless $text =~ m/<pars|<\/pars>/;
     say PLAIN ""; $position++;
   }
 }
