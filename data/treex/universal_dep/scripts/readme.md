@@ -75,6 +75,7 @@ ud_convert.sh
       wrapper for a single treex job because when I submitted treex directly, it did not find the Treex blocks
   = run this script on cluster to convert conllu to vertical (Manatee) format
     (this requires checking out the directory universal_dep and whole Treex to the cluster, and possibly adjusting the paths in ud_convert and run_treex
+    some jobs may fail, so after running ud_convert, run "grep err run_treex.sh.o*" and "grep 'Out of mem' run_treex.sh.o*" to find out which ones had problems
 
 process.sh
   - python generate_templates.py
