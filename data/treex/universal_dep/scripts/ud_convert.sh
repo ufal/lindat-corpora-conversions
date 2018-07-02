@@ -1,6 +1,6 @@
 #/bin/bash
-ROOT_FOLDER=/export/KONTEXT/kontext-dev/corpora/conversions/data/treex/universal_dep
-#ROOT_FOLDER=/a/LRC_TMP/vernerova/lindat-corpora-conversions/data/treex/universal_dep/
+#ROOT_FOLDER=/export/KONTEXT/kontext-dev/corpora/conversions/data/treex/universal_dep
+ROOT_FOLDER=/a/LRC_TMP/vernerova/lindat-corpora-conversions/data/treex/universal_dep/
 TRAIN_FOLDER=$ROOT_FOLDER/input
 DOCUMENTS_FOLDER=$ROOT_FOLDER/input_divided
 OUT_FOLDER=$ROOT_FOLDER/output
@@ -30,11 +30,11 @@ for dir in $TRAIN_FOLDER/UD_*; do
     done
 #  fi
 done
-#for dir in $DOCUMENTS_FOLDER/*; do
-#  filename=$(basename $file .conllu)
-#  languagecode=${filename%%_*}
-#  if [ $languagecode == "fro" ]; then languagecode="fr"; fi   #Old French
-#  echo "processing $file, lang: $languagecode, saving to $(basename $file)"
-#  qsub -S /bin/bash -cwd -j y -l mem_free=8G,act_mem_free=8G,h_vmem=12G -v PATH  -v PERL5LIB $SCRIPT_FOLDER/run_treex.sh $languagecode "$file" $OUT_FOLDER/$(basename $file)
-#done
+for dir in $DOCUMENTS_FOLDER/*; do
+  filename=$(basename $file .conllu)
+  languagecode=${filename%%_*}
+  if [ $languagecode == "fro" ]; then languagecode="fr"; fi   #Old French
+  echo "processing $file, lang: $languagecode, saving to $(basename $file)"
+  qsub -S /bin/bash -cwd -j y -l mem_free=8G,act_mem_free=8G,h_vmem=12G -v PATH  -v PERL5LIB $SCRIPT_FOLDER/run_treex.sh $languagecode "$file" $OUT_FOLDER/$(basename $file)
+done
 
