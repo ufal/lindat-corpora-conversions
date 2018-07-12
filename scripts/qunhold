@@ -11,6 +11,8 @@ cat <<- __HELP__
 	can get far over the threshold!
 
 	Author: Jan Stepanek
+ 	Edits to treat the case with no jobs running correctly:
+        Anna Vernerova
 
 	__HELP__
 fi
@@ -27,6 +29,11 @@ function count () {
     bc -l <<<"$1"
 }
 
+function sort_sub_last () {
+  perl -e 'print sort {($a =~ / sub/) - ($b =~ / sub/) ||
+                     $a cmp $b} <>'
+}
+
 function tabify () {
     sed -r 's/^[ \t]*/\t/;s/[ \t]+/\t/g'
 }
@@ -37,8 +44,8 @@ function qstat_no_header () {
 
 function faster () {
     sleep=$(count $sleep/$speed)
-    if (( $(bc -l <<<$sleep'<0.5') )) ; then
-        sleep=0.5
+    if (( $(bc -l <<<$sleep'<0.01') )) ; then
+        sleep=0.01
     fi
 }
 
@@ -62,31 +69,47 @@ if ((threshold < 1)) || ((step < 1)) ; then
     exit 1
 fi
 
-qs=$(qstat_no_header) ; while grep -q . <<<"$qs" || ((QUNHOLD_FOREVER)); do
+qs=$(qstat_no_header)
+while grep -q . <<<"$qs" || ((QUNHOLD_FOREVER)); do
     if [ "$qs" = "" ]; then 
       new_and_running=0; 
       running=0;
       new=0;
+      held=0;
       all=0;
+      actually_running=0;
+      waiting=0;
     else
       new_and_running=$(grep -cv "hqw|^$" <<<"$qs")
       running=$(grep -c ' h\?[tr] '<<<"$qs")
       new=$((new_and_running - running))
       all=$(wc -l <<<"$qs")
+      held=$(grep -c 'vernerova *h'<<<"$qs")
+      actually_running=$(grep -c 'vernerova *[tr]'<<<"$qs")
+      waiting=$(grep -c 'vernerova *qw'<<<"$qs")
     fi
     echo $(count $(date +$date_format)-$start) \
-        run $running / new $new / all $all \
+        actually_running $actually_running / held $held / waiting $waiting / all $all / new_and_running $new_and_running / new $new / running $running \
         \| sleep $sleep
-    if (( running < threshold )) ; then
+    if (( waiting + actually_running < threshold )) ; then
+        echo "Below threshold; remove hold on $step jobs; prefer jobs with names not starting in 'sub'"
         grep hqw <<<"$qs" \
+            | sort_sub_last \
             | head -n$step \
             | tabify \
             | cut -f2 \
             | xargs qalter -h U > /dev/null
     else
-        grep -v 'hqw\| h\?[tr] ' <<<"$qs" | tabify | cut -f2 \
+        difference=$((waiting + actually_running - threshold))
+        echo "Above threshold; add hold on $difference unheld jobs"
+        grep -v 'hqw\| h\?[tr] ' <<<"$qs" \
+            | sort_sub_last \
+            | tail -n $difference \
+            | tabify \
+            | cut -f2 \
             | xargs qalter -h u > /dev/null
     fi
+    echo
 
     if ((new < threshold)) && (( running > threshold )) ; then
         slower
