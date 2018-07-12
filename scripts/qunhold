@@ -1,0 +1,113 @@
+#! /bin/bash
+
+if [[ $1 =~ --?h(elp)? ]] ; then
+cat <<- __HELP__
+	Usage: $0 [threshold [step] ]
+
+	Tries to keep the number of running SGE jobs under threshold:
+	all jobs over the threshold are held. If the number of running
+	jobs goes below the threshold (default: 100), step (default:
+	10) jobs are unheld. Beware: if your jobs submit new jobs, you
+	can get far over the threshold!
+
+	Author: Jan Stepanek
+
+	__HELP__
+fi
+
+threshold=100
+step=10
+
+sleep=2
+speed=1.4
+date_format='%s.%N'
+start=$(date +$date_format)
+
+function count () {
+    bc -l <<<"$1"
+}
+
+function tabify () {
+    sed -r 's/^[ \t]*/\t/;s/[ \t]+/\t/g'
+}
+
+function qstat_no_header () {
+    qstat | tail -n+3
+}
+
+function faster () {
+    sleep=$(count $sleep/$speed)
+    if (( $(bc -l <<<$sleep'<0.5') )) ; then
+        sleep=0.5
+    fi
+}
+
+function slower () {
+    sleep=$(count $sleep*$speed)
+    if (( $(bc -l <<<$sleep'>15') )) ; then
+        sleep=15
+    fi
+}
+
+if (($#)) ; then
+    threshold=$1
+    shift
+fi
+if (($#)) ; then
+    step=$1
+    shift
+fi
+
+if ((threshold < 1)) || ((step < 1)) ; then
+    exit 1
+fi
+
+qs=$(qstat_no_header) ; while grep -q . <<<"$qs" || ((QUNHOLD_FOREVER)); do
+    if [ "$qs" = "" ]; then 
+      new_and_running=0; 
+      running=0;
+      new=0;
+      all=0;
+    else
+      new_and_running=$(grep -cv "hqw|^$" <<<"$qs")
+      running=$(grep -c ' h\?[tr] '<<<"$qs")
+      new=$((new_and_running - running))
+      all=$(wc -l <<<"$qs")
+    fi
+    echo $(count $(date +$date_format)-$start) \
+        run $running / new $new / all $all \
+        \| sleep $sleep
+    if (( running < threshold )) ; then
+        grep hqw <<<"$qs" \
+            | head -n$step \
+            | tabify \
+            | cut -f2 \
+            | xargs qalter -h U > /dev/null
+    else
+        grep -v 'hqw\| h\?[tr] ' <<<"$qs" | tabify | cut -f2 \
+            | xargs qalter -h u > /dev/null
+    fi
+
+    if ((new < threshold)) && (( running > threshold )) ; then
+        slower
+    fi
+
+    if (( new_and_running > threshold )) ; then
+        faster
+    fi
+
+    if ((new == 0)) && ((running <= old_running)) ; then
+        if ((running+step > threshold)) || ((all < threshold)); then
+            slower
+        else
+            faster
+        fi
+    fi
+    old_running=running
+
+    sleep $sleep
+    qs=$(qstat_no_header)
+done
+
+# gnuplot:
+# plot 'j' using 1:3 with lines lc 1 title 'run', '' using 1:6 with lines lc 2 title 'new', '' using 1:9 with lines lc 3 title 'all', '' using 1:12 with boxes title 'sleep'
