@@ -46,7 +46,7 @@ class PrintTemplates:
 PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/2.2/ud_$filename-a"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/$dirname"
 ENCODING utf-8
-INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2, the training and development data released in April 2018 for the UD Shared Task."
+INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2 released in July 2018."
 LANGUAGE "$language"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -57,116 +57,121 @@ RIGHTTOLEFT righttoleft"""
         templateDef +="""
 
 ATTRIBUTE word {
-        TYPE "FD_FGD"
-        LOCALE "$locale"
+    TYPE "FD_FGD"
+    LOCALE "$locale"
 }
 
 ATTRIBUTE lc {
-        DYNAMIC utf8lowercase
-        DYNLIB internal
-        FUNTYPE s
-        ARG1 "$locale"
-        FROMATTR word
-        TYPE index
-        TRANSQUERY yes
-        LOCALE "$locale"
+    DYNAMIC utf8lowercase
+    DYNLIB internal
+    FUNTYPE s
+    ARG1 "$locale"
+    FROMATTR word
+    TYPE index
+    TRANSQUERY yes
+    LOCALE "$locale"
 }
 
 
 ATTRIBUTE lemma {
-        TYPE "FD_FGD"
-        LOCALE "$locale"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    LOCALE "$locale"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE upos {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE xpos {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE feats {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE parent {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE deprel {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE p_word {
-          TYPE "FD_FGD"
-          LOCALE "$locale"
-        MULTIVALUE y
-        MULTISEP "|"
+      TYPE "FD_FGD"
+      LOCALE "$locale"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE p_lemma {
-        TYPE "FD_FGD"
-        LOCALE "$locale"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    LOCALE "$locale"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE p_upos {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE p_xpos {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE p_feats {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE p_deprel {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE deps {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
 }
 
 ATTRIBUTE misc {
-        TYPE "FD_FGD"
+    TYPE "FD_FGD"
 }
 
 ATTRIBUTE id {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "-"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "-"
 }
 ATTRIBUTE p_id {
-        TYPE "FD_FGD"
-        MULTIVALUE y
-        MULTISEP "|"
+    TYPE "FD_FGD"
+    MULTIVALUE y
+    MULTISEP "|"
+}
+
+STRUCTURE data {
+    ATTRIBUTE id
+    ATTRIBUTE wordcount
 }
 
 STRUCTURE doc {
@@ -174,12 +179,15 @@ STRUCTURE doc {
     ATTRIBUTE wordcount
 }
 
+STRUCTURE par {
+    ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
 STRUCTURE s {
     ATTRIBUTE id
-	ATTRIBUTE text
-	ATTRIBUTE orig_file_sentence
-    ATTRIBUTE newdoc
-    ATTRIBUTE newpar
+    ATTRIBUTE text
+    ATTRIBUTE orig_file_sentence
 }
 
 
