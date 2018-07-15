@@ -15,7 +15,7 @@ data_dir=/opt/lindat/kontext-data/corpora/data/monolingual/UD/$ud_version_long
 
 mkdir -p $vertical_dir
 mkdir -p $log_dir
-for dir in $INPUT_FOLDER/UD_Armenian*; do
+for dir in $INPUT_FOLDER/UD_*; do
   language=${dir#*UD_}
   language=${language%%-*}
   language=${language/_/ }
