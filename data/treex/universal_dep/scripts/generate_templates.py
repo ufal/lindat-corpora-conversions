@@ -51,7 +51,7 @@ INFO "Universal Dependencies is a project that seeks to develop cross-linguistic
 LANGUAGE "$language"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
-DOCSTRUCTURE doc"""
+DOCSTRUCTURE data"""
         if languagecode=='ar' or languagecode=='he' or languagecode=='fa' or languagecode=='ur':
           templateDef += """
 RIGHTTOLEFT righttoleft"""
