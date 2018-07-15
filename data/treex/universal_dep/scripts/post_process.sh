@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i -n -e '/<doc id=".*train.*">/,/<\/doc>/p;/<doc id=".*train.*"/,$!H;${x;p};' $1 # order of parts: train, dev, test
+sed -i -n -e '/<doc id=".*train">/,$p;/<doc id=".*train"/,$!H;${x;p};' $1 # order of parts: train, dev, test
 sed -i -e '/^$/d; s/^<doc /<data /; s/<\/doc>/<\/data>/' $1   # rename doc to part so that newdoc can be renamed to doc
 perl -i'.orig' -e '
           use feature qw(switch say);
@@ -8,13 +8,13 @@ perl -i'.orig' -e '
           my $docline; my $parline;
           while (<>) {
             if (s/newdoc(="[^"]*")\s*//) {
-              $docline = "<doc id=$1>\n";
+              $docline = "<doc id$1>\n";
               if ($waspar) { say "</par>" }
               if ($wasdoc) { say "</doc>" }
               $wasdoc = 1; $waspar = 0;
             } 
             if (s/newpar(="[^"]*")\s*//) {
-              $parline = "<par id=$1>\n";
+              $parline = "<par id$1>\n";
               if ($waspar) { say "</par>" }
               $waspar = 1;
             }

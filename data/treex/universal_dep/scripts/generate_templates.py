@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
+
 import sys
 import re
 import os
@@ -9,7 +10,7 @@ languagecode=sys.argv[2]  # e.g. vi
 language=sys.argv[3]      # e.g. Vietnamese
 corpname=sys.argv[4]      # e.g. VTB
 dirname=sys.argv[5]       # e.g. UD_Vietnamese-VTB
-lindatrepo=""
+lindatrepo="http://hdl.handle.net/11234/1-2837"
 pmltqprefix=""
 
 def get_locale(langcode):
@@ -200,7 +201,7 @@ MAXDETAIL 50
         return templ
 
     def printConf(self):
-        configDef = """		<corpus ident="$registry" sentence_struct="s" features="morphology, syntax" keyboard_lang="$keyboard" repo="$lindatrepo" pmltq="$pmltqlink" />
+        configDef = """		<corpus ident="$registry" keyboard_lang="$keyboard" sentence_struct="s" features="morphology, syntax" repo="$lindatrepo" pmltq="$pmltqlink" />
 """
         conf = Template(configDef, searchList=[nameSpace])
         return conf
