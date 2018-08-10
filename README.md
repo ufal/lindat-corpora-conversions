@@ -105,6 +105,18 @@ scripts        Makefile, which typically includes common.mk, for converting the 
 output         vertical format, typically created automatically by "cd scripts; make"
 ```
 
+Typically, the `scripts` and `templates` directories are tracked in the "master" branch and pushed to this github repo, while the changes in the `input` and `output` directories are tracked only locally on `kontext-dev` in the "local" branch.
+The local branch should be checked out most of the time because it contains the data needed by the kontext-staging instances!
+Beware; committing a very large file (especially if git identifies it as binary, e.g. urducorp input/output) to git slows down git substantially.
+In that case, keep several untracked copies of the file instead.
+For removing an already committed large file from the history of the local branch, run these commands:
+```
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch data/path-to-the-files-to-be-removed-from-history' --prune-empty --tag-name-filter cat -- ^master ^hash-of-parent-of-the-commit-in-which-the-files-were-first-added local
+git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+git reflog expire --expire=now --all
+git gc --prune=now
+```
+
 Besides the files in the above listed directories, you will have to edit the `corplist.xml` file with the configuration of the main KonText page.
 It is located in `/opt/{kontext,kontext-USERNAME}/configs`; on production, the history of the file is tracked in a local git repo.
 After upgrading `corplist.xml`, you have to run `pm2 restart KONTEXT-INSTANCE`.
