@@ -1,0 +1,66 @@
+#!/usr/bin/python
+import sys
+import re
+import os
+from Cheetah.Template import Template
+lang=sys.argv[1]
+
+def get_wiki(lang):
+    with open('languages.2010-12-12.wiki', 'r') as wiki:
+        for line in wiki.readlines():
+            if line.startswith(lang):
+                language=line.split()[1]
+                locales=line.split()[4]
+                return language, locales
+            else:
+                pass
+
+def get_locale(locales_abbr):
+    with open('locale','r') as loc:
+        for line in loc.readlines():
+            if ( line.startswith(locales_abbr) and 'UTF-8' in line):# & line.startswith(locales_abbr):
+               # print re.split('\s+', line)[0]
+                return re.split('\s+', line)[0]
+
+if __name__ == "__main__":
+    language, locales_abbr = get_wiki(lang)
+    locale = get_locale(locales_abbr)
+    config_file=open('to_config','a')
+    templateDef = """NAME "Web to Corpus - $language"
+PATH "/opt/projects/lindat-services-kontext/devel/data/corpora/data/monolingual/W2C/W2C_$lang-w"
+VERTICAL "/opt/projects/lindat-services-kontext/devel/data/corpora/vert/monolingual/W2C/W2C_$lang-w"
+ENCODING utf-8
+INFO "A set of corpora for 120 languages automatically collected from wikipedia and the web."
+LANGUAGE "$language"
+
+DOCSTRUCTURE doc
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "$locale"
+}
+
+STRUCTURE doc {
+        ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+
+STRUCTURE s {
+        ATTRIBUTE id
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
+
+"""
+    keyboard= locale.split("_", 1)[0]
+    registry_name = "w2c_" + lang + "_w"
+    configDef = """		<corpus id="$registry" sentence_struct="s" features="words only" num_tag_pos="16" keyboard_lang="$keyboard" repo="https://lindat.mff.cuni.cz/repository/xmlui/handle/11858/00-097C-0000-0022-6133-9" />"
+"""
+    nameSpace = {'locale': locale, 'language': language, 'lang' : lang, 'keyboard' : keyboard, 'registry' : registry_name}
+    templ = Template(templateDef, searchList=[nameSpace])
+    conf = Template(configDef, searchList=[nameSpace])
+    print templ
+    config_file.write(str(conf))
+    config_file.close()    
