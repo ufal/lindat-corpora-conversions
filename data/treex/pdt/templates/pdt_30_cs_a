@@ -171,31 +171,6 @@ ATTRIBUTE ep_afun {
 } 
 
 
-STRUCTURE title {
-	ATTRIBUTE name
-}
-
-STRUCTURE issue {
-    ATTRIBUTE id
-    ATTRIBUTE name
-    ATTRIBUTE date
-    ATTRIBUTE number
-    ATTRIBUTE year
-}
-
-
-STRUCTURE article {
-	ATTRIBUTE genre
-	ATTRIBUTE id
-    ATTRIBUTE number
-    ATTRIBUTE wordcount
-}
-
-STRUCTURE doc {
-	ATTRIBUTE id
-    ATTRIBUTE wordcount
-}
-
 STRUCTURE s {
 	ATTRIBUTE id
 }
