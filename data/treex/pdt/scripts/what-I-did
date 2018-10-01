@@ -1,0 +1,32 @@
+treex -Lcs Read::PDT from="input/tamw/train-1/ln94200_2.t.gz" Wri
+te::ManateeGeneral format=pdt3.5 to=testoutput
+
+for file in input/tamw/*/*; do echo -e "\n\n\n" $file >&2; treex 
+-Lcs Read::PDT from=$file Write::ManateeGeneral format=pdt3.5 to=
+output/$file; done 2>logs
+
+for file in input/tamw/*/*.t.gz; do if [ -f output/$(basename $file) ]; then echo -e "\n\n\n" $file exists >&2; else echo -e "\n\n\n" $file >&2; treex -Lcs Read::PDT from=$file Write::ManateeGeneral format=pdt3.5 to=output/$file; fi; done 2>>logs
+
+for dir in *; do mkdir ../../output/$dir; for file in $dir/*.t.gz
+; do mv ../../output/$(basename $file) ../../output/$file; done; 
+done
+
+cd output
+for dir in train-* dtest/ etest/; do mv input/tamw/$dir/* $dir; done
+
+for dir in *; do for file in $dir/*; do sed -i -e "1s/>\$/ data=\
+"$dir\">/" $file; done; done
+
+## some files did not compile correctly:
+for file in input/tamw/{dtest/ln94208_65,etest/mf930713_145,train-1/ln94203_51,train-2/ln95045_111,train-3/ln94202_22,train-4/ln94209_44,train-5/ln95048_046,train-6/ln94207_123,train-7/ln95048_088,train-8/ln94200_44}.t.gz; do rm output/$file; echo -e "\n\n\n" $file >&2; treex -Lcs Read::PDT from=$file Write::ManateeGeneral format=pdt3.5 to=output/$file; fi; done 2>>logs
+
+for dir in *; do zcat $dir/* > data_$dir; done
+rm -r dtest etest train-*
+rename 's/data_//' *
+
+for file in *; do sed -i -e "1i <data id=\"$file\">" -e"\$a </dat
+a>" $file; done
+cat train* dtest etest > pdt3.5
+ls
+scp pdt3.5 vernerova@kontext-dev:corpora/conversions/data/treex/p
+dt/output/
