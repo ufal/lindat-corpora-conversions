@@ -51,8 +51,10 @@ ATTRIBUTE t_lemma {
         TYPE "FD_FGD"
 	LOCALE "cs_CZ.UTF-8"
 }
-ATTRIBUTE sempos {
+ATTRIBUTE t-gram {
         TYPE "FD_FGD"
+        MULTIVALUE yes
+        MULTISEP "|"
 }
 ATTRIBUTE pdtvallex {
         TYPE "FD_FGD"
@@ -62,6 +64,11 @@ ATTRIBUTE tfa {
 }
 ATTRIBUTE clause_number {
         TYPE "FD_FGD"
+}
+ATTRIBUTE discourse-gram {
+        TYPE "FD_FGD"
+        MULTIVALUE yes
+        MULTISEP "|"
 }
 ATTRIBUTE parent {
         TYPE "FD_FGD"
@@ -175,6 +182,6 @@ STRUCTURE s {
     ATTRIBUTE wordcount
 }
 
-MAXCONTEXT 50
-MAXDETAIL 50
+MAXCONTEXT 500
+MAXDETAIL 500
 
