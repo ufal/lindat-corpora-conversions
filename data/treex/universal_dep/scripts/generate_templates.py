@@ -10,6 +10,9 @@ languagecode=sys.argv[2]  # e.g. vi
 language=sys.argv[3]      # e.g. Vietnamese
 corpname=sys.argv[4]      # e.g. VTB
 dirname=sys.argv[5]       # e.g. UD_Vietnamese-VTB
+outfile=sys.argv[6]       # where to put the template
+udversionshort=sys.argv[7]# e.g. 23
+udversionlong=sys.argv[8] # e.g. 2.3
 lindatrepo="http://hdl.handle.net/11234/1-2837"
 pmltqprefix=""
 
@@ -43,11 +46,11 @@ class PrintTemplates:
         self.nameSpace = nameSpace	
 
     def printRegistry(self):
-        templateDef = """NAME "UD 2.2 - $language $corpname"
-PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/2.2/ud_$filename-a"
-VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/2.2/$dirname"
+        templateDef = """NAME "UD $udversionlong - $language $corpname"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/UD/$udversionlong/ud_$filename-a"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/UD/$udversionlong/$dirname"
 ENCODING utf-8
-INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages. This is version 2.2 released in July 2018."
+INFO "Universal Dependencies is a project that seeks to develop cross-linguistically consistent treebank annotation for many languages."
 LANGUAGE "$language"
 
 TAGSETDOC "http://universaldependencies.github.io/docs/u/feat/index.html"
@@ -210,9 +213,9 @@ if __name__ == "__main__":
     locale = str(get_locale(languagecode)).rstrip()
     keyboard = locale.split("_", 1)[0]
 
-    registry_name = "ud_22_" + filename + "_a"
+    registry_name = "ud_" + udversionshort + "_" + filename + "_a"
     pmltqlink = pmltqprefix   #TODO: adjust
-    nameSpace = {'filename': filename, 'locale': locale, 'language': language, 'languagecode': languagecode, 'keyboard': keyboard, 'registry': registry_name, 'corpname': corpname, 'lindatrepo': lindatrepo, 'pmltqlink': pmltqlink, 'dirname': dirname}
+    nameSpace = {'filename': filename, 'locale': locale, 'language': language, 'languagecode': languagecode, 'keyboard': keyboard, 'registry': registry_name, 'corpname': corpname, 'lindatrepo': lindatrepo, 'pmltqlink': pmltqlink, 'dirname': dirname, 'udversionlong': udversionlong, 'udversionshort': udversionshort}
 
     registry = PrintTemplates(nameSpace)
     basepath = os.path.dirname(__file__)
@@ -220,6 +223,6 @@ if __name__ == "__main__":
     registry_file = open(filepath, "w")
     registry_file.write(str(registry.printRegistry()))
 
-    config_file=open('to_corplist','a')
+    config_file=open('../to_corplist','a')
     config_file.write(str(registry.printConf()))
 

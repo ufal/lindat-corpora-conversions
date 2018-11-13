@@ -13,9 +13,16 @@ vertical_dir=/opt/lindat/kontext-data/corpora/vert/monolingual/UD/$ud_version_lo
 registry_dir=/opt/lindat/kontext-data/corpora/registry
 data_dir=/opt/lindat/kontext-data/corpora/data/monolingual/UD/$ud_version_long
 
+function die {
+  local message=$1
+  [ -z "$message" ] && message="Died"
+  echo "${BASH_SOURCE[1]}: line ${BASH_LINENO[0]}: ${FUNCNAME[1]}: $message."  | tee -a $log_dir/$filename >&2
+  exit 1
+}
+
 mkdir -p $vertical_dir
 mkdir -p $log_dir
-for dir in $INPUT_FOLDER/UD_*; do
+for dir in $INPUT_FOLDER/*; do
   language=${dir#*UD_}
   language=${language%%-*}
   language=${language/_/ }
@@ -33,16 +40,18 @@ for dir in $INPUT_FOLDER/UD_*; do
     echo -e "\n\nPost-processing the output file ${dir}..." | tee -a $log_dir/$filename
     ./post_process.sh "$OUTPUT_FOLDER/$dir"
     echo "Creating the template for $filename and linking to it"
-    python generate_templates.py "$filename" "$languagecode" "$language" "$corpname" "$dir"  # writes to ../templates/$corpname and a line to to_corplist
-    #echo "<corpus ident=\"$filename\" keyboard_lang=\"$languagecode\" sentence_struct=\"s\" features=\"morphology, syntax\" repo=\"$lindatrepo\" pmltq=\"pmltqlink\"/>" >> to_corplist
+    echo python generate_templates.py "$filename" "$languagecode" "$language" "$corpname" "$dir" "$TEMPLATE_FOLDER/$registryname" "$ud_version_short" "$ud_version_long" # also writes a line to to_corplist
+    python generate_templates.py "$filename" "$languagecode" "$language" "$corpname" "$dir" "$TEMPLATE_FOLDER/$registryname" "$ud_version_short" "$ud_version_long" # also writes a line to to_corplist
+    if [ $? -ne 0 ]; then die "generating template $registryname failed"; fi
     ln -is $TEMPLATE_FOLDER/$registryname -t $registry_dir
-    if [ $? -ne 0 ]; then echo "linking to template failed" | tee -a $log_dir/$filename ; exit; fi 
+    if [ $? -ne 0 ]; then die "linking to template failed"; fi 
     echo "Linking to the vertical file $vertical_dir/$dir"
 	ln -is $OUTPUT_FOLDER/$dir -t $vertical_dir
-    if [ $? -ne 0 ]; then echo "linking to the vertical failed" | tee -a $log_dir/$filename; exit; fi
+    if [ $? -ne 0 ]; then die "linking to the vertical failed"; fi
+    grep "^PATH\ \"[^\"]*\"\s*$" "$registry_dir/$registryname" || die "template does not set PATH properly"
 	echo "Compiling the corpus  /opt/projects/lindat-services-kontext/devel/data/corpora/registry/$registryname" | tee -a $log_dir/$filename
 	mkdir -p $data_dir/$registryname
 	compilecorp --no-sketches --recompile-corpus /opt/projects/lindat-services-kontext/devel/data/corpora/registry/$registryname | tee -a $log_dir/$filename
-    if [ $? -ne 0 ]; then echo "compilation failed"; exit; fi | tee -a $log_dir/$filename
+    if [ $? -ne 0 ]; then die "compilation failed"; fi
 #  fi
 done
