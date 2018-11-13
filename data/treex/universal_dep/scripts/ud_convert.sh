@@ -9,13 +9,13 @@ mkdir -p $LOG_FOLDER; mkdir -p $OUT_FOLDER
 
 ###export PATH; export PERL5LIB  # needed when I try to run treex directly without resorting to run_treex.sh - but then it does not appear in qsub which I find worrying
 
-for dir in $TRAIN_FOLDER/UD_Spanish-AnCora; do
+for dir in $TRAIN_FOLDER/UD_*; do
     dirname=$(basename $dir)
     shortname=${dirname/UD_/}
-#  if [ ! -f $dir/*train1.conllu ]; then
+#  if [ ! -f $dir/*train.conllu ]; then
 #    continue   ## skip corpora with no training data
 #  else
-    echo -e "\n==========generating VERITCAL from dir: $dir========" $(date)
+    echo -e "\n==========generating VERTICAL from dir: $dir========" $(date)
     if [ $dir == "$TRAIN_FOLDER/UD_Czech-CAC" ] || [ $dir == "$TRAIN_FOLDER/UD_Czech-PDT" ] || [ $dir == "$TRAIN_FOLDER/UD_Russian-SynTagRus" ] || [ $dir == "$TRAIN_FOLDER/UD_Arabic-NYUAD" ] || [ $dir == "$TRAIN_FOLDER/UD_Japanese-BCCWJ" ] || [ $dir == "$TRAIN_FOLDER/UD_Spanish-AnCora" ] ; then
       ## with these very large corpora, the submitted job will likely fail on an out-of-memory error; let's create the vertical for each file separately + it is necessary to somehow divide the train data into smaller files
       for file in $dir/*.conllu; do
@@ -27,7 +27,7 @@ for dir in $TRAIN_FOLDER/UD_Spanish-AnCora; do
     else
       filename=$(basename $dir/*test.conllu .conllu)
       languagecode=${filename%%_*}
-      files=$(echo $dir/*.conllu)
+      files=$((ls $dir/*-train.conllu; ls $dir/*-dev.conllu; ls $dir/*-test.conllu  ) 2>/dev/null)
       #if [ $languagecode == "fro" ]; then languagecode="fr"; fi   #Old French
       echo "processing $files, lang: $languagecode, saving to $(basename $dir)"
       qsub -N $shortname -cwd -o $LOG_FOLDER/ -S /bin/bash -j y -l mem_free=8G,act_mem_free=8G,h_vmem=12G -v PATH  -v PERL5LIB $SCRIPT_FOLDER/run_treex.sh $languagecode $OUT_FOLDER/${dirname} $files
@@ -36,6 +36,6 @@ for dir in $TRAIN_FOLDER/UD_Spanish-AnCora; do
 #  fi
 done
 
-### when all jobs finish, do not forget tconcatenate the output files for the 6 corpora that were converted by file
-### then also run reordering of parts of data so that train comes before test and dev:
+### when all jobs finish, do not forget to concatenate the output files for the 6 corpora that were converted by file
+### then also run post_process.sh, which does reordering of parts of data so that train comes before test and dev:
 ### for file in output/*; do sed -i -n -e sed -n -e '/<doc id=".*train.*">/,/<\/doc>/p;/<doc id=".*train.*"/,$!H;${x;p};' $file; sed -i -e '/^$/d' $file; done
