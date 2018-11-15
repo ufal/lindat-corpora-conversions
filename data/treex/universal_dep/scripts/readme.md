@@ -34,6 +34,14 @@ source /net/work/projects/perlbrew/init
 and see if it helps
 (after running it, cpanm -i will install to shared directories, which is what you probably want)
 
+## Adding links to KonText to Lindat repo
+
+Send the output of this command (with necessary edits for the UD version) to shark:
+
+```
+grep "NAME" ud_23* | sed -e 's#\(.*\):NAME "UD 2.3 - \(.*\)"#{"key": "local.featuredService.kontext", "value": "\2|https://lindat.mff.cuni.cz/services/kontext/first_form?corpname=\1"},#' | LC_ALL=en_US.utf8 sort > ~/featured_ud_23.txt
+```
+
 ## Whole conversion pipeline on the cluster (outdated?)
 
 ```bash
