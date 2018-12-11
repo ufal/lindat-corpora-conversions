@@ -1,0 +1,27 @@
+#!/bin/bash
+ROOT_FOLDER=/export/KONTEXT/kontext-dev/corpora/conversions/data/treex/universal_dep
+TEMPLATE_FOLDER=$ROOT_FOLDER/templates
+cd $TEMPLATE_FOLDER
+rm ../syntax-viewer
+for file in *; do echo '    "'"$file"'": {
+       "sentenceStruct": "s",
+       "emptyValuePlaceholders": ["_"],
+       "trees": [
+         {
+           "id": "default",
+           "name": "Default",
+           "wordAttr": "word",
+           "parentAttr": "parent",
+           "labelTemplates": ["#{#009EE0}%s","#{#010101}%s","#{#010101}%s","#{#009EE0}%s"],
+           "layerType": "t",
+           "detailAttrs": ["*"],
+           "nodeAttrs": ["word","deprel","upos","lemma"],
+           "rootNode": {
+             "id": "root",
+             "word": "#",
+             "parent": null
+           }
+         }
+       ]
+     },' >> ../syntax-viewer; done
+
