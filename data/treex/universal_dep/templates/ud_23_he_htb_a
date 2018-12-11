@@ -127,16 +127,6 @@ STRUCTURE data {
     ATTRIBUTE wordcount
 }
 
-STRUCTURE doc {
-    ATTRIBUTE id
-    ATTRIBUTE wordcount
-}
-
-STRUCTURE par {
-    ATTRIBUTE id
-    ATTRIBUTE wordcount
-}
-
 STRUCTURE s {
     ATTRIBUTE id
     ATTRIBUTE text
