@@ -1,4 +1,4 @@
-NAME "Summa teologie"
+NAME "Theologická summa"
 PATH "/opt/lindat/kontext-data/corpora/data/parallel/Summa/Summa_cs-a"
 VERTICAL "/opt/lindat/kontext-data/corpora/vert/parallel/Summa/Summa_cs-a"
 ENCODING utf-8
