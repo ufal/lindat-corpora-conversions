@@ -1,0 +1,180 @@
+NAME "Prague Dependency Treebank 3.5"
+PATH "/opt/lindat/kontext-data/corpora/data/monolingual/PDT/3.5"
+VERTICAL "/opt/lindat/kontext-data/corpora/vert/monolingual/PDT/3.5/PDT_3.5_cs-t"
+ENCODING utf-8
+INFO "THIS CONVERSION FOR KONTEXT IS STILL LIKELY TO CHANGE -- BOTH THE NAMING OF ATTRIBUTES AND THE LIST OF ATTRIBUTES SELECTED TO BE ACCESSIBLE VIA KONTEXT WILL CHANGE BEFORE THE END OF SEPTEMBER 2018. PDT 3.5 has been published in 2018; it contains annotation from the previous versions of the Prague Dependency Treebank and the Prague Discourse Treebank. Via KonText, the corpus can be searched for attributes that come from the morphological, analytical and tectogrammatical layers, including two kinds of tree structure (captured in the attributes parent and t-parent and the corresponding attributes with the p_ and tp_ prefixes). Attributes eparent and those with ep_ and tep_ prefixes refer to the dependency structure skipping edges inside coordination-like structures."
+LANGUAGE "Czech"
+
+SHORTREF "=issue.name"
+TAGSETDOC "https://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Doc/hmptagqr.html"
+WPOSLIST ",podstatné jméno,N.*,přídavné jméno,A.*,zájmeno,P.*,číslovka,C.*,sloveso,V.*,příslovce,D.*,předložka,R.*,spojka,J.*,částice,T.*,citoslovce,I.*,interpunkce,Z.*,neznámý,X.*"
+DOCSTRUCTURE article
+
+ATTRIBUTE word {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE lc {
+        DYNAMIC utf8lowercase
+        DYNLIB internal
+        FUNTYPE s
+        ARG1 "cs_CZ.UTF-8"
+        FROMATTR word
+        TYPE index
+        TRANSQUERY yes
+}
+ATTRIBUTE lemma {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE pos {
+        DYNAMIC getnchar
+        DYNLIB  internal
+        FUNTYPE i
+        ARG1    1
+        FROMATTR tag
+        TYPE index
+}
+ATTRIBUTE afun {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE a_type {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE functor {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE t_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE sempos {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE pdtvallex {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE tfa {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE clause_number {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE parent {
+        TYPE "FD_FGD"
+        LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE p_form {
+        TYPE "FD_FGD"
+} 
+ATTRIBUTE p_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+} 
+ATTRIBUTE p_tag {
+        TYPE "FD_FGD"
+} 
+ATTRIBUTE p_afun {
+        TYPE "FD_FGD"
+} 
+ATTRIBUTE eparent {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ep_form {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ep_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ep_tag {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE ep_afun {
+        TYPE "FD_FGD"
+} 
+ATTRIBUTE t-parent {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE tp_t_lemma {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE tp_valframe {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE t_eparent {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE tep_t_lemma {
+        TYPE "FD_FGD"
+} 
+ATTRIBUTE tep_valframe {
+        TYPE "FD_FGD"
+	LOCALE "cs_CZ.UTF-8"
+}
+ATTRIBUTE ord {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE p_ord {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE deepord {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE tp_deepord {
+        TYPE "FD_FGD"
+}
+ATTRIBUTE tep_deepord {
+        TYPE "FD_FGD"
+}
+
+
+#ATTRIBUTE is_member {
+#        TYPE "FD_FGD"
+#}
+#ATTRIBUTE grammatemes_rf {
+#        TYPE "FD_FGD"
+#}
+#ATTRIBUTE coref_special {
+#        TYPE "FD_FGD"
+#}
+#ATTRIBUTE antes {
+#        TYPE "FD_FGD"
+#	LOCALE "cs_CZ.UTF-8"
+#}
+#ATTRIBUTE discourse_special {
+#        TYPE "FD_FGD"
+#}
+#ATTRIBUTE discourse_type {
+#        TYPE "FD_FGD"
+#}
+#ATTRIBUTE discourse_target {
+#        TYPE "FD_FGD"
+#	LOCALE "cs_CZ.UTF-8"
+#} 
+
+
+
+STRUCTURE data {
+	ATTRIBUTE id
+}
+STRUCTURE doc {
+	ATTRIBUTE genre
+	ATTRIBUTE id
+    ATTRIBUTE wordcount
+}
+STRUCTURE s {
+	ATTRIBUTE id
+	ATTRIBUTE text
+    ATTRIBUTE wordcount
+}
+
+MAXCONTEXT 50
+MAXDETAIL 50
+
