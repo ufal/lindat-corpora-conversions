@@ -10,6 +10,7 @@ form lemma upos xpos feats parent deprel p_word p_lemma p_upos p_xpos p_feats p_
 ud_convert.sh
   - run_treex.sh
       wrapper for a single treex job because when I submitted treex directly, it did not find the Treex blocks
+      
   = run this script on cluster to *convert conllu to vertical (Manatee) format*
     (this requires checking out the directory universal_dep and whole Treex to the cluster, and possibly adjusting the paths in ud_convert and run_treex
     some jobs may fail, so after running ud_convert, run "grep err run_treex.sh.o*" and "grep 'Out of mem' run_treex.sh.o*" to find out which ones had problems
@@ -21,6 +22,7 @@ process.sh
   - python generate_templates.py
       works only on kontext-dev because I was too lazy to install Cheetah (a python templating module) on cluster or another machine
       - with open('locale','r')
+      
   = run this script on kontext-dev to *create the registry files* and *compile the vertical files*
 
 
@@ -29,10 +31,10 @@ process.sh
 if treex complains of missing modules, first check that you are using at least version 5.18.2 of perl
 
 if not, run
-source /net/work/projects/perlbrew/init
+`source /net/work/projects/perlbrew/init`
 
 and see if it helps
-(after running it, cpanm -i will install to shared directories, which is what you probably want)
+(after running it, `cpanm -i` will install to shared directories, which is what you probably want)
 
 ## Adding links to KonText to Lindat repo
 
@@ -78,9 +80,9 @@ cd input
 
 # SCP vertical to kontext-dev:
 scp $USER@$MACHINE.ms.mff.cuni.cz:/net/cluster/TMP/$USER/kontext/ud/input/*-train.vert output
-cd output &for file in *; do echo $(basename $file); rename 's/(.*?)-ud-train.vert/ud_$1-a/' $(basename $file); done
+cd output & for file in *; do echo $(basename $file); rename 's/(.*?)-ud-train.vert/ud_$1-a/' $(basename $file); done
 # rename vertical files according to what is in registry
 
-# Clean up (optional, or at least remove treex folder)
+# Clean up (or at least remove treex folder)
 rm -r /net/cluster/TMP/$USER/kontext/ud22
 ```
